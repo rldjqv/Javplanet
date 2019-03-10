@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontBestController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String best(Model model, final HttpServletRequest request) throws Exception {
-		return "best";
+		return "best/best";
 	}
 }

@@ -2,16 +2,16 @@
 	pageEncoding="UTF-8"%>
 	
 <!-- start header -->
-<%@ include file="./common/header.jsp" %>
+<%@ include file="../common/header.jsp" %>
 <!-- end header -->
 
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_ggol"> 
+    <div class="content" id="vue_enter"> 
       <div id="gallery">
         <figure>
-          <header class="heading">은꼴</header>
+          <header class="heading">연예인</header>
           <ul class="nospace clear">
             <li class="one_quarter first">
             	<a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a>
@@ -54,6 +54,6 @@
 </div>
 
 <!-- start footer -->
-<%@ include file="./common/footer.jsp" %>
+<%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/ggol.js"></script>
+<script src="/js/vue/enter/enter.js"></script>

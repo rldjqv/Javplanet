@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontCelebController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String celeb(Model model, final HttpServletRequest request) throws Exception {
-		return "celeb";
+		return "celeb/celeb";
 	}
 }

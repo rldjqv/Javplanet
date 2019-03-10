@@ -2,16 +2,16 @@
 	pageEncoding="UTF-8"%>
 	
 <!-- start header -->
-<%@ include file="./common/header.jsp" %>
+<%@ include file="../common/header.jsp" %>
 <!-- end header -->
 
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_enter"> 
+    <div class="content" id="vue_game"> 
       <div id="gallery">
         <figure>
-          <header class="heading">연예인</header>
+          <header class="heading">게임</header>
           <ul class="nospace clear">
             <li class="one_quarter first">
             	<a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a>
@@ -54,6 +54,6 @@
 </div>
 
 <!-- start footer -->
-<%@ include file="./common/footer.jsp" %>
+<%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/enter.js"></script>
+<script src="/js/vue/game/game.js"></script>

@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontIssueController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String issue(Model model, final HttpServletRequest request) throws Exception {
-		return "issue";
+		return "issue/issue";
 	}
 }

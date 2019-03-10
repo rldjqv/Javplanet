@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontGifController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String gif(Model model, final HttpServletRequest request) throws Exception {
-		return "gif";
+		return "gif/gif";
 	}
 }

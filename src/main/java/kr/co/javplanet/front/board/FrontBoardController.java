@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontBoardController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String board(Model model, final HttpServletRequest request) throws Exception {
-		return "board";
+		return "board/board";
 	}
 }

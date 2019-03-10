@@ -2,16 +2,16 @@
 	pageEncoding="UTF-8"%>
 	
 <!-- start header -->
-<%@ include file="./common/header.jsp" %>
+<%@ include file="../common/header.jsp" %>
 <!-- end header -->
 
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_issue"> 
+    <div class="content" id="vue_sports"> 
       <div id="gallery">
         <figure>
-          <header class="heading">인터넷이슈</header>
+          <header class="heading">스포츠</header>
           <ul class="nospace clear">
             <li class="one_quarter first">
             	<a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a>
@@ -54,6 +54,6 @@
 </div>
 
 <!-- start footer -->
-<%@ include file="./common/footer.jsp" %>
+<%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/issue.js"></script>
+<script src="/js/vue/sports/sports.js"></script>

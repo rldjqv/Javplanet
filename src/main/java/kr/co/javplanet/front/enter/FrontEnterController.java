@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontEnterController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String enter(Model model, final HttpServletRequest request) throws Exception {
-		return "enter";
+		return "enter/enter";
 	}
 }

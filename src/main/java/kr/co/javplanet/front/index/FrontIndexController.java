@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontIndexController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String index(Model model, final HttpServletRequest request) throws Exception {
-		return "index";
+		return "index/index";
 	}
 }

@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontGgolController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String ggol(Model model, final HttpServletRequest request) throws Exception {
-		return "ggol";
+		return "ggol/ggol";
 	}
 }

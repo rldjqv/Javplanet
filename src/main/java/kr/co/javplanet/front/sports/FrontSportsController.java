@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontSportsController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String sports(Model model, final HttpServletRequest request) throws Exception {
-		return "sports";
+		return "sports/sports";
 	}
 }

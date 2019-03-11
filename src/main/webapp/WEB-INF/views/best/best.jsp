@@ -11,7 +11,7 @@
     <div class="content" id="vue_best"> 
       <div id="gallery">
         <figure>
-          <header class="heading">베스트</header> ${_contextPath}
+          <header class="heading">베스트</header>
           <ul class="nospace clear">
             <li class="one_quarter first">
             	<a href="#"><img src="/images/demo/gallery/591822_271770_4427_org.jpg" alt=""></a>
@@ -65,4 +65,7 @@
 <!-- start footer -->
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/best/best.js"></script>
+
+<!-- start vue-common -->
+<%@ include file="../common/vue-common.jsp" %>
+<!-- end vue-common -->

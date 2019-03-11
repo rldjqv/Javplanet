@@ -20,4 +20,3 @@
 <!-- start footer -->
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/user/register.js"></script>

@@ -56,4 +56,7 @@
 <!-- start footer -->
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
-<script src="/js/vue/ggol/ggol.js"></script>
+
+<!-- start vue-common -->
+<%@ include file="../common/vue-common.jsp" %>
+<!-- end vue-common -->

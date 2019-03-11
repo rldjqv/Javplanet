@@ -20,3 +20,7 @@
 <!-- start footer -->
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
+
+<!-- start vue-common -->
+<%@ include file="../common/vue-common.jsp" %>
+<!-- end vue-common -->

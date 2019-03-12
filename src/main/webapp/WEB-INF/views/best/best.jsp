@@ -15,7 +15,7 @@
           <ul class="nospace clear">
             <li class="one_quarter first">
             	<a href="#"><img src="/images/demo/gallery/591822_271770_4427_org.jpg" alt=""></a>
-            	<span class="image_font" style="font-size:11px;">조회수 : 100 | 추천수 : 100 | 댓글 : 3</span>
+            	<span class="image_font" style="font-size:11px;">제목은 몇글자까지 보여야 할까요오오오</span>
             </li>
             <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/267299_328696_2458.jpg" alt=""></a></li>
             <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/591822_271771_4450_org.jpg" alt=""></a></li>
@@ -27,18 +27,6 @@
           </ul>
         </figure>
       </div>
-      
-<!--       <form th:action="@{/api/image/upload}" method="post" enctype="multipart/form-data" class="col m8 s12 offset-m2">
-      	<div class="input-field col s6">
-      		<input multiple="multiple" type="file" name="files"/>
-   		</div>
-	    <div class="input-field col s6">
-	        <button class="btn indigo waves-effect waves-light"
-	            type="submit" name="save">
-	            Submit<i class="mdi-content-send right"></i>
-	        </button>
-	    </div>
-	  </form> -->
 
       <nav class="pagination">
         <ul>
@@ -54,6 +42,7 @@
           <li><a href="#">9</a></li>
           <li><a href="#">10</a></li>
           <li><a href="#">&raquo;</a></li>
+          <a class="contents_write" v-on:click="{{commonJs.uploadsContents('best')}}">글쓰기</a>
         </ul>
       </nav>
     </div>

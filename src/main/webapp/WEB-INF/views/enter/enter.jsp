@@ -13,21 +13,15 @@
         <figure>
           <header class="heading">연예인</header>
           <ul class="nospace clear">
-            <li class="one_quarter first">
+            <li class="one_half first">
             	<a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a>
-            	<span class="image_font" style="font-size:11px;">조회수 : 100 | 추천수 : 100 | 댓글 : 3</span>
+            	<span class="image_font" style="font-size:11px;">제목은 몇글자까지 보여야 할까요오오오</span>
             </li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/320x320.png" alt=""></a></li>
-            <li class="one_quarter first"><a href="#"><img src="/images/demo/480x400.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/500x280.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter first"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
+            <li class="one_half"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
+            <li class="one_half first"><a href="#"><img src="/images/demo/480x400.png" alt=""></a></li>
+            <li class="one_half"><a href="#"><img src="/images/demo/500x280.png" alt=""></a></li>
+            <li class="one_half first"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
+            <li class="one_half"><a href="#"><img src="/images/demo/gallery/wsyoo.png" alt=""></a></li>
           </ul>
         </figure>
       </div>
@@ -45,6 +39,7 @@
           <li><a href="#">9</a></li>
           <li><a href="#">10</a></li>
           <li><a href="#">&raquo;</a></li>
+          <a class="contents_write" v-on:click="{{commonJs.uploadsContents('enter')}}">글쓰기</a>
         </ul>
       </nav>
     </div>

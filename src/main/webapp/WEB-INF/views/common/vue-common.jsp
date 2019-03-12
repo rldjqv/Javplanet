@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <!-- start vue-common -->
+<script src="/js/vue/common/vue-common.js"></script>
 <script src="/js/vue/index/index.js"></script>
 <script src="/js/vue/best/best.js"></script>
 <script src="/js/vue/board/board.js"></script>

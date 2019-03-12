@@ -1,8 +1,8 @@
-var boardJs = new Vue ({
-	el : "#vue_board",
+var contentsJs = new Vue ({
+	el : "#vue_contents",
 	data : {
 		resultDatas : {},
-		url : location.origin + "/api/board"
+		url : location.origin + "/api/contents"
 	},
 	created : function () {
 

@@ -24,7 +24,7 @@ File: Layout CSS
 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
-#topbar{padding:15px 0; font-size:.8rem; text-transform:uppercase;}
+#topbar{padding:5px 0; font-size:.8rem; text-transform:uppercase;}
 
 #topbar *{margin:0; padding:0; list-style:none;}
 #topbar ul li{display:inline-block; margin-right:10px; padding-right:15px; border-right:1px solid;}
@@ -34,7 +34,7 @@ File: Layout CSS
 
 /* Header
 --------------------------------------------------------------------------------------------------------------- */
-#header{padding:50px 0; text-align:center;}
+#header{padding:30px 0; text-align:center;}
 
 #header *{margin:0; padding:0; line-height:1;}
 #header h1{font-size:36px; letter-spacing:3px;}
@@ -53,7 +53,7 @@ File: Layout CSS
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:20px 0;}
+.container{padding:10px 0;}
 
 /* Content */
 .container .content{}
@@ -234,7 +234,7 @@ td{border-width:0 1px;}
 
 /* Gallery
 --------------------------------------------------------------------------------------------------------------- */
-#gallery{display:block; width:100%; margin-bottom:50px;}
+#gallery{display:block; width:100%; margin-bottom:10px;}
 #gallery figure figcaption{display:block; width:100%; clear:both;}
 #gallery li{margin-bottom:30px;}
 
@@ -392,7 +392,7 @@ table a, #comments a{background-color:inherit;}
 
 	#topbar{}
 
-	#header{padding: 30px;}
+	#header{padding: 20px;}
 
 	#mainav{}
 	#mainav ul{display:none;}

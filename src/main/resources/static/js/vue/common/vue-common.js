@@ -13,8 +13,8 @@ var commonJs = new Vue ({
 		}
 	},
 	methods : {
-		uploadsContents : function () {
-			window.location.href = "/uploads/contents";
+		uploadsContents : function (category) {
+			window.location.href = "/uploads/contents?category=" + category;
 		}
 	},
 	computed : function () {

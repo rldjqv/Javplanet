@@ -14,5 +14,5 @@
 <script src="/js/vue/sports/sports.js"></script>
 <script src="/js/vue/user/login.js"></script>
 <script src="/js/vue/user/register.js"></script>
+<script src="/js/vue/uploads/contents.js"></script>
 <!-- end vue-common -->
-

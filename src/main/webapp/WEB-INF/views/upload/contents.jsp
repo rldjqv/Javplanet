@@ -12,7 +12,7 @@
           <thead>
             <tr style="text-align: center;">
               <th width="5%;">제목</th>
-              <td style="vertical-align: middle;"><input type="text" style="width: 100%;" value=""></input></td>
+              <td style="vertical-align: middle;"><input type="text" id="title" style="width: 100%;" value=""></input></td>
             </tr>
           </thead>
         </table>
@@ -33,7 +33,7 @@
 		@decsription
 		등록하기 위한 Form으로 상황에 맞게 수정하여 사용한다. Form 이름은 에디터를 생성할 때 설정값으로 설정한다.
 	-->
-	<form name="tx_editor_form" id="tx_editor_form" action="http://posttestserver.com/post.php" method="post" accept-charset="utf-8">
+	<form name="tx_editor_form" id="tx_editor_form" action="/daumeditor-7.4.9/send.jsp" method="post" accept-charset="utf-8">
 		<!-- 에디터 컨테이너 시작 -->
 		<div id="tx_trex_container" class="tx-editor-container">
 			<!-- 사이드바 -->
@@ -503,7 +503,10 @@
 <script type="text/javascript">
 	/* 예제용 함수 */
 	function saveContent() {
-		Editor.save(); // 이 함수를 호출하여 글을 등록하면 된다.
+		contentsJs.contents = Editor.getContent();
+		contentsJs.title = document.getElementById('title').value;
+		alert(Editor.getContent());
+		// Editor.save(); // 이 함수를 호출하여 글을 등록하면 된다.
 	}
 
 	/**

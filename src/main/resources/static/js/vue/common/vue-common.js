@@ -1,11 +1,11 @@
 var commonJs = new Vue ({
 	data : {
-		isMobile : true
+		isMobile : false
 	},
 	created : function () {
 		var filter = "win16|win32|win64|mac|macintel";
 		if (navigator.platform) {
-			if (filter.indexOf( navigator.platform.toLowerCase()) < 0 ) {
+			if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
 				this.isMobile = true;
 			} else {
 				this.isMobile = false;
@@ -14,7 +14,7 @@ var commonJs = new Vue ({
 	},
 	methods : {
 		uploadsContents : function (category) {
-			window.location.href = "/uploads/contents?category=" + category;
+			window.location.href = "/upload/contents?category=" + category;
 		}
 	},
 	computed : function () {

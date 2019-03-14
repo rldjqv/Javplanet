@@ -1,4 +1,4 @@
-package kr.co.javplanet.front.uploads;
+package kr.co.javplanet.front.upload;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value="/uploads")
-public class FrontUploadsController {
+@RequestMapping(value="/upload")
+public class FrontUploadController {
 	@RequestMapping(value = "/contents", method = RequestMethod.GET)
 	public String uploadsContents(Model model, final HttpServletRequest request) throws Exception {
-		return "uploads/contents";
+		return "upload/contents";
 	}
 }

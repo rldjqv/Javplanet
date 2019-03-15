@@ -5,7 +5,7 @@ import kr.co.javplanet.common.param.BaseParam;
 public class BoardParam extends BaseParam {
 	public Board data = new Board();
 	public class Board {
-		
+		public int seq;
 		
 	}
 }

@@ -7,5 +7,7 @@ import kr.co.javplanet.api.board.model.BoardParam;
 
 public interface BoardDao {
 	public List<Board> getBoards(BoardParam param);
+	public List<Board> getBoardDetail(BoardParam param);
+	
 	
 }

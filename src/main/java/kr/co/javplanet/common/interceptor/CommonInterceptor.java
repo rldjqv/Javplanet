@@ -13,7 +13,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 	@Override // Controller 진입 전
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		boolean isTrue = true;
-
+		
     	return isTrue;
     }
     

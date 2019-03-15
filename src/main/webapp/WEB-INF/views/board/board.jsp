@@ -13,23 +13,25 @@
       <header class="heading">자유게시판</header>
         <table>
           <thead>
-            <tr style="text-align: center;">
-              <th width="5%;">#</th>
-              <th width="65%;">제목</th>
+            <tr>
+              <th width="5%;">번호</th>
+              <th width="*;">제목</th>
               <th width="10%;">글쓴이</th>
-              <th width="10%;">날짜</th>
+              <th width="8%;">날짜</th>
               <th width="5%;">조회</th>
-              <th width="5%;">추천</th>
+              <th width="5%;">UP</th>
+              <th width="6%;">DOWN</th>
             </tr>
           </thead>
           <tbody v-if="resultDatas.data != null">
             <tr v-for="datas, index in resultDatas.data.list">
-              <td style="text-align: center;">{{index+1}}</td>
-              <td>{{datas.title}}</td>
-              <td style="text-align: center;">{{datas.memNo}}</td>
-              <td style="text-align: center; font-size: 11px;">{{datas.regDate}}</td>
-              <td style="text-align: center;">{{datas.viewCount}}</td>
-              <td style="text-align: center;">{{datas.up}}</td>
+              <td>{{datas.seq}}</td>
+              <td style="text-align: left;" v-on:click="{{getBoardDetail(datas.seq)}}"><a>{{datas.title}}</a></td>
+              <td>{{datas.userId}}</td>
+              <td style="font-size: 13px;">{{datas.regDate}}</td>
+              <td>{{datas.viewCount}}</td>
+              <td>{{datas.up}}</td>
+              <td>{{datas.down}}</td>
             </tr>
           </tbody>
         </table>

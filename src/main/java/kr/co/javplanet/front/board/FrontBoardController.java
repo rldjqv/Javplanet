@@ -14,4 +14,9 @@ public class FrontBoardController {
 	public String board(Model model, final HttpServletRequest request) throws Exception {
 		return "board/board";
 	}
+	
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public String detail(Model model, final HttpServletRequest request) throws Exception {
+		return "board/board-detail";
+	}
 }

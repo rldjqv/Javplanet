@@ -5,6 +5,7 @@
 <script src="/js/vue/index/vue-index.js"></script>
 <script src="/js/vue/best/vue-best.js"></script>
 <script src="/js/vue/board/vue-board.js"></script>
+<script src="/js/vue/board/vue-board-detail.js"></script>
 <script src="/js/vue/celeb/vue-celeb.js"></script>
 <script src="/js/vue/enter/vue-enter.js"></script>
 <script src="/js/vue/game/vue-game.js"></script>

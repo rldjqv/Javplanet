@@ -5,25 +5,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 <mapper namespace="kr.co.javplanet.api.board.dao.BoardDao">
 
 	<sql id="conditions">
-		<!-- <if test="data.app_seq != null and data.app_seq != ''">
-			AND master.tn_appinfo.app_seq = #{data.data.app_seq}			
-		</if> -->		
+		<if test="data.seq != null and data.seq != ''">
+			AND seq = #{data.seq}			
+		</if>		
 	</sql>
 	
 	<select id="getBoards" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="kr.co.javplanet.api.board.dto.Board">
 		SELECT /* board.xml : getBoards */
-			adminNo,
-			memNo,
-			boardType,
+			seq,
+			userId,
+			type,
 			title,
+			contents,
 			viewCount,
 			up,
+			down,
 			delYN,
-			DATE_FORMAT(regDate, '%Y-%m-%d') as regDate
+			DATE_FORMAT(regDate, '%m-%d') as regDate
 		FROM jav_board
 		WHERE 1=1
-		ORDER BY seq DESC
 		<include refid="conditions"/>
+		ORDER BY seq DESC
 	</select>
 	
+	<select id="getBoardDetail" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="kr.co.javplanet.api.board.dto.Board">
+		SELECT /* board.xml : getBoardDetail */
+			seq,
+			userId,
+			type,
+			title,
+			contents,
+			viewCount,
+			up,
+			down,
+			userIp,
+			delYN,
+			modId,
+			modDate,
+			DATE_FORMAT(regDate, '%y-%m-%d %H:%i') as regDate
+		FROM jav_board
+		WHERE 1=1
+		<include refid="conditions"/>
+	</select>
 </mapper>

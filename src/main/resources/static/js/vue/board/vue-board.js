@@ -3,14 +3,17 @@ var boardJs = new Vue ({
 	data : {
 		category : 'board',
 		resultDatas : {},
-		url : location.origin + "/api/board"
+		url : location.origin + "/api",
+		boardParam : {
+			seq : ''
+		}
 	},
 	created : function () {
 
 	},
 	mounted : function () {
 		axios
-	    .get(this.url)
+	    .get(this.url + "/board")
 	    .then(function(response){
 	    	this.resultDatas = response.data;
 	    }.bind(this))
@@ -18,7 +21,10 @@ var boardJs = new Vue ({
 	    });
 	},
 	methods : {
-
+		getBoardDetail : function (seq) {
+			this.boardParam.seq = seq;
+			window.location.href = "/board/detail";
+		}
 	},
 	computed : function () {
 		

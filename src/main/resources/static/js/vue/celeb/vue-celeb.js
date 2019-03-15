@@ -8,6 +8,9 @@ var celebJs = new Vue ({
 	created : function () {
 
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 		getBatchList : function () {
 			debugger;

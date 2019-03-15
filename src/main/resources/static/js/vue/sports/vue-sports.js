@@ -7,6 +7,9 @@ var sportsJs = new Vue ({
 	created : function () {
 
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 
 	},

@@ -17,6 +17,7 @@
 <!-- <script src="/js/vue.js"></script> --> <!-- 개발용 -->
 <script src="/js/vue.min.js"></script> <!-- 배포용 -->
 <script src="/js/axios.min.js"></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <a id="backtotop" href="#"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>

@@ -7,6 +7,9 @@ var ggolJs = new Vue ({
 	created : function () {
 
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 
 	},

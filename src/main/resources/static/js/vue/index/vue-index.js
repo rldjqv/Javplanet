@@ -7,6 +7,9 @@ var indexJs = new Vue ({
 	created : function () {
 
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 
 	},

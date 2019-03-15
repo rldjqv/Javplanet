@@ -6,12 +6,13 @@ var boardJs = new Vue ({
 		url : location.origin + "/api/board"
 	},
 	created : function () {
+
+	},
+	mounted : function () {
 		axios
 	    .get(this.url)
 	    .then(function(response){
-	    	debugger;
 	    	this.resultDatas = response.data;
-//	    	window.location.href = "/" + this.category;
 	    }.bind(this))
 	    .catch(function(e) {
 	    });

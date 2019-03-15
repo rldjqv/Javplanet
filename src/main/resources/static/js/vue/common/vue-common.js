@@ -12,6 +12,9 @@ var commonJs = new Vue ({
 			}
 		}
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 		uploadContents : function (category) {
 			window.location.href = "/upload/contents?category=" + category;

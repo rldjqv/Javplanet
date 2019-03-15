@@ -7,6 +7,9 @@ var enterJs = new Vue ({
 	created : function () {
 
 	},
+	mounted : function () {
+		
+	},
 	methods : {
 
 	},

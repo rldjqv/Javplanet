@@ -10,23 +10,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		</if> -->		
 	</sql>
 	
-	<select id="getUploads" parameterType="kr.co.javplanet.api.upload.model.UploadParam" resultType="kr.co.javplanet.api.upload.dto.Upload">
-		SELECT  /* upload.xml : getUploads */
-			batch_log_id,
-		    batch_program_id,
-		    batch_name,
-		    success_yn,
-		    error_message,
-		    delete_yn,
-		    reg_date,
-		    upd_date
-		FROM batch_logs 
-		WHERE 1=1
-		    AND reg_date IN (SELECT MAX(reg_date) FROM batch_logs WHERE 1=1 GROUP BY batch_program_id)
-		    AND DATE_FORMAT(reg_date, '%Y') = DATE_FORMAT(now(), '%Y')
-		    AND batch_program_id IS NOT NULL
-		ORDER BY success_yn, reg_date DESC
-			<include refid="conditions"/>
-	</select>
+	<insert id="postUpload" parameterType="kr.co.javplanet.api.upload.model.UploadParam" useGeneratedKeys="true" keyProperty="data.seq">
+		INSERT INTO /* upload.xml : postUpload */
+			jav_board
+			(
+			title,
+			contents,
+			regDate
+			)
+		VALUES
+			(
+			#{data.title},
+			#{data.contents},
+			now()
+			)
+		<include refid="conditions"/>
+	</insert>
 	
 </mapper>

@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
-import kr.co.javplanet.api.upload.dto.UploadListDto;
 import kr.co.javplanet.api.upload.model.UploadParam;
 import kr.co.javplanet.api.upload.service.UploadService;
+import kr.co.javplanet.common.dto.BaseResult;
 
 @RestController
 @RequestMapping(value = "/api/upload")
@@ -28,10 +28,10 @@ public class UploadController {
 	
 	@RequestMapping(value = "/contents", method = RequestMethod.POST, consumes="application/json", headers = "content-type=application/x-www-form-urlencoded")
 	@ResponseBody
-	public UploadListDto postContents(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
+	public BaseResult postContents(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		UploadParam uploadParam = new UploadParam();
 		uploadParam.data = gson.fromJson(gson.toJson(param), UploadParam.Upload.class);
-		return uploadService.getUploads(uploadParam);
+		return uploadService.postUpload(uploadParam);
 	}
 }

@@ -6,9 +6,9 @@
 <!-- end header -->
 
 <div class="wrapper row3">
-  <main class="hoc container clear" id="vue_contents">
+  <main class="hoc container clear">
     <!-- main body -->
-        <table>
+        <table id="vue_contents">
           <thead>
             <tr style="text-align: center;">
               <th width="5%;">제목</th>
@@ -503,9 +503,11 @@
 <script type="text/javascript">
 	/* 예제용 함수 */
 	function saveContent() {
-		contentsJs.contents = Editor.getContent();
-		contentsJs.title = document.getElementById('title').value;
-		alert(Editor.getContent());
+		contentsJs.uploadParam.contents = Editor.getContent();
+		contentsJs.uploadParam.title = document.getElementById('title').value;
+		contentsJs.uploadConents();
+		
+		// alert(Editor.getContent());
 		// Editor.save(); // 이 함수를 호출하여 글을 등록하면 된다.
 	}
 

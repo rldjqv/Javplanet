@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.javplanet.api.upload.dao.UploadDao;
-import kr.co.javplanet.api.upload.dto.UploadListDto;
+import kr.co.javplanet.api.upload.dto.UploadDto;
 import kr.co.javplanet.api.upload.model.UploadParam;
 
 @Service
@@ -15,10 +15,10 @@ public class UploadService {
 	@Autowired
 	private UploadDao uploadDao;
 
-	public UploadListDto getUploads(UploadParam param) throws Exception {
-		UploadListDto result = new UploadListDto();
-		result.data.list = uploadDao.getUpload(param);
-		result.header.resultCnt = result.data.list.size();
+	public UploadDto postUpload(UploadParam param) throws Exception {
+		UploadDto result = new UploadDto();
+		result.header.resultCnt = uploadDao.postUpload(param);
+		result.data.seq= param.data.seq;
 		return result;
 	}
 }

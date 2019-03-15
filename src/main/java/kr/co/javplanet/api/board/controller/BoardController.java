@@ -28,7 +28,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	@ResponseBody
-	public BoardListDto getBatchs(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public BoardListDto getBoards(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		BoardParam boardParam = new BoardParam();
 		boardParam.data = gson.fromJson(gson.toJson(param), BoardParam.Board.class);

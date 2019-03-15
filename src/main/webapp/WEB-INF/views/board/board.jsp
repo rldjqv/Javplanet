@@ -8,7 +8,7 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_board">
+    <div class="content" id="vue_board" v-cloak>
       <div class="scrollable">
       <header class="heading">자유게시판</header>
         <table>
@@ -22,14 +22,14 @@
               <th width="5%;">추천</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">1</td>
-              <td>리중딱 리중딱 신나는노래~~~~~~~ 나도 한번 불러보자~~~~~~~~~~~~~</td>
-              <td style="text-align: center;">리중딱</td>
-              <td style="text-align: center;">12-31</td>
-              <td style="text-align: center;">99999</td>
-              <td style="text-align: center;">3000</td>
+          <tbody v-if="resultDatas.data != null">
+            <tr v-for="datas, index in resultDatas.data.list">
+              <td style="text-align: center;">{{index+1}}</td>
+              <td>{{datas.title}}</td>
+              <td style="text-align: center;">{{datas.memNo}}</td>
+              <td style="text-align: center; font-size: 11px;">{{datas.regDate}}</td>
+              <td style="text-align: center;">{{datas.viewCount}}</td>
+              <td style="text-align: center;">{{datas.up}}</td>
             </tr>
           </tbody>
         </table>
@@ -48,7 +48,7 @@
           <li><a href="#">9</a></li>
           <li><a href="#">10</a></li>
           <li><a href="#">&raquo;</a></li>
-          <a class="contents_write" v-on:click="{{commonJs.uploadsContents('board')}}">글쓰기</a>
+          <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents('board')">글쓰기</a>
         </ul>
       </nav>
     <!-- / main body -->

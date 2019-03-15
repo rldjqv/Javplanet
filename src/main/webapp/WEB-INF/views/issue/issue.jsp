@@ -45,7 +45,7 @@
           <li><a href="#">9</a></li>
           <li><a href="#">10</a></li>
           <li><a href="#">&raquo;</a></li>
-          <a class="contents_write" v-on:click="{{commonJs.uploadsContents('issue')}}">글쓰기</a>
+          <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents('issue')">글쓰기</a>
         </ul>
       </nav>
     </div>

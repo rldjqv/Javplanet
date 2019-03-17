@@ -22,8 +22,7 @@ var boardJs = new Vue ({
 	},
 	methods : {
 		getBoardDetail : function (seq) {
-			this.boardParam.seq = seq;
-			window.location.href = "/board/detail";
+			window.location.href = "/board/detail?seq=" + seq;
 		}
 	},
 	computed : function () {

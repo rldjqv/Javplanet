@@ -21,6 +21,9 @@
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
 
+<script src="/js/vue/common/vue-common.js"></script>
+<script src="/js/vue/user/vue-register.js"></script>
+
 <!-- start vue-common -->
-<%@ include file="../common/vue-common.jsp" %>
+<%-- <%@ include file="../common/vue-common.jsp" %> --%>
 <!-- end vue-common -->

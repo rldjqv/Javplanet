@@ -231,6 +231,7 @@ table{width:100%; margin-bottom:15px;}
 th, td{padding:5px 8px;}
 td{border-width:0 1px;}
 tr td a {cursor: pointer; color: #929292;}
+tr td a:hover {color: #05B3F2;}
 
 
 /* Gallery

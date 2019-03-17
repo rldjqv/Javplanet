@@ -8,7 +8,7 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_best"> 
+    <div class="content" id="vue_best" v-cloak> 
       <div id="gallery">
         <figure>
           <header class="heading">베스트</header>
@@ -55,6 +55,9 @@
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
 
+<script src="/js/vue/common/vue-common.js"></script>
+<script src="/js/vue/best/vue-best.js"></script>
+
 <!-- start vue-common -->
-<%@ include file="../common/vue-common.jsp" %>
+<%-- <%@ include file="../common/vue-common.jsp" %> --%>
 <!-- end vue-common -->

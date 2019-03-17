@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JavPlanet</title>
+<title>Kibe</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -32,7 +32,7 @@
 </div>
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
-    <h1><a href="/">JavPlanet</a></h1>
+    <h1><a href="/">Kibe</a></h1>
     <p></p>
   </header>
 </div>

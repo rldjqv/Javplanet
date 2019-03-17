@@ -53,6 +53,7 @@
           <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents('board')">글쓰기</a>
         </ul>
       </nav>
+    </div>
     <!-- / main body -->
     <div class="clear"></div>
   </main>
@@ -62,6 +63,9 @@
 <%@ include file="../common/footer.jsp" %>
 <!-- end footer -->
 
+<script src="/js/vue/common/vue-common.js"></script>
+<script src="/js/vue/board/vue-board.js"></script>
+
 <!-- start vue-common -->
-<%@ include file="../common/vue-common.jsp" %>
+<%-- <%@ include file="../common/vue-common.jsp" %> --%>
 <!-- end vue-common -->

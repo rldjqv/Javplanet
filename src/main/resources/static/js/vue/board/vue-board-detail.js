@@ -11,6 +11,17 @@ var boardDetailJs = new Vue ({
 		
 	},
 	created : function () {
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCOAtVNdFdkNNmuGk0HJJKgbS19AbZHlMk",
+	    authDomain: "kibe-26e58.firebaseapp.com",
+	    databaseURL: "https://kibe-26e58.firebaseio.com",
+	    projectId: "kibe-26e58",
+	    storageBucket: "",
+	    messagingSenderId: "195081640198"
+	  };
+	  	firebase.initializeApp(config);
+		
 		var queryString = (window.location.href).split("?")[1];
 		var seq = queryString.split('=')[1];
 		this.boardDetailParam.seq = seq;

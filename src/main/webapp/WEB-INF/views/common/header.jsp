@@ -47,7 +47,7 @@
       <li class="menu"><a href="/sports">스포츠</a></li>
       <li class="menu"><a href="/game">게임</a></li>
       <li class="menu"><a href="/issue">인터넷이슈</a></li>
-      <li class="menu"><a href="/board">자유게시판</a></li>
+      <!-- <li class="menu"><a href="#">자유게시판</a></li> -->
       
 <!--       <li><a class="drop" href="#">Pages</a>
         <ul>
@@ -55,19 +55,21 @@
           <li><a href="/full-width">Full Width</a></li>
         </ul>
       </li> -->
-<!--       <li><a class="drop" href="#">Dropdown</a>
+       <li><a class="drop" href="#">게시판</a>
         <ul>
-          <li><a href="#">Level 2</a></li>
-          <li><a class="drop" href="#">Level 2 + Drop</a>
+          <li><a href="/board">자유게시판</a></li>
+<!--           <li><a class="drop" href="#">Level 2 + Drop</a>
             <ul>
               <li><a href="#">Level 3</a></li>
               <li><a href="#">Level 3</a></li>
               <li><a href="#">Level 3</a></li>
             </ul>
-          </li>
-          <li><a href="#">Level 2</a></li>
+          </li> -->
+          <li><a href="/board">썰게시판</a></li>
+          <li><a href="/board">위즈게시판</a></li>
+          <li><a href="/board">성준이게시판</a></li>
         </ul>
-      </li> -->
+      </li>
     </ul>
   </nav>
 </div>

@@ -12,6 +12,9 @@ import kr.co.javplanet.common.interceptor.CommonInterceptor;
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter { 
+	@Value("${static.resource.location}")
+    private String staticResouceLocation;
+
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")

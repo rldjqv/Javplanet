@@ -20,7 +20,6 @@ var boardDetailJs = new Vue ({
 		axios
 	    .get(this.url + "/board/detail/" + this.boardDetailParam.seq)
 	    .then(function(response){
-	    	debugger;
 	    	this.resultDatas = response.data;
 	    }.bind(this))
 	    .catch(function(e) {

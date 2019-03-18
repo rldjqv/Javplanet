@@ -8,7 +8,7 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_board_detail" style="height: 680px; overflow: scroll;" v-cloak>
+    <div class="content" id="vue_board_detail" style="min-height: 680px;" v-cloak>
       <div class="scrollable" v-if="resultDatas.data != null">
       <header class="heading">{{this.resultDatas.data.list[0].title}}</header>
       <hr>

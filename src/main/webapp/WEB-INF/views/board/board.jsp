@@ -11,7 +11,7 @@
     <div class="content" id="vue_board" v-cloak>
       <div class="scrollable">
       <header class="heading">자유게시판</header>
-        <table>
+        <table v-if="resultDatas.data != null">
           <thead>
             <tr>
               <th width="5%;">번호</th>
@@ -23,7 +23,7 @@
               <th width="6%;">DOWN</th>
             </tr>
           </thead>
-          <tbody v-if="resultDatas.data != null">
+          <tbody>
             <tr v-for="datas, index in resultDatas.data.list">
               <td>{{datas.seq}}</td>
               <td style="text-align: left;" v-on:click="{{getBoardDetail(datas.seq)}}"><a>{{datas.title}}</a></td>

@@ -26,9 +26,11 @@ var contentsJs = new Vue ({
 			axios
 		    .post(this.url + "/contents", this.uploadParam)
 		    .then(function(response){
-		    	window.location.href = "/" + category;
+		    	alert("글 작성에 성공하였습니다.");
+		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
 		    }.bind(this))
 		    .catch(function(e) {
+		    	alert("글 작성에 실패하였습니다. ERROR : " + e.toString());
 		    });
 		}
 	},

@@ -9,7 +9,8 @@
   </div>
 </div>
 
-<script src="/layout/scripts/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="/layout/scripts/jquery.min.js"></script> -->
 <script src="/layout/scripts/jquery.backtotop.js"></script>
 <script src="/layout/scripts/jquery.mobilemenu.js"></script>
 <script src="/layout/scripts/jquery.flexslider-min.js"></script>

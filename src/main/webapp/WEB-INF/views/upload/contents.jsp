@@ -24,7 +24,7 @@
     <title>Daum 에디터 - 등록화면 예제</title>
     <link rel="stylesheet" href="/daumeditor-7.4.9/css/editor.css" type="text/css" charset="utf-8"/>
     <script src="/daumeditor-7.4.9/js/editor_loader.js" type="text/javascript" charset="utf-8"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="body">
@@ -37,7 +37,7 @@
 		<!-- 에디터 컨테이너 시작 -->
 		<div id="tx_trex_container" class="tx-editor-container">
 			<!-- 사이드바 -->
-			<div id="tx_sidebar" class="tx-sidebar">
+			<div id="tx_sidebar" class="tx-sidebar" style="display: none;">
 				<div class="tx-sidebar-boundary">
 					<!-- 사이드바 / 첨부 -->
 					<ul class="tx-bar tx-bar-left tx-nav-attach">
@@ -52,27 +52,25 @@
 							</div>
 						</li>
 						<!-- 이미지 첨부 버튼 끝 -->
-<!-- 						<li class="tx-list">
+ 						<li class="tx-list">
 							<div unselectable="on" id="tx_file" class="tx-file tx-btn-trans">
 								<a href="javascript:;" title="파일" class="tx-text">파일</a>
 							</div>
-						</li> -->
-<!-- 						<li class="tx-list">
+						</li>
+ 						<li class="tx-list">
 							<div unselectable="on" id="tx_media" class="tx-media tx-btn-trans">
 								<a href="javascript:;" title="외부컨텐츠" class="tx-text">외부컨텐츠</a>
 							</div>
-						</li> -->
-<!-- 						<li class="tx-list tx-list-extra">
+						</li>
+ 						<li class="tx-list tx-list-extra">
 							<div unselectable="on" class="tx-btn-nlrbg tx-extra">
 								<a href="javascript:;" class="tx-icon" title="버튼 더보기">버튼 더보기</a>
 							</div>
 							<ul class="tx-extra-menu tx-menu" style="left:-48px;" unselectable="on">
-								
-									@decsription
-									일부 버튼들을 빼서 레이어로 숨기는 기능을 원할 경우 이 곳으로 이동시킬 수 있다.
-								
+							<!-- @decsription
+							일부 버튼들을 빼서 레이어로 숨기는 기능을 원할 경우 이 곳으로 이동시킬 수 있다. -->
 							</ul>
-						</li> -->
+						</li>
 					</ul>
 					<!-- 사이드바 / 우측영역 -->
 					<ul class="tx-bar tx-bar-right">
@@ -403,7 +401,7 @@
 			</div></div>
 			<!-- 툴바 - 더보기 끝 -->
 			<!-- 편집영역 시작 -->
-				<!-- 에디터 Start -->
+			<!-- 에디터 Start -->
 	<div id="tx_canvas" class="tx-canvas">
 		<div id="tx_loading" class="tx-loading"><div><img src="/daumeditor-7.4.9/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
 		<div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
@@ -418,7 +416,7 @@
 			<textarea id="tx_canvas_text" rows="30" cols="30"></textarea>
 		</div>
 	</div>
-					<!-- 높이조절 Start -->
+	<!-- 높이조절 Start -->
 	<div id="tx_resizer" class="tx-resize-bar">
 		<div class="tx-resize-bar-bg"></div>
 		<img id="tx_resize_holder" src="/daumeditor-7.4.9/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
@@ -500,7 +498,78 @@
 </script>
 
 <!-- Sample: Saving Contents -->
-<script type="text/javascript">
+
+	<style>
+		.imgs_wrap {
+			width: 600px;
+			margin-top: 50px;
+		}
+		.imgs_wrap img {
+			max-width: 200px;
+		}
+	</style>
+	
+<!-- 	<script>
+		var sel_files = [];
+		$(document).ready(function() {
+			debugger;
+			$("#input_imgs").on("change", handleImgsFilesSelect);
+		});
+		
+		function handleImgsFilesSelect(e) {
+			var files = e.target.files;
+			var filesArr = Array.prototype.slice.call(files);
+			
+			filesArr.forEach(function(f) {
+				if(!f.type.match("image.*")) {
+					alert("확장자는 이미지 확장자만 가능합니다.");
+					return;
+				}
+				sel_files.push(f);
+				
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					var img_html = "<img src=\"" + e.target.result + "\" />";
+					$(".imgs_wrap").append(img_html);
+					reader.readAsDataURL(f);
+				}
+			})
+		}
+	</script> -->
+	
+	<script type="text/javascript">
+	$(document).ready(
+	    function() {
+	        // 태그에 onchange를 부여한다.
+	        $('#input_imgs').change(function() {
+	                addPreview($(this)); //preview form 추가하기
+	        });
+	    });
+		 
+    // image preview 기능 구현
+    // input = file object[]
+    function addPreview(input) {
+        if (input[0].files) {
+            //파일 선택이 여러개였을 시의 대응
+            for (var fileIndex = 0 ; fileIndex < input[0].files.length ; fileIndex++) {
+                var file = input[0].files[fileIndex];
+                var reader = new FileReader();
+ 
+                reader.onload = function (img) {
+                	var image_tag = "<img src=\"" + img.target.result + "\"\/>";
+                	image_tag.slice(0, -1);
+                    //div id="preview" 내에 동적코드추가.
+                    //이 부분을 수정해서 이미지 링크 외 파일명, 사이즈 등의 부가설명을 할 수 있을 것이다.
+                    $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(
+                    		image_tag
+                    );
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
+    }
+
 	/* 예제용 함수 */
 	function saveContent() {
 		contentsJs.uploadParam.contents = Editor.getContent();
@@ -579,7 +648,13 @@
         return true;
 	}
 </script>
-<div><button onclick='saveContent()'>저장</button></div>
+	<div>
+		<input type="file" id="input_imgs" title="사진" class="tx-text" multiple />
+		<button style="float: right;" onclick='saveContent()'>저장</button>
+	</div>
+	
+	<div id="preview">
+    </div>
 <!-- End: Saving Contents -->
 </body>
 </html>

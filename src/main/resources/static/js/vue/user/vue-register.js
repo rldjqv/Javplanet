@@ -5,6 +5,7 @@ var registerJs = new Vue ({
 		url : location.origin + "/api/user/login"
 	},
 	created : function () {
+		commonJs.naverAnalytics();
 	
 	},
 	mounted : function () {

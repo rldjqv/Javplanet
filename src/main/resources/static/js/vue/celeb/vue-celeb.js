@@ -6,6 +6,7 @@ var celebJs = new Vue ({
 		test : "test"
 	},
 	created : function () {
+		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

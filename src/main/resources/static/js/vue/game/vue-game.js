@@ -5,6 +5,7 @@ var gameJs = new Vue ({
 		url : location.origin + "/api/game"
 	},
 	created : function () {
+		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

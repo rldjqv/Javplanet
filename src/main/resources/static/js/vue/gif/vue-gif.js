@@ -5,6 +5,7 @@ var gifJs = new Vue ({
 		url : location.origin + "/api/gif"
 	},
 	created : function () {
+		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

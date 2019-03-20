@@ -499,45 +499,7 @@
 
 <!-- Sample: Saving Contents -->
 
-	<style>
-		.imgs_wrap {
-			width: 600px;
-			margin-top: 50px;
-		}
-		.imgs_wrap img {
-			max-width: 200px;
-		}
-	</style>
-	
-<!-- 	<script>
-		var sel_files = [];
-		$(document).ready(function() {
-			debugger;
-			$("#input_imgs").on("change", handleImgsFilesSelect);
-		});
-		
-		function handleImgsFilesSelect(e) {
-			var files = e.target.files;
-			var filesArr = Array.prototype.slice.call(files);
-			
-			filesArr.forEach(function(f) {
-				if(!f.type.match("image.*")) {
-					alert("확장자는 이미지 확장자만 가능합니다.");
-					return;
-				}
-				sel_files.push(f);
-				
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					var img_html = "<img src=\"" + e.target.result + "\" />";
-					$(".imgs_wrap").append(img_html);
-					reader.readAsDataURL(f);
-				}
-			})
-		}
-	</script> -->
-	
-	<script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(
 	    function() {
 	        // 태그에 onchange를 부여한다.
@@ -555,14 +517,24 @@
                 var file = input[0].files[fileIndex];
                 var reader = new FileReader();
  
+                debugger;
                 reader.onload = function (img) {
-                	var image_tag = "<img src=\"" + img.target.result + "\"\/>";
-                	image_tag.slice(0, -1);
+                	var image_tag = "<img src=\"" + img.target.result + "\"\ style='width: 500px; height: 100%;'/>";
+                	var child = document.createElement('span');
+                	child.innerHTML = image_tag;
+                	
+                	/* image_tag.slice(0, -1); */
                     //div id="preview" 내에 동적코드추가.
                     //이 부분을 수정해서 이미지 링크 외 파일명, 사이즈 등의 부가설명을 할 수 있을 것이다.
+                  
                     $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(
-                    		image_tag
+                    		child
                     );
+                    
+/*                     $("#preview").append(
+                    		image_tag
+                    ); */
+                    
                 };
                 
                 reader.readAsDataURL(file);

@@ -8,10 +8,8 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" style="height:550px;">
-	<hr>
-	<h1>해당페이지는 존재하지 않습니다.</h1>
-	<hr>
+    <div class="content" style="height:550px; text-align: center; padding-top: 100px;">
+	<img src="/images/error/img_404.png" />
     </div>
     <!-- / main body -->
     <div class="clear"></div>

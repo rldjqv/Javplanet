@@ -32,6 +32,7 @@ var boardDetailJs = new Vue ({
 	    .get(this.url + "/board/detail/" + this.boardDetailParam.seq)
 	    .then(function(response){
 	    	this.resultDatas = response.data;
+	    	document.title = this.resultDatas.data.list[0].title;
 	    }.bind(this))
 	    .catch(function(e) {
 	    });	

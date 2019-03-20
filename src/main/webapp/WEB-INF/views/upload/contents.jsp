@@ -562,8 +562,8 @@
 
 	/* 예제용 함수 */
 	function saveContent() {
-		contentsJs.uploadParam.contents = Editor.getContent();
-		contentsJs.uploadParam.title = document.getElementById('title').value;
+		contentsJs.uploadParam.text.contents = Editor.getContent();
+		contentsJs.uploadParam.text.title = document.getElementById('title').value;
 		contentsJs.uploadConents();
 		
 		// alert(Editor.getContent());

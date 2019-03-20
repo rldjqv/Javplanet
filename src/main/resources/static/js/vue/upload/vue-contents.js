@@ -4,10 +4,14 @@ var contentsJs = new Vue ({
 		resultDatas : {},
 		url : location.origin + "/api/upload",
 		uploadParam : {
-			category : "",
-			title : "",
-			contents : "",
-			images : []
+			text : {
+				category : "",
+				title : "",
+				contents : ""				
+			},
+			file : {
+				images : []	
+			}
 		}
 
 	},
@@ -24,13 +28,18 @@ var contentsJs = new Vue ({
 			this.uploadParam.category = category;
 			
 			axios
-		    .post(this.url + "/contents", this.uploadParam)
+		    .post(this.url + "/contents", this.uploadParam.text)
+//		    .post(this.url + "/contents", this.uploadParam, {
+//		    	headers: {
+//		    		'Content-Type': 'multipart/form-data'
+//		    	}
+//		    })
 		    .then(function(response){
 		    	alert("글 작성에 성공하였습니다.");
 		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
 		    }.bind(this))
 		    .catch(function(e) {
-		    	alert("글 작성에 실패하였습니다. ERROR : " + e.toString());
+		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
 		    });
 		}
 	},

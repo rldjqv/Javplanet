@@ -405,7 +405,7 @@
 	<div id="tx_canvas" class="tx-canvas">
 		<div id="tx_loading" class="tx-loading"><div><img src="/daumeditor-7.4.9/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
 		<div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
-			<iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0"></iframe>
+			<iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0" style="height: 600px;"></iframe>
 		</div>
 		<div class="tx-source-deco">
 			<div id="tx_canvas_source_holder" class="tx-holder">
@@ -515,6 +515,10 @@
             //파일 선택이 여러개였을 시의 대응
             for (var fileIndex = 0 ; fileIndex < input[0].files.length ; fileIndex++) {
                 var file = input[0].files[fileIndex];
+            	if(!file.type.match("image.*")) {
+        			alert("확장자는 이미지 확장자만 가능합니다.");
+       				return;
+            	}
                 var reader = new FileReader();
  
                 debugger;
@@ -530,11 +534,6 @@
                     $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(
                     		child
                     );
-                    
-/*                     $("#preview").append(
-                    		image_tag
-                    ); */
-                    
                 };
                 
                 reader.readAsDataURL(file);
@@ -621,7 +620,7 @@
 	}
 </script>
 	<div>
-		<input type="file" id="input_imgs" title="사진" class="tx-text" multiple />
+		<input type="file" id="input_imgs" title="사진" class="tx-text" accept="image/*" multiple />
 		<button style="float: right;" onclick='saveContent()'>저장</button>
 	</div>
 	

@@ -455,6 +455,24 @@
 	</form>
 </div>
 <!-- 에디터 끝 -->
+
+	<div>
+		<input type="file" id="input_imgs" title="사진" class="tx-text" accept="image/*" multiple />
+		<button style="float: right;" onclick='saveContent()'>저장</button>
+	</div>
+<!-- End: Saving Contents -->
+</body>
+</html>
+
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<!-- start footer -->
+<%@ include file="../common/footer.jsp" %>
+<!-- end footer -->
+
 <script type="text/javascript">
 	var config = {
 		txHost: '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */
@@ -523,8 +541,8 @@
  
                 debugger;
                 reader.onload = function (img) {
-                	var image_tag = "<img src=\"" + img.target.result + "\"\ style='width: 500px; height: 100%;'/>";
-                	var child = document.createElement('span');
+                	var image_tag = "<img src=\"" + img.target.result + "\"\ style='max-height: 500px;'/>";
+                	var child = document.createElement('div');
                 	child.innerHTML = image_tag;
                 	
                 	/* image_tag.slice(0, -1); */
@@ -537,6 +555,7 @@
                 };
                 
                 reader.readAsDataURL(file);
+                contentsJs.uploadParam.images.push(file);
             }
         } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
     }
@@ -619,25 +638,6 @@
         return true;
 	}
 </script>
-	<div>
-		<input type="file" id="input_imgs" title="사진" class="tx-text" accept="image/*" multiple />
-		<button style="float: right;" onclick='saveContent()'>저장</button>
-	</div>
-	
-	<div id="preview">
-    </div>
-<!-- End: Saving Contents -->
-</body>
-</html>
-
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-
-<!-- start footer -->
-<%@ include file="../common/footer.jsp" %>
-<!-- end footer -->
 
 <script src="/js/vue/common/vue-common.js"></script>
 <script src="/js/vue/upload/vue-contents.js"></script>

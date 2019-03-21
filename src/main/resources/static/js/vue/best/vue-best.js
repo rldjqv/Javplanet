@@ -1,7 +1,7 @@
 var bestJs = new Vue ({
 	el : "#vue_best",
 	data : {
-		name : 'best',
+		category : 'best',
 		resultDatas : {},
 		url : location.origin + "/api/best"
 	},

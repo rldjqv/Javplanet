@@ -31,23 +31,7 @@
           </ul>
         </figure>
       </div>
-      <nav class="pagination">
-        <ul>
-          <li><a href="#">&laquo;</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li class="current"><strong>5</strong></li>
-          <li><a href="#">6</a></li>
-          <li><a href="#">7</a></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><a href="#">10</a></li>
-          <li><a href="#">&raquo;</a></li>
-          <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents('ggol')">글쓰기</a>
-        </ul>
-      </nav>
+      <pagination v-bind:category="category"></pagination>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

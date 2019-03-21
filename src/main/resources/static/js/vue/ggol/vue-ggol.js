@@ -1,6 +1,7 @@
 var ggolJs = new Vue ({
 	el : "#vue_ggol",
 	data : {
+		category : 'ggol',
 		resultDatas : {},
 		url : location.origin + "/api/ggol"
 	},

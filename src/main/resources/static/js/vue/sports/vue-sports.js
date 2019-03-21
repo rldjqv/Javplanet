@@ -1,6 +1,7 @@
 var sportsJs = new Vue ({
 	el : "#vue_sports",
 	data : {
+		category : 'sports',
 		resultDatas : {},
 		url : location.origin + "/api/sports"
 	},

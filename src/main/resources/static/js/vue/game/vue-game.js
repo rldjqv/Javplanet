@@ -1,6 +1,7 @@
 var gameJs = new Vue ({
 	el : "#vue_game",
 	data : {
+		category : 'game',
 		resultDatas : {},
 		url : location.origin + "/api/game"
 	},

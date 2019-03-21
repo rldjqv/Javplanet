@@ -1,6 +1,7 @@
 var celebJs = new Vue ({
 	el : "#vue_celeb",
 	data : {
+		category : 'celeb',
 		resultDatas : {},
 		url : location.origin + "/api/celeb",
 		test : "test"
@@ -12,9 +13,7 @@ var celebJs = new Vue ({
 		
 	},
 	methods : {
-		getBatchList : function () {
-			debugger;
-		}
+		
 	},
 	computed : function () {
 		

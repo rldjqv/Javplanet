@@ -8,10 +8,13 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_board" v-cloak>
+    <div class="content" id="vue_board" v-if="resultDatas.data != null" v-cloak>
       <div class="scrollable">
-      <header class="heading">자유게시판</header>
-        <table v-if="resultDatas.data != null">
+      <header class="heading">
+      	<span>자유게시판</span>
+      	<span id="result_cnt">총 페이지 수 : {{resultDatas.header.resultCnt}}</span>
+      </header>
+        <table>
           <thead>
             <tr>
               <th width="6%;" class="board_seq">번호</th>
@@ -36,23 +39,7 @@
           </tbody>
         </table>
       </div>
-      <nav class="pagination">
-        <ul>
-          <li><a href="#">&laquo;</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li class="current"><strong>5</strong></li>
-          <li><a href="#">6</a></li>
-          <li><a href="#">7</a></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><a href="#">10</a></li>
-          <li><a href="#">&raquo;</a></li>
-          <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents('board')">글쓰기</a>
-        </ul>
-      </nav>
+      <pagination v-bind:category="category"></pagination>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

@@ -29,7 +29,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping(value = "/board", method = RequestMethod.GET, produces="application/json; charset=UTF-8")
+	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	@ResponseBody
 	public BoardListDto getBoards(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
@@ -40,7 +40,7 @@ public class BoardController {
 		return boardService.getBoards(boardParam);
 	}
 	
-	@RequestMapping(value = "/board/detail/{seq}", method = RequestMethod.GET, produces="application/json; charset=UTF-8")
+	@RequestMapping(value = "/board/detail/{seq}", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
 	@ResponseBody
 	public BoardListDto getBoardDetail(HttpServletRequest request, @PathVariable int seq) throws Exception {
 		Gson gson = new Gson();

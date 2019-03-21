@@ -18,7 +18,7 @@ public class UserService {
 	public UserListDto getUsers(UserParam param) throws Exception {
 		UserListDto result = new UserListDto();
 		result.data.list = userDao.getUsers(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

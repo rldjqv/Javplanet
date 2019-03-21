@@ -18,7 +18,7 @@ public class GifService {
 	public GifListDto getGifs(GifParam param) throws Exception {
 		GifListDto result = new GifListDto();
 		result.data.list = gifDao.getGifs(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

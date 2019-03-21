@@ -18,7 +18,7 @@ public class CelebService {
 	public CelebListDto getCelebs(CelebParam param) throws Exception {
 		CelebListDto result = new CelebListDto();
 		result.data.list = celebDao.getCelebs(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

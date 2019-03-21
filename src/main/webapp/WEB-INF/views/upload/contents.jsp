@@ -555,15 +555,15 @@
                 };
                 
                 reader.readAsDataURL(file);
-                contentsJs.uploadParam.images.push(file);
+                contentsJs.images.push(file);
             }
         } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
     }
 
 	/* 예제용 함수 */
 	function saveContent() {
-		contentsJs.uploadParam.text.contents = Editor.getContent();
-		contentsJs.uploadParam.text.title = document.getElementById('title').value;
+		contentsJs.uploadParam.contents = Editor.getContent();
+		contentsJs.uploadParam.title = document.getElementById('title').value;
 		contentsJs.uploadConents();
 		
 		// alert(Editor.getContent());

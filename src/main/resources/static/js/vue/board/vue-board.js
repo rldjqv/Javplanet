@@ -5,22 +5,39 @@ var boardJs = new Vue ({
 		resultDatas : {},
 		url : location.origin + "/api",
 		boardParam : {
-			seq : ''
+			offset : 0
 		}
 	},
 	created : function () {
 
 	},
 	mounted : function () {
-		axios
-	    .get(this.url + "/board")
-	    .then(function(response){
-	    	this.resultDatas = response.data;
-	    }.bind(this))
-	    .catch(function(e) {
-	    });
+		axios({
+			method: 'get',
+			url: this.url + "/board",
+			params : this.boardParam
+			})
+		.then(function (response) {
+			this.resultDatas = response.data;
+		}.bind(this))
+		.catch(function(e) {
+		});
 	},
 	methods : {
+		search : function () {
+			this.boardParam.offset = commonJs.offset;
+			
+			axios({
+				method: 'get',
+				url: this.url + "/board",
+				params : this.boardParam
+			})
+			.then(function (response) {
+				this.resultDatas = response.data;
+			}.bind(this))
+			.catch(function(e) {
+			});
+		},
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;
 		}

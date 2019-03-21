@@ -18,7 +18,7 @@ public class IndexService {
 	public IndexListDto getIndexs(IndexParam param) throws Exception {
 		IndexListDto result = new IndexListDto();
 		result.data.list = indexDao.getIndexs(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

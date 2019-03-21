@@ -17,8 +17,9 @@ public class BoardService {
 
 	public BoardListDto getBoards(BoardParam param) throws Exception {
 		BoardListDto result = new BoardListDto();
+		result.header.totalCnt = boardDao.getBoardsTotalCnt(param);
 		result.data.list = boardDao.getBoards(param);
-		result.header.resultCnt = result.data.list.size();
+		result.data.resultCnt = result.data.list.size();
 		return result;
 	}
 
@@ -26,7 +27,7 @@ public class BoardService {
 		BoardListDto result = new BoardListDto();
 		result.data.list = boardDao.getBoards(param);
 		boardDao.putBoardDetailViewCount(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 	

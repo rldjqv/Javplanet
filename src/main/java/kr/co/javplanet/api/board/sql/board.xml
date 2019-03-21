@@ -5,9 +5,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 <mapper namespace="kr.co.javplanet.api.board.dao.BoardDao">
 
 	<sql id="conditions">
-		<if test="data.seq != null and data.seq != ''">
-			AND seq = #{data.seq}			
+		<if test="data.seq != null and data.seq != '' and data.seq != 0">
+			AND seq = #{data.seq}
 		</if>		
+	</sql>
+	
+	<sql id="paging">
+		LIMIT 20
+		OFFSET #{data.offset}
 	</sql>
 	
 	<select id="getBoards" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="kr.co.javplanet.api.board.dto.Board">
@@ -27,6 +32,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		WHERE 1=1
 		<include refid="conditions"/>
 		ORDER BY seq DESC
+		<include refid="paging" />
+	</select>
+	
+	<select id="getBoardsTotalCnt" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="int">
+		/* board.xml : getBoardsTotalCnt */
+		SELECT
+			COUNT(1)
+		FROM jav_board
+		WHERE 1=1
+		<include refid="conditions"/>
 	</select>
 	
 	<select id="getBoardDetail" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="kr.co.javplanet.api.board.dto.Board">

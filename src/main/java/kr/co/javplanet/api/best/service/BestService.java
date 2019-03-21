@@ -18,7 +18,7 @@ public class BestService {
 	public BestListDto getBests(BestParam param) throws Exception {
 		BestListDto result = new BestListDto();
 		result.data.list = bestDao.getBests(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

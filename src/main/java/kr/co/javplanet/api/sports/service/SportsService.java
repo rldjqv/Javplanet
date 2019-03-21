@@ -18,7 +18,7 @@ public class SportsService {
 	public SportsListDto getSportss(SportsParam param) throws Exception {
 		SportsListDto result = new SportsListDto();
 		result.data.list = sportsDao.getSportss(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

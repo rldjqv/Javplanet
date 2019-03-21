@@ -18,7 +18,7 @@ public class IssueService {
 	public IssueListDto getIssues(IssueParam param) throws Exception {
 		IssueListDto result = new IssueListDto();
 		result.data.list = issueDao.getIssues(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

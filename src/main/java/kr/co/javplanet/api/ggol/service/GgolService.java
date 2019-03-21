@@ -18,7 +18,7 @@ public class GgolService {
 	public GgolListDto getGgols(GgolParam param) throws Exception {
 		GgolListDto result = new GgolListDto();
 		result.data.list = ggolDao.getGgols(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

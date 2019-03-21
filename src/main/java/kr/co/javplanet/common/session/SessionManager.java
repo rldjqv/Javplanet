@@ -17,6 +17,33 @@ public class SessionManager {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 	
+	public static void setApiHeader(BaseParam param, HttpServletRequest request) {
+		String userId = getSessionUserId(request);
+		String userIp = getClientIP(request);
+		if(param == null)
+			return;
+		if(param.header == null)
+			return;
+		param.header.userId = (userId);
+		param.header.userIp = (userIp);
+	}
+	
+	public static String getSessionUserId(HttpServletRequest request) {
+		SessionObject so = SessionManager.getSessionObject(request);
+		if(so == null)
+			return "";
+		return so.getUserId();
+	}
+	
+	public static SessionObject getSessionObject(HttpServletRequest request) {
+		if(request == null)
+			return null;
+		HttpSession session = request.getSession(false);
+		if(session == null)
+			return null;
+		return SESSION_MAP.get(session.getId());
+	}
+	
 	public static String getClientIP(HttpServletRequest request) {
 		if(request == null)
 			return "";
@@ -40,32 +67,5 @@ public class SessionManager {
 		}
 		
 		return ip;
-	}
-	
-	public static SessionObject getSessionObject(HttpServletRequest request) {
-		if(request == null)
-			return null;
-		HttpSession session = request.getSession(false);
-		if(session == null)
-			return null;
-		return SESSION_MAP.get(session.getId());
-	}
-	
-	public static void setApiHeader(BaseParam param, HttpServletRequest request) {
-		String userId = getSessionUserId(request);
-		String userIp = getClientIP(request);
-		if(param == null)
-			return;
-		if(param.header == null)
-			return;
-		param.header.userId = (userId);
-		param.header.userIp = (userIp);
-	}
-	
-	public static String getSessionUserId(HttpServletRequest request) {
-		SessionObject so = SessionManager.getSessionObject(request);
-		if(so == null)
-			return "";
-		return so.getUserId();
 	}
 }

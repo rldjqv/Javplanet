@@ -293,7 +293,7 @@ blockquote::before{color:rgba(0,0,0,.05);}
 .row0{box-shadow:0 10px 10px rgba(0,0,0,.05);}
 .row1{color:#929292; background-color:#FFFFFF;}
 .row2, .row2 a{}
-.row3{color:#929292; background-color:#FFFFFF;}
+.row3{color:#929292; background-color:#FFFFFF; min-height:774px;}
 .row4{color:#CBCBCB; background-color:#222222; text-align: center;}
 .row5, .row5 a{color:#CBCBCB; background-color:#1A1A1A;}
 
@@ -305,7 +305,7 @@ blockquote::before{color:rgba(0,0,0,.05);}
 
 /* Header */
 #header a{color:inherit;}
-#result_cnt {float: right; font-size: 13px; padding-top: 15px;}
+#total_cnt {float: right; font-size: 13px; padding-top: 15px;}
 
 /* Page Intro */
 #pageintro li p:first-of-type{color:rgba(255,255,255,.5);}
@@ -353,7 +353,7 @@ blockquote::before{color:rgba(0,0,0,.05);}
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
 .container .sidebar nav a:hover{color:#05B3F2;}
 
-.pagination a, .pagination strong{border-color:#D7D7D7;}
+.pagination a, .pagination strong{border-color:#D7D7D7; cursor: pointer;}
 .pagination .current *{color:#FFFFFF; background-color:#05B3F2;}
 
 #backtotop{color:#FFFFFF; background-color:#05B3F2;}

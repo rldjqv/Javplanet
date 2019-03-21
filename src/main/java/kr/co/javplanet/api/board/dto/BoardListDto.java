@@ -9,7 +9,7 @@ public class BoardListDto extends BaseResult {
 	public BoardData data = new BoardData();
 	public class BoardData {
 		public List<Board> list = new ArrayList<Board>();
-		public int totalcnt;
+		public int resultCnt;
 		public int limit;
 		public int offset;
 	}

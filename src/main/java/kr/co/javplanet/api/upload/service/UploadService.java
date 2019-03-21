@@ -17,7 +17,7 @@ public class UploadService {
 
 	public UploadDto postUpload(UploadParam param) throws Exception {
 		UploadDto result = new UploadDto();
-		result.header.resultCnt = uploadDao.postUpload(param);
+		result.header.totalCnt = uploadDao.postUpload(param);
 		result.data.seq= param.data.seq;
 		return result;
 	}

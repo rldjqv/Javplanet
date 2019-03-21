@@ -18,7 +18,7 @@ public class EnterService {
 	public EnterListDto getEnters(EnterParam param) throws Exception {
 		EnterListDto result = new EnterListDto();
 		result.data.list = enterDao.getEnters(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

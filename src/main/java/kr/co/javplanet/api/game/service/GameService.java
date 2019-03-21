@@ -18,7 +18,7 @@ public class GameService {
 	public GameListDto getGames(GameParam param) throws Exception {
 		GameListDto result = new GameListDto();
 		result.data.list = gameDao.getGames(param);
-		result.header.resultCnt = result.data.list.size();
+		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 }

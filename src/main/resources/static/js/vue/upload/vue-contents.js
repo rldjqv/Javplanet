@@ -1,18 +1,15 @@
+
 var contentsJs = new Vue ({
 	el : "#vue_contents",
 	data : {
 		resultDatas : {},
 		url : location.origin + "/api/upload",
 		uploadParam : {
-			text : {
-				category : "",
-				title : "",
-				contents : ""				
-			},
-			file : {
-				images : []	
-			}
-		}
+			category : "",
+			title : "",
+			contents : ""				
+		},
+		images : []
 
 	},
 	created : function () {
@@ -28,7 +25,7 @@ var contentsJs = new Vue ({
 			this.uploadParam.category = category;
 			
 			axios
-		    .post(this.url + "/contents", this.uploadParam.text)
+		    .post(this.url + "/contents", this.uploadParam)
 //		    .post(this.url + "/contents", this.uploadParam, {
 //		    	headers: {
 //		    		'Content-Type': 'multipart/form-data'

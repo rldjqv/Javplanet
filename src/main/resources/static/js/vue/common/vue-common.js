@@ -1,7 +1,6 @@
 var commonJs = new Vue ({
 	data : {
 		isMobile : false,
-		offset : 0,
 		member : {
 			id : '',
 			name : '',

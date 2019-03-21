@@ -14,24 +14,24 @@
         <table v-if="resultDatas.data != null">
           <thead>
             <tr>
-              <th width="5%;">번호</th>
-              <th width="*;">제목</th>
-              <th width="10%;">글쓴이</th>
-              <th width="8%;">날짜</th>
-              <th width="5%;">조회</th>
-              <th width="5%;">UP</th>
-              <th width="6%;">DOWN</th>
+              <th width="6%;" class="board_seq">번호</th>
+              <th width="*;" class="board_title">제목</th>
+              <th width="10%;" class="board_userId">글쓴이</th>
+              <th width="8%;" class="board_regDate">날짜</th>
+              <th width="6%;" class="board_viewCount">조회</th>
+              <th width="6%;" class="board_up">UP</th>
+              <th width="6%;" class="board_down">DOWN</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="datas, index in resultDatas.data.list">
-              <td>{{datas.seq}}</td>
-              <td style="text-align: left;" v-on:click="{{getBoardDetail(datas.seq)}}"><a>{{datas.title}}</a></td>
-              <td>{{datas.userId}}</td>
-              <td style="font-size: 13px;">{{datas.regDate}}</td>
-              <td>{{datas.viewCount}}</td>
-              <td>{{datas.up}}</td>
-              <td>{{datas.down}}</td>
+              <td class="board_seq">{{datas.seq}}</td>
+              <td class="board_title" style="text-align: left;"><a v-on:click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a></td>
+              <td class="board_userId">{{datas.userId}}</td>
+              <td class="board_regDate">{{datas.regDate}}</td>
+              <td class="board_viewCount">{{datas.viewCount}}</td>
+              <td class="board_up">{{datas.up}}</td>
+              <td class="board_down">{{datas.down}}</td>
             </tr>
           </tbody>
         </table>

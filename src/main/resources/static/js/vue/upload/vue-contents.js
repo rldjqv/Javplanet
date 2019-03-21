@@ -16,7 +16,6 @@ var contentsJs = new Vue ({
 
 	},
 	created : function () {
-		commonJs.naverAnalytics();
 		
 	},
 	mounted : function () {

@@ -22,11 +22,6 @@ var commonJs = new Vue ({
 		
 		uploadBoard : function () {
 			window.location.href = "/upload/contents?category=" + category;
-		},
-		naverAnalytics : function () {
-			if(!wcs_add) var wcs_add = {};
-			wcs_add["wa"] = "dd9cdf64921808";
-			wcs_do();			
 		}
 	},
 	computed : function () {

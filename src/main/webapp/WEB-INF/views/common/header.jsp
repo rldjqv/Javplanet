@@ -66,8 +66,6 @@
             </ul>
           </li> -->
           <li><a href="/board">썰게시판</a></li>
-          <li><a href="/board">위즈게시판</a></li>
-          <li><a href="/board">성준이게시판</a></li>
         </ul>
       </li>
     </ul>

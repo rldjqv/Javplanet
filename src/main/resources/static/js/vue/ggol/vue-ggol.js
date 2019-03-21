@@ -5,7 +5,6 @@ var ggolJs = new Vue ({
 		url : location.origin + "/api/ggol"
 	},
 	created : function () {
-		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

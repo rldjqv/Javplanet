@@ -5,7 +5,6 @@ var enterJs = new Vue ({
 		url : location.origin + "/api/enter"
 	},
 	created : function () {
-		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

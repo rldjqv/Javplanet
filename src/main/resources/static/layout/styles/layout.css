@@ -366,7 +366,7 @@ th{color:#FFFFFF; background-color:#373737;}
 tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
-
+.scrollable table{margin:0; padding:0; font-size: 13px;}
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------ */
@@ -412,6 +412,7 @@ table a, #comments a{background-color:inherit;}
 	#copyright p:first-of-type{margin-bottom:10px;}
 	
 	.pagination a, .pagination strong{display:block; padding:3px 3px; background-clip:padding-box; font-weight:normal;}
+	.scrollable table{margin:0; padding:0; font-size: 10px;}
 }
 
 
@@ -452,7 +453,7 @@ table a, #comments a{background-color:inherit;}
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:650px){
 	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
-	.scrollable table{margin:0; padding:0; font-size: 7px;}
+	.scrollable table{margin:0; padding:0; font-size: 8px;}
 
 	.inline li{display:block; margin-bottom:10px;}
 	.pushright li{margin-right:0;}

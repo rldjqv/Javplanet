@@ -5,7 +5,6 @@ var sportsJs = new Vue ({
 		url : location.origin + "/api/sports"
 	},
 	created : function () {
-		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

@@ -5,7 +5,6 @@ var issueJs = new Vue ({
 		url : location.origin + "/api/issue"
 	},
 	created : function () {
-		commonJs.naverAnalytics();
 
 	},
 	mounted : function () {

@@ -9,7 +9,7 @@ var boardJs = new Vue ({
 		}
 	},
 	created : function () {
-		commonJs.naverAnalytics();
+
 	},
 	mounted : function () {
 		axios

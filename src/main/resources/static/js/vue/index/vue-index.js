@@ -5,7 +5,7 @@ var indexJs = new Vue ({
 		url : location.origin + "/api/index"
 	},
 	created : function () {
-		commonJs.naverAnalytics();
+
 	},
 	mounted : function () {
 		

@@ -6,8 +6,7 @@ var bestJs = new Vue ({
 		url : location.origin + "/api/best"
 	},
 	created : function () {
-		debugger;
-		commonJs.naverAnalytics();
+
 	},
 	mounted : function () {
 		

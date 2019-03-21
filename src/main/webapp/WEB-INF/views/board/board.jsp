@@ -12,7 +12,7 @@
       <div class="scrollable">
       <header class="heading">
       	<span>자유게시판</span>
-      	<span id="result_cnt">총 페이지 수 : {{resultDatas.header.resultCnt}}</span>
+      	<span id="result_cnt">총 게시글 수 : {{resultDatas.header.resultCnt}}</span>
       </header>
         <table>
           <thead>
@@ -39,7 +39,7 @@
           </tbody>
         </table>
       </div>
-      <pagination v-bind:category="category"></pagination>
+      <pagination :category="category" :result_cnt="resultDatas.header.resultCnt"></pagination>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

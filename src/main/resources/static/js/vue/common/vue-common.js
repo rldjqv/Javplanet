@@ -1,7 +1,11 @@
 var commonJs = new Vue ({
 	data : {
-		category : 'test',
-		isMobile : false
+		isMobile : false,
+		offset : 0,
+		member : {
+			id : '',
+			name : '',
+		}
 	},
 	created : function () {
 		var filter = "win16|win32|win64|mac|macintel";
@@ -39,8 +43,8 @@ var commonJs = new Vue ({
 });
 
 Vue.component('pagination', {
-	props: ['category'],
-	template: 
+	props: ['category', 'resultCnt'],
+	template:
     '<nav class="pagination">' +
     '<ul>' + 
 	  '<li><a href="#">&laquo;</a></li>' +
@@ -57,5 +61,23 @@ Vue.component('pagination', {
 	  '<li><a href="#">&raquo;</a></li>' +
 	  '<a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents(category)">글쓰기</a>' +
 	'</ul>' +
-	'</nav>'
+	'</nav>',
+	data : {
+
+	},
+	created : function () {
+
+	},
+	mounted : function () {
+
+	},
+	methods : {
+
+	},
+	computed : function () {
+		
+	},
+	watch : {
+		
+	}
 });

@@ -72,7 +72,6 @@ Vue.component('pagination', {
 			this.currentPage = pageIndex;
 			commonJs.offset = (pageIndex -1) * 20;
 			this.$parent.search();
-//			window.location.href = "/" + this.category;
 		}
 
 	},

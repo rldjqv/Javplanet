@@ -4,6 +4,6 @@ import kr.co.javplanet.api.upload.model.UploadParam;
 
 
 public interface UploadDao {
-	public int postUpload(UploadParam param);
+	public int postContents(UploadParam param);
 	
 }

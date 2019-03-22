@@ -7,9 +7,9 @@ var contentsJs = new Vue ({
 		uploadParam : {
 			category : "",
 			title : "",
-			contents : ""				
+			contents : ""
 		},
-		images : []
+		images : new FormData()
 
 	},
 	created : function () {
@@ -24,20 +24,23 @@ var contentsJs = new Vue ({
 			var category = queryString.split('=')[1];
 			this.uploadParam.category = category;
 			
+//			axios
+//		    .post(this.url + "/contents", this.uploadParam)
+//		    .then(function(response){
+//		    	alert("글 작성에 성공하였습니다.");
+//		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
+//		    }.bind(this))
+//		    .catch(function(e) {
+//		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
+//		    });
+
 			axios
-		    .post(this.url + "/contents", this.uploadParam)
-//		    .post(this.url + "/contents", this.uploadParam, {
-//		    	headers: {
-//		    		'Content-Type': 'multipart/form-data'
-//		    	}
-//		    })
+		    .post(this.url + "/files", this.images)
 		    .then(function(response){
-		    	alert("글 작성에 성공하였습니다.");
-		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
 		    }.bind(this))
 		    .catch(function(e) {
-		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
 		    });
+			
 		}
 	},
 	computed : function () {

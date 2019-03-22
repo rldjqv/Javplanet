@@ -16,7 +16,7 @@ var boardJs = new Vue ({
 			method: 'get',
 			url: this.url + "/board",
 			params : this.boardParam
-			})
+		})
 		.then(function (response) {
 			this.resultDatas = response.data;
 		}.bind(this))

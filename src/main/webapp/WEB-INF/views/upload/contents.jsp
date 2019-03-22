@@ -537,10 +537,10 @@
         			alert("확장자는 이미지 확장자만 가능합니다.");
        				return;
             	}
+            	
                 var reader = new FileReader();
- 
-                debugger;
                 reader.onload = function (img) {
+                	debugger;
                 	var image_tag = "<img src=\"" + img.target.result + "\"\ style='max-height: 500px;'/>";
                 	var child = document.createElement('div');
                 	child.innerHTML = image_tag;
@@ -553,9 +553,8 @@
                     		child
                     );
                 };
-                
                 reader.readAsDataURL(file);
-                contentsJs.images.push(file);
+                contentsJs.images.append('images', file);
             }
         } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
     }

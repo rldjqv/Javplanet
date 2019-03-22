@@ -15,9 +15,16 @@ public class UploadService {
 	@Autowired
 	private UploadDao uploadDao;
 
-	public UploadDto postUpload(UploadParam param) throws Exception {
+	public UploadDto postContents(UploadParam param) throws Exception {
 		UploadDto result = new UploadDto();
-		result.header.totalCnt = uploadDao.postUpload(param);
+		result.header.totalCnt = uploadDao.postContents(param);
+		result.data.seq= param.data.seq;
+		return result;
+	}
+	
+	public UploadDto postImages(UploadParam param) throws Exception {
+		UploadDto result = new UploadDto();
+		result.header.totalCnt = uploadDao.postContents(param);
 		result.data.seq= param.data.seq;
 		return result;
 	}

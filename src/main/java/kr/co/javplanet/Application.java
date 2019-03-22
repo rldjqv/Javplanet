@@ -13,20 +13,15 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @SpringBootApplication
 public class Application {
-
 	public static void main(String[] args) {
-//		SpringApplication app = new SpringApplication(BatchMonitorApplication.class);
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		try {
 //			GoodsListDto goodsList = context.getBean(GoodsService.class).getGoodsList(new GoodsParam());
 //			context.getBean(GoodsPickService.class).setGoodsList(goodsList.list);
 		} catch (BeansException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }

@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		</if> -->		
 	</sql>
 	
-	<insert id="postUpload" parameterType="kr.co.javplanet.api.upload.model.UploadParam" useGeneratedKeys="true" keyProperty="data.seq">
-		/* upload.xml : postUpload */
+	<insert id="postContents" parameterType="kr.co.javplanet.api.upload.model.UploadParam" useGeneratedKeys="true" keyProperty="data.seq">
+		/* upload.xml : postContents */
 		INSERT INTO
 			jav_board
 			(

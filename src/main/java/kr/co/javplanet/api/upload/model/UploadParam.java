@@ -1,7 +1,6 @@
 package kr.co.javplanet.api.upload.model;
 
-import java.io.File;
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.javplanet.common.param.BaseParam;
 
@@ -12,7 +11,5 @@ public class UploadParam extends BaseParam {
 		public String category;
 		public String title;
 		public String contents;
-		public List<File> images;
-		
 	}
 }

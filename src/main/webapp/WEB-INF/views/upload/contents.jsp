@@ -540,8 +540,7 @@
             	
                 var reader = new FileReader();
                 reader.onload = function (img) {
-                	debugger;
-                	var image_tag = "<img src=\"" + img.target.result + "\"\ style='max-height: 500px;'/>";
+                	var image_tag = "<img class='upload_image' src=\"" + img.target.result + "\"\ style='max-height: 500px;'/>";
                 	var child = document.createElement('div');
                 	child.innerHTML = image_tag;
                 	
@@ -549,20 +548,32 @@
                     //div id="preview" 내에 동적코드추가.
                     //이 부분을 수정해서 이미지 링크 외 파일명, 사이즈 등의 부가설명을 할 수 있을 것이다.
                   
-                    $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(
-                    		child
-                    );
+                    $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(child);
                 };
                 reader.readAsDataURL(file);
-                contentsJs.images.append('images', file);
+                contentsJs.uploadParam.append('images', file);
             }
         } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
     }
 
 	/* 예제용 함수 */
 	function saveContent() {
-		contentsJs.uploadParam.contents = Editor.getContent();
-		contentsJs.uploadParam.title = document.getElementById('title').value;
+		/* contentsJs.uploadParam.contents = Editor.getContent();
+		contentsJs.uploadParam.title = document.getElementById('title').value; */
+		debugger;
+		var temp_content = $("#tx_canvas_wysiwyg");
+		
+		var upload_images = $("#tx_canvas_wysiwyg").contents().find('.upload_image');
+		var param_images = contentsJs.uploadParam.getAll('images');
+		var origin_Contents = Editor.getContent();
+		
+		for (var i=0; i<upload_images.length; i++) {
+			upload_images[i].src = location.origin + "/" + contentsJs.uploadParam.getAll('images')[i].name 
+		}
+		
+		contentsJs.uploadParam.append('contents', Editor.getContent());
+		contentsJs.uploadParam.append('title', document.getElementById('title').value);
+		
 		contentsJs.uploadConents();
 		
 		// alert(Editor.getContent());

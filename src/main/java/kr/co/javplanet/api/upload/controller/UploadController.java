@@ -1,6 +1,5 @@
 package kr.co.javplanet.api.upload.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +35,7 @@ public class UploadController {
 	private UploadService uploadService;
 	
 	@PostMapping("/contents")
-	public BaseResult postContents(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
+	public BaseResult postContents(HttpServletRequest request, @RequestParam Map<String, Object> param, @RequestParam MultipartFile[] images) throws Exception {
 		Gson gson = new Gson();
 		UploadParam uploadParam = new UploadParam();
 		SessionManager.setApiHeader(uploadParam, request);
@@ -46,11 +45,12 @@ public class UploadController {
 	}
 	
 	@PostMapping("/files")
-	public ResponseEntity<?> postImages(HttpServletRequest request, @RequestParam(value = "images") List<MultipartFile> images) throws Exception {
+	public ResponseEntity<?> postImages(HttpServletRequest request, @RequestParam Map<String, Object> param, @RequestParam MultipartFile[] images) throws Exception {
 //		Gson gson = new Gson();
 //		UploadParam uploadParam = new UploadParam();
 //		SessionManager.setApiHeader(uploadParam, request);
 //		SessionObject so = SessionManager.getSessionObject(request);
-		return uploadService.postImages(images);
+		return null;
+//		return uploadService.postImages(images);
 	}
 }

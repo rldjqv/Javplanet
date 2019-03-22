@@ -1,6 +1,7 @@
 package kr.co.javplanet.api.upload.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,7 @@ public class UploadService {
 		return result;
 	}
 	
-	public ResponseEntity<?> postImages(List<MultipartFile> images) throws Exception {
+	public ResponseEntity<?> postImages(Map<String, Object> images) throws Exception {
 		
 		return null;
 	}

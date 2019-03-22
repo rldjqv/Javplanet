@@ -4,12 +4,14 @@ var contentsJs = new Vue ({
 	data : {
 		resultDatas : {},
 		url : location.origin + "/api/upload",
-		uploadParam : {
-			category : "",
-			title : "",
-			contents : ""
-		},
-		images : new FormData()
+		uploadParam : new FormData()
+//		uploadParam : {
+//			category : "",
+//			title : "",
+//			contents : "",
+//			images : new FormData()
+//		},
+//		images : new FormData()
 
 	},
 	created : function () {
@@ -22,25 +24,25 @@ var contentsJs = new Vue ({
 		uploadConents : function () {
 			var queryString = (window.location.href).split("?")[1];
 			var category = queryString.split('=')[1];
-			this.uploadParam.category = category;
+//			this.uploadParam.category = category;
+			this.uploadParam.append('category', category);
 			
-//			axios
-//		    .post(this.url + "/contents", this.uploadParam)
-//		    .then(function(response){
-//		    	alert("글 작성에 성공하였습니다.");
-//		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
-//		    }.bind(this))
-//		    .catch(function(e) {
-//		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
-//		    });
-
 			axios
-		    .post(this.url + "/files", this.images)
+		    .post(this.url + "/contents", this.uploadParam)
 		    .then(function(response){
-//		    	document.getElementsByTagName("img")[0].src = "dd";
+		    	alert("글 작성에 성공하였습니다.");
+		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
 		    }.bind(this))
 		    .catch(function(e) {
+		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
 		    });
+
+//			axios
+//		    .post(this.url + "/files", this.uploadParam)
+//		    .then(function(response){
+//		    }.bind(this))
+//		    .catch(function(e) {
+//		    });
 			
 		}
 	},

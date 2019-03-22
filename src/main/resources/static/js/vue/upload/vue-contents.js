@@ -37,6 +37,7 @@ var contentsJs = new Vue ({
 			axios
 		    .post(this.url + "/files", this.images)
 		    .then(function(response){
+//		    	document.getElementsByTagName("img")[0].src = "dd";
 		    }.bind(this))
 		    .catch(function(e) {
 		    });

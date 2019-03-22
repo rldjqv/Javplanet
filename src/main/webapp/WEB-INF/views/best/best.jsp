@@ -14,16 +14,27 @@
           <header class="heading">베스트</header>
           <ul class="nospace clear">
             <li class="one_quarter first">
-            	<a href="#"><img src="/images/demo/gallery/591822_271770_4427_org.jpg" alt=""></a>
+            	<a href="#"><img src="/images/demo/1.jpg" alt=""></a>
             	<span class="image_font" style="font-size:11px;">제목은 몇글자까지 보여야 할까요오오오</span>
             </li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/267299_328696_2458.jpg" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/591822_271771_4450_org.jpg" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/591822_271772_4513_org.jpg" alt=""></a></li>
-            <li class="one_quarter first"><a href="#"><img src="/images/demo/gallery/591822_271772_4513_org.jpg" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/img_20190305195630_ce27196c.jpg" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/1VGH08DAR8_1.jpg" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/201903051710770173_5c7e2f1c752b7_1024x.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/2.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/3.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/4.PNG" alt=""></a></li>
+            
+            <li class="one_quarter first"><a href="#"><img src="/images/demo/4.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/3.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/2.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/1.jpg" alt=""></a></li>
+            
+            <li class="one_quarter first"><a href="#"><img src="/images/demo/3.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/4.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/1.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/2.jpg" alt=""></a></li>
+            
+            <li class="one_quarter first"><a href="#"><img src="/images/demo/2.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/1.jpg" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/4.PNG" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="/images/demo/3.PNG" alt=""></a></li>
           </ul>
         </figure>
       </div>

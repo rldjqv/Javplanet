@@ -1,5 +1,6 @@
 package kr.co.javplanet.api.upload.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,12 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -46,12 +46,11 @@ public class UploadController {
 	}
 	
 	@PostMapping("/files")
-	public BaseResult postImages(HttpServletRequest request, @RequestParam(value = "images") MultipartFile[] images) throws Exception {
-		Gson gson = new Gson();
-		UploadParam uploadParam = new UploadParam();
-		SessionManager.setApiHeader(uploadParam, request);
-		SessionObject so = SessionManager.getSessionObject(request);
-		uploadParam.data = gson.fromJson(gson.toJson(images), UploadParam.Upload.class);
-		return uploadService.postImages(uploadParam);
+	public ResponseEntity<?> postImages(HttpServletRequest request, @RequestParam(value = "images") List<MultipartFile> images) throws Exception {
+//		Gson gson = new Gson();
+//		UploadParam uploadParam = new UploadParam();
+//		SessionManager.setApiHeader(uploadParam, request);
+//		SessionObject so = SessionManager.getSessionObject(request);
+		return uploadService.postImages(images);
 	}
 }

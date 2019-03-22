@@ -1,4 +1,4 @@
-package kr.co.javplanet.common;
+package kr.co.javplanet.common.util;
 
 import javax.servlet.http.HttpServletRequest;
 

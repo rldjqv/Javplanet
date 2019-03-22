@@ -1,12 +1,15 @@
 package kr.co.javplanet.api.user.dto;
 
 public class User {
-	public int batch_log_id;
-	public String batch_program_id;
-	public String batch_name;
-	public int success_yn;
-	public String error_message;
-	public String delete_yn;
-	public String reg_date;
-	public String upd_date;
+	public int userNo;
+	public String userId;
+	public String password;
+	public String userName;
+	public String userNickName;
+	public String userDate;
+	public String statusCd;
+	public String delYN;
+	public int modUserNo;
+	public String modDate;
+	public String regDate;
 }

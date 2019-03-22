@@ -1,10 +1,7 @@
 var commonJs = new Vue ({
 	data : {
 		isMobile : false,
-		member : {
-			id : '',
-			name : '',
-		},
+		user : {},
 		offset : 0
 	},
 	created : function () {
@@ -22,9 +19,6 @@ var commonJs = new Vue ({
 	},
 	methods : {
 		uploadContents : function (category) {
-			window.location.href = "/upload/contents?category=" + category;
-		},
-		uploadBoard : function () {
 			window.location.href = "/upload/contents?category=" + category;
 		},
 		setTitle : function (title) {

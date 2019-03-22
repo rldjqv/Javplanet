@@ -9,7 +9,7 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <div class="content" id="vue_index" style="height:550px;">
-
+	${sessionObject}
     </div>
     <!-- / main body -->
     <div class="clear"></div>
@@ -22,7 +22,6 @@
 
 <script src="/js/vue/common/vue-common.js"></script>
 <script src="/js/vue/index/vue-index.js"></script>
-
 <!-- start vue-common -->
 <%-- <%@ include file="../common/vue-common.jsp" %> --%>
 <!-- end vue-common -->

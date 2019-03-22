@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,12 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
-import kr.co.javplanet.api.user.dto.UserListDto;
+import kr.co.javplanet.api.user.dto.User;
 import kr.co.javplanet.api.user.model.UserParam;
 import kr.co.javplanet.api.user.service.UserService;
+import kr.co.javplanet.common.session.SessionManager;
+import kr.co.javplanet.common.session.SessionObject;
+import kr.co.javplanet.common.util.SHA256Util;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/user")
 public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired
@@ -29,19 +31,22 @@ public class UserController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	@ResponseBody
-	public UserListDto getUsers(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public User getUser(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		UserParam userParam = new UserParam();
+		SessionManager.setApiHeader(userParam, request);
+		SessionObject so = SessionManager.getSessionObject(request);
 		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
-		return userService.getUsers(userParam);
+		userParam.data.password = SHA256Util.encrypt(userParam.data.password);
+		return userService.getUser(userParam, request);
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	@ResponseBody
-	public UserListDto postRegister(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
-		Gson gson = new Gson();
-		UserParam userParam = new UserParam();
-		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
-		return userService.getUsers(userParam);
-	}
+//	@RequestMapping(value = "/register", method = RequestMethod.POST)
+//	@ResponseBody
+//	public UserListDto postRegister(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
+//		Gson gson = new Gson();
+//		UserParam userParam = new UserParam();
+//		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
+//		return userService.getUser(userParam);
+//	}
 }

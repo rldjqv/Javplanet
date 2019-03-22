@@ -10,22 +10,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		</if> -->		
 	</sql>
 	
-	<select id="getUsers" parameterType="kr.co.javplanet.api.user.model.UserParam" resultType="kr.co.javplanet.api.user.dto.User">
-		SELECT  /* user.xml : getUsers */
-			batch_log_id,
-		    batch_program_id,
-		    batch_name,
-		    success_yn,
-		    error_message,
-		    delete_yn,
-		    reg_date,
-		    upd_date
-		FROM batch_logs 
+	<select id="getUser" parameterType="kr.co.javplanet.api.user.model.UserParam" resultType="kr.co.javplanet.api.user.dto.User">
+		/* user.xml : getUser */
+		SELECT
+			userNo,
+			userId,
+			password,
+			userName,
+			userNickName,
+			userDate,
+			statusCd,
+			delYN,
+			modUserNo,
+			modDate,
+			regDate
+		FROM jav_user
 		WHERE 1=1
-		    AND reg_date IN (SELECT MAX(reg_date) FROM batch_logs WHERE 1=1 GROUP BY batch_program_id)
-		    AND DATE_FORMAT(reg_date, '%Y') = DATE_FORMAT(now(), '%Y')
-		    AND batch_program_id IS NOT NULL
-		ORDER BY success_yn, reg_date DESC
+			AND delYN = 'N'
+			AND userId = #{data.userId}
+			AND password = #{data.password}
 			<include refid="conditions"/>
 	</select>
 	

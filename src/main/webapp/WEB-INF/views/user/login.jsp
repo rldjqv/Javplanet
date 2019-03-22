@@ -14,11 +14,14 @@
         <table>
 		<tr>	
 			<th>ID</th>
-			<td><input placeholder="" title="" autocomplete="off" type="text" required style="width:100%;"></td>
+			<td><input placeholder="" type="text" required style="width:100%;" v-model="userParam.userId"></td>
 		</tr>
 		<tr>
 			<th>PW</th>
-			<td><input placeholder="" title="" autocomplete="off" type="password" required style="width:100%;"></td>
+			<td><input placeholder="" type="password" required style="width:100%;" v-model="userParam.password"></td>
+		</tr>
+		<tr>
+			<th class="login" colspan="2" @click="getLogin()" style="cursor:pointer;">로그인</th>
 		</tr>
         </table>
       </div>

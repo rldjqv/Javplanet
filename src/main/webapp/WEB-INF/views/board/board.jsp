@@ -12,7 +12,7 @@
       <div class="scrollable">
       <header class="heading">
       	<span>자유게시판</span>
-      	<span id="total_cnt">총 게시글 수 : {{resultDatas.header.totalCnt}}</span>
+      	<span class="total_cnt">총 게시글 수 : {{resultDatas.header.totalCnt}}</span>
       </header>
         <table>
           <thead>
@@ -39,7 +39,10 @@
           </tbody>
         </table>
       </div>
-      <pagination :category="category" :total_cnt="resultDatas.header.totalCnt"></pagination>
+      <pagination :total_cnt="resultDatas.header.totalCnt"></pagination>
+      <c:if test="${sessionObject != null}">
+      <a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents(category)">글쓰기</a>
+      </c:if>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

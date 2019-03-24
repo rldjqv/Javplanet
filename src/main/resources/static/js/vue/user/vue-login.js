@@ -24,7 +24,7 @@ var loginJs = new Vue ({
 			.then(function (response) {
 				debugger;
 				this.resultDatas = response.data;
-				if (this.resultDatas != null) {
+				if (this.resultDatas != null && this.resultDatas != '') {
 					alert(this.resultDatas.userNickName + "님 환영합니다.")
 					window.location.href = "/";
 				} else {

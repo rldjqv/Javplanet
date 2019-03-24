@@ -1,5 +1,6 @@
 var commonJs = new Vue ({
 	data : {
+		isLogin : false,
 		isMobile : false,
 		offset : 0
 	},
@@ -23,9 +24,6 @@ var commonJs = new Vue ({
 		setTitle : function (title) {
 			document.title = title;
 			document.getElementById('meta_title').setAttribute('content', title);
-		},
-		logout : function () {
-			
 		}
 		
 	},
@@ -38,14 +36,13 @@ var commonJs = new Vue ({
 });
 
 Vue.component('pagination', {
-	props: ['category', 'total_cnt'],
+	props: ['total_cnt'],
 	template:
     '<nav class="pagination">' +
     '<ul>' + 
 	  '<li><a href="#">&laquo;</a></li>' +
 	  '<li :class="{\'current\' : (currentPage == pageIndex)}" v-for="pageIndex in totalPage"><a @click="getSelectPage(pageIndex)">{{getPageIndex(pageIndex)}}</a></li>' +
 	  '<li><a href="#">&raquo;</a></li>' +
-	  '<a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents(category)">글쓰기</a>' +
 	'</ul>' +
 	'</nav>',
 	data : function () {

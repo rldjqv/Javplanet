@@ -18,33 +18,22 @@ public class SessionManager {
 	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 	
 	public static void setApiHeader(BaseParam param, HttpServletRequest request) {
-		String userId = getSessionUserId(request);
-		String userIp = getClientIP(request);
-		if(param == null)
-			return;
-		if(param.header == null)
-			return;
-		param.header.userId = (userId);
-		param.header.userIp = (userIp);
+			param.header.userId = getUserId(request);
+			param.header.userIp = getUserIP(request);
 	}
 	
-	public static String getSessionUserId(HttpServletRequest request) {
-		SessionObject so = SessionManager.getSessionObject(request);
-		if(so == null)
-			return "";
-		return so.getUserId();
-	}
-	
-	public static SessionObject getSessionObject(HttpServletRequest request) {
-		if(request == null)
-			return null;
+	public static String getUserId(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
-		if(session == null)
-			return null;
-		return SESSION_MAP.get(session.getId());
+		String userId = null;
+		Map<String, Object> sessionObject = (Map<String, Object>) session.getAttribute("sessionObject");
+		if (sessionObject != null) {
+			userId = (String) sessionObject.get("userId");
+			
+		}
+		return userId;
 	}
 	
-	public static String getClientIP(HttpServletRequest request) {
+	public static String getUserIP(HttpServletRequest request) {
 		if(request == null)
 			return "";
 		

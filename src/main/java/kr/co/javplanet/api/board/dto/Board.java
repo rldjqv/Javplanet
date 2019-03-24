@@ -3,6 +3,7 @@ package kr.co.javplanet.api.board.dto;
 public class Board {
 	public int seq;
 	public String userId;
+	public String userNickName;
 	public String type;
 	public String title;
 	public String contents;

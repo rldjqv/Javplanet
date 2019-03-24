@@ -1,7 +1,6 @@
 var commonJs = new Vue ({
 	data : {
 		isMobile : false,
-		user : {},
 		offset : 0
 	},
 	created : function () {
@@ -24,6 +23,9 @@ var commonJs = new Vue ({
 		setTitle : function (title) {
 			document.title = title;
 			document.getElementById('meta_title').setAttribute('content', title);
+		},
+		logout : function () {
+			
 		}
 		
 	},

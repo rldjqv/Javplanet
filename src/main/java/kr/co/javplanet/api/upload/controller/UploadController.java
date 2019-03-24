@@ -39,7 +39,6 @@ public class UploadController {
 		Gson gson = new Gson();
 		UploadParam uploadParam = new UploadParam();
 		SessionManager.setApiHeader(uploadParam, request);
-		SessionObject so = SessionManager.getSessionObject(request);
 		uploadParam.data = gson.fromJson(gson.toJson(param), UploadParam.Upload.class);
 		return uploadService.postContents(uploadParam);
 	}

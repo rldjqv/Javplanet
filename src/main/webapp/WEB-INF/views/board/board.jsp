@@ -30,7 +30,7 @@
             <tr v-for="datas, index in resultDatas.data.list">
               <td class="board_seq">{{datas.seq}}</td>
               <td class="board_title" style="text-align: left;"><a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a></td>
-              <td class="board_userId">{{datas.userId}}</td>
+              <td class="board_userId">{{datas.userNickName}}</td>
               <td class="board_regDate">{{datas.regDate}}</td>
               <td class="board_viewCount">{{datas.viewCount}}</td>
               <td class="board_up">{{datas.up}}</td>

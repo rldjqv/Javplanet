@@ -2,19 +2,22 @@ package kr.co.javplanet.common.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import kr.co.javplanet.common.param.BaseParam;
+import kr.co.javplanet.common.session.SessionManager;
+
 @Component
 public class CommonInterceptor extends HandlerInterceptorAdapter {
-	public static final String CONTEXT_PATH = "_contextPath";
 	@Override // Controller 진입 전
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		boolean isTrue = true;
-		
-    	return isTrue;
+
+		return isTrue;
     }
     
     @Override // Controller 진입 후 View 랜더링 전 

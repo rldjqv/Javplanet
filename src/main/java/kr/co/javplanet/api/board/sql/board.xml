@@ -18,17 +18,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 	<select id="getBoards" parameterType="kr.co.javplanet.api.board.model.BoardParam" resultType="kr.co.javplanet.api.board.dto.Board">
 		/* board.xml : getBoards */
 		SELECT
-			seq,
-			userId,
-			type,
-			title,
-			contents,
-			viewCount,
-			up,
-			down,
-			delYN,
-			DATE_FORMAT(regDate, '%m-%d') as regDate
-		FROM jav_board
+			A.seq,
+			B.userId,
+			B.userNickName,
+			A.type,
+			A.title,
+			A.contents,
+			A.viewCount,
+			A.up,
+			A.down,
+			A.delYN,
+			DATE_FORMAT(A.regDate, '%m-%d') as regDate
+		FROM jav_board A
+			LEFT JOIN jav_user B ON A.userId = B.userId
 		WHERE 1=1
 		<include refid="conditions"/>
 		ORDER BY seq DESC

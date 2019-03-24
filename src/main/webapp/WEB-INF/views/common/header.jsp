@@ -30,8 +30,13 @@
     <div class="fl_right">
       <ul>
         <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
+        <c:if test="${sessionObject == null}">
         <li><a href="/user/login">Login</a></li>
         <li><a href="/user/register">Register</a></li>
+        </c:if>
+        <c:if test="${sessionObject != null}">
+        <li><a href="#" onclick="logout()">Logout</a></li>
+        </c:if>
       </ul>
     </div>
   </div>
@@ -53,6 +58,7 @@
       <li class="menu"><a href="/sports">스포츠</a></li>
       <li class="menu"><a href="/game">게임</a></li>
       <li class="menu"><a href="/issue">인터넷이슈</a></li>
+      <li class="menu"><a href="/board">자유게시판</a></li>
       <!-- <li class="menu"><a href="#">자유게시판</a></li> -->
       
 <!--       <li><a class="drop" href="#">Pages</a>
@@ -61,19 +67,19 @@
           <li><a href="/full-width">Full Width</a></li>
         </ul>
       </li> -->
-       <li><a class="drop" href="#">게시판</a>
+<!--        <li><a class="drop" href="#">게시판</a>
         <ul>
           <li><a href="/board">자유게시판</a></li>
-<!--           <li><a class="drop" href="#">Level 2 + Drop</a>
+          <li><a class="drop" href="#">Level 2 + Drop</a>
             <ul>
               <li><a href="#">Level 3</a></li>
               <li><a href="#">Level 3</a></li>
               <li><a href="#">Level 3</a></li>
             </ul>
-          </li> -->
+          </li>
           <li><a href="/board">썰게시판</a></li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </div>

@@ -34,7 +34,6 @@ public class BoardController {
 		Gson gson = new Gson();
 		BoardParam boardParam = new BoardParam();
 		SessionManager.setApiHeader(boardParam, request);
-		SessionObject so = SessionManager.getSessionObject(request);
 		boardParam.data = gson.fromJson(gson.toJson(param), BoardParam.Board.class);
 		return boardService.getBoards(boardParam);
 	}
@@ -44,7 +43,6 @@ public class BoardController {
 		Gson gson = new Gson();
 		BoardParam boardParam = new BoardParam();
 		SessionManager.setApiHeader(boardParam, request);
-		SessionObject so = SessionManager.getSessionObject(request);
 		boardParam.data.seq = seq;
 		return boardService.getBoardDetail(boardParam);
 	}

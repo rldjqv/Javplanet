@@ -9,7 +9,6 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <div class="content" id="vue_index" style="height:550px;">
-	${sessionObject}
     </div>
     <!-- / main body -->
     <div class="clear"></div>

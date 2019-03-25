@@ -14,8 +14,9 @@
         <table>
 		<tr>	
 			<th>아이디 *</th>
-			<td><input class="register_form" placeholder="" type="text" required v-model="registerParam.userId"></td>
-			<td @click="getUserIdCheck()">중복체크</td>
+			<td v-if="!this.isCheckUserId"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userId"></td>
+			<td v-if="this.isCheckUserId"><input class="register_form" placeholder="" type="text" readonly v-model="registerParam.userId"></td>
+			<td v-if="!this.isCheckUserId" @click="getUserIdCheck()">중복체크</td>
 		</tr>
 		<tr>
 			<th>패스워드 *</th>
@@ -29,8 +30,9 @@
 		</tr>
 		<tr>
 			<th>닉네임 *</th>
-			<td><input class="register_form" placeholder="" type="text" required v-model="registerParam.userNickName"></td>
-			<td @click="getUserNickNameCheck()">중복체크</td>
+			<td v-if="!this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userNickName"></td>
+			<td v-if="this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" readonly v-model="registerParam.userNickName"></td>
+			<td v-if="!this.isCheckUserNickName" @click="getUserNickNameCheck()">중복체크</td>
 		</tr>
 		<tr>
 			<th class="login" colspan="2" @click="postUserRegister()" style="cursor:pointer;">회원가입</th>

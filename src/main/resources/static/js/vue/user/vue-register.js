@@ -22,6 +22,14 @@ var registerJs = new Vue ({
 	},
 	methods : {
 		getUserIdCheck : function () {
+			if(this.registerParam.userId.length == 0) {
+				alert("아이디는 공백일수 없습니다.");
+				return;
+			} else if(this.registerParam.userId.length > 10) {
+				alert("아이디는 10자리 이상 작성 할 수 없습니다.");
+				return;
+			}
+			
 			axios({
 				method: 'get',
 				url: this.url + "/getUserIdCheck",
@@ -40,6 +48,14 @@ var registerJs = new Vue ({
 			});
 		},
 		getUserNickNameCheck : function () {
+			if(this.registerParam.userNickName.length == 0) {
+				alert("별명은 공백일수 없습니다.");
+				return;
+			} else if(this.registerParam.userNickName.length > 10) {
+				alert("별명은 10자리 이상 작성 할 수 없습니다.");
+				return;
+			}
+			
 			axios({
 				method: 'get',
 				url: this.url + "/getUserNickNameCheck",
@@ -60,7 +76,32 @@ var registerJs = new Vue ({
 			});
 		},
 		postUserRegister : function () {
+			if(!this.isCheckUserId) {
+				alert("아이디 중복체크를 진행주시기 바랍니다.");
+				return;
+			}
+			if (!this.isCheckPasswordValid) {
+				alert("패스워드는 8자리이상 12자리 미만입니다.");
+				return;
+			}
+			if (!this.isCheckPasswordConfirm) {
+				alert("패스워드를 동일하게 작성해주시기 바랍니다.");
+				return;
+			}
+			if (!this.isCheckUserNickName) {
+				alert("닉네임 중복체크를 진행해주시기 바랍니다.");
+				return;
+			}
 			
+			axios
+		    .post(this.url + "/register", this.registerParam)
+		    .then(function(response){
+		    	alert("회원가입 해주셔서 감사합니다.");
+		    	window.location.href = "/";
+		    }.bind(this))
+		    .catch(function(e) {
+		    	alert("회원가입에 실패하였습니다. \n" + e.toString());
+		    });
 		},
 		setFormReset : function () {
 			var isReset = confirm("모든값을 초기화 하시겠습니까?");

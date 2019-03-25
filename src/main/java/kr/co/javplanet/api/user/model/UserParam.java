@@ -7,6 +7,7 @@ public class UserParam extends BaseParam {
 	public class User {
 		public String userId;
 		public String password;
+		public String userName;
 		public String userNickName;
 	}
 }

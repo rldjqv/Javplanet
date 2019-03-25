@@ -8,5 +8,5 @@ public interface UserDao {
 	public User getUser(UserParam param);
 	public int getUserIdCheck(UserParam param);
 	public int getUserNickNameCheck(UserParam param);
-	
+	public int postRegisterUser(UserParam param);
 }

@@ -52,4 +52,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			<include refid="conditions"/>
 	</select>
 	
+	<insert id="postRegisterUser" parameterType="kr.co.javplanet.api.user.model.UserParam">
+		/* user.xml : postRegisterUser */
+		INSERT INTO
+			jav_user
+			(
+			userId,
+			password,
+			userName,
+			userNickName,
+			regDate
+			)
+		VALUES
+			(
+			#{data.userId},
+			#{data.password},
+			#{data.userName},
+			#{data.userNickName},
+			now()
+			)
+		<include refid="conditions"/>
+	</insert>
 </mapper>

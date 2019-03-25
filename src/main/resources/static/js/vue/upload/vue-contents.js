@@ -36,14 +36,6 @@ var contentsJs = new Vue ({
 		    .catch(function(e) {
 		    	alert("글 작성에 실패하였습니다. \n" + e.toString());
 		    });
-
-//			axios
-//		    .post(this.url + "/files", this.uploadParam)
-//		    .then(function(response){
-//		    }.bind(this))
-//		    .catch(function(e) {
-//		    });
-			
 		}
 	},
 	computed : function () {

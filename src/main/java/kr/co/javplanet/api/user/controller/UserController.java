@@ -60,11 +60,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/register")
-	public User postUser(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
+	public int postRegisterUser(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		UserParam userParam = new UserParam();
 		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
-		return userService.postUser(userParam, request);
+		userParam.data.password = SHA256Util.encrypt(userParam.data.password);
+		return userService.postRegisterUser(userParam, request);
 	}
 	
 	@GetMapping("/logout")

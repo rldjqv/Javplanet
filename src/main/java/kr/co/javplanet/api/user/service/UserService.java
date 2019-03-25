@@ -50,18 +50,22 @@ public class UserService {
 	}
 	
 	
-	public User postUser(UserParam param, HttpServletRequest request) throws Exception {
-		User result = new User();
-		result = userDao.getUser(param);
-		ObjectMapper objectMapper = new ObjectMapper();
-		Map<String, Object> sessionObject = objectMapper.convertValue(result, Map.class);
-		if (result != null) {
-			HttpSession session = request.getSession(true);
-			session.setAttribute("sessionObject", sessionObject);
-		} else {
-			
+	public int postRegisterUser(UserParam param, HttpServletRequest request) throws Exception {
+		int postRegisterUserResult = 0;
+		postRegisterUserResult = userDao.postRegisterUser(param);
+		if (postRegisterUserResult > 0) {
+			User result = new User();
+			result = userDao.getUser(param);
+			ObjectMapper objectMapper = new ObjectMapper();
+			Map<String, Object> sessionObject = objectMapper.convertValue(result, Map.class);
+			if (result != null) {
+				HttpSession session = request.getSession(true);
+				session.setAttribute("sessionObject", sessionObject);
+			} else {
+				
+			}
 		}
-		return result;
+		return postRegisterUserResult;
 	}
 	
 	public User logout(UserParam param, HttpServletRequest request) throws Exception {

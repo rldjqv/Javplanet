@@ -8,17 +8,17 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_login" style="height:550px;">
+    <div class="content" id="vue_login">
       <div class="scrollable">
-      <header class="heading">Login</header>
+      <header class="heading">로그인</header>
         <table>
 		<tr>	
 			<th>ID</th>
-			<td><input placeholder="" type="text" required style="width:100%;" v-model="userParam.userId"></td>
+			<td><input placeholder="" type="text" required style="width:100%;" v-model="loginParam.userId"></td>
 		</tr>
 		<tr>
 			<th>PW</th>
-			<td><input placeholder="" type="password" required style="width:100%;" v-model="userParam.password"></td>
+			<td><input placeholder="" type="password" required style="width:100%;" v-model="loginParam.password"></td>
 		</tr>
 		<tr>
 			<th class="login" colspan="2" @click="getLogin()" style="cursor:pointer;">로그인</th>

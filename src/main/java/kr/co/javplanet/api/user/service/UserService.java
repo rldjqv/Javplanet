@@ -37,6 +37,19 @@ public class UserService {
 		return result;
 	}
 	
+	public int getUserIdCheck(UserParam param, HttpServletRequest request) {
+		int getUserIdCheckCount = 0;
+		getUserIdCheckCount = userDao.getUserIdCheck(param);
+		return getUserIdCheckCount;
+	}
+	
+	public int getUserNickNameCheck(UserParam param, HttpServletRequest request) {
+		int getUserNickNameCheckCount = 0;
+		getUserNickNameCheckCount = userDao.getUserNickNameCheck(param);
+		return getUserNickNameCheckCount;
+	}
+	
+	
 	public User postUser(UserParam param, HttpServletRequest request) throws Exception {
 		User result = new User();
 		result = userDao.getUser(param);

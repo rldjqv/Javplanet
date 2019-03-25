@@ -2,7 +2,7 @@ var loginJs = new Vue ({
 	el : "#vue_login",
 	data : {
 		url : location.origin + "/api/user",
-		userParam : {
+		loginParam : {
 			userId : '',
 			password : ''			
 		},
@@ -19,10 +19,9 @@ var loginJs = new Vue ({
 			axios({
 				method: 'get',
 				url: this.url + "/login",
-				params : this.userParam
+				params : this.loginParam
 			})
 			.then(function (response) {
-				debugger;
 				this.resultDatas = response.data;
 				if (this.resultDatas != null && this.resultDatas != '') {
 					alert(this.resultDatas.userNickName + "님 환영합니다.")

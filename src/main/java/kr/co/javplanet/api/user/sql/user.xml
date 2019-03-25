@@ -32,4 +32,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			<include refid="conditions"/>
 	</select>
 	
+	<select id="getUserIdCheck" parameterType="kr.co.javplanet.api.user.model.UserParam" resultType="int">
+		/* user.xml : getUserIdCheck */
+		SELECT
+			COUNT(1)
+		FROM jav_user
+		WHERE 1=1
+			AND userId = #{data.userId}
+			<include refid="conditions"/>
+	</select>
+	
+	<select id="getUserNickNameCheck" parameterType="kr.co.javplanet.api.user.model.UserParam" resultType="int">
+		/* user.xml : getUserNickNameCheck */
+		SELECT
+			COUNT(1)
+		FROM jav_user
+		WHERE 1=1
+			AND userNickName = #{data.userNickName}
+			<include refid="conditions"/>
+	</select>
+	
 </mapper>

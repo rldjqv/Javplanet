@@ -8,7 +8,7 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" id="vue_index" style="height:550px;">
+    <div class="content" id="vue_index">
     </div>
     <!-- / main body -->
     <div class="clear"></div>

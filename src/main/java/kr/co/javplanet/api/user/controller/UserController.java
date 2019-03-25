@@ -43,6 +43,22 @@ public class UserController {
 		return userService.getUser(userParam, request);
 	}
 
+	@GetMapping("/getUserIdCheck")
+	public int getUserIdCheck(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+		Gson gson = new Gson();
+		UserParam userParam = new UserParam();
+		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
+		return userService.getUserIdCheck(userParam, request);
+	}
+	
+	@GetMapping("/getUserNickNameCheck")
+	public int getUserNickNameCheck(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+		Gson gson = new Gson();
+		UserParam userParam = new UserParam();
+		userParam.data = gson.fromJson(gson.toJson(param), UserParam.User.class);
+		return userService.getUserNickNameCheck(userParam, request);
+	}
+	
 	@PostMapping("/register")
 	public User postUser(HttpServletRequest request, @RequestBody Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();

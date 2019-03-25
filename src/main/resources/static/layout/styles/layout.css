@@ -56,7 +56,7 @@ File: Layout CSS
 .container{padding:10px 0;}
 
 /* Content */
-.container .content{}
+.container .content{min-height: 680px;}
 
 .sectiontitle{margin-bottom:80px;}
 .sectiontitle *{margin:0;}

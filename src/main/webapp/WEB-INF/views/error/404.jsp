@@ -8,7 +8,7 @@
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    <div class="content" style="height:550px; text-align: center; padding-top: 100px;">
+    <div class="content" style="text-align: center; padding-top: 100px;">
 	<img src="/images/error/img_404.png" />
     </div>
     <!-- / main body -->

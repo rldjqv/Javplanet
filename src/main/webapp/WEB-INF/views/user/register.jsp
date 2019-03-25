@@ -14,27 +14,27 @@
         <table>
 		<tr>	
 			<th>아이디 *</th>
-			<td><input placeholder="" type="text" required style="width:100%;" v-model="registerParam.userId"></td>
+			<td><input class="register_form" placeholder="" type="text" required v-model="registerParam.userId"></td>
 			<td @click="getUserIdCheck()">중복체크</td>
 		</tr>
 		<tr>
 			<th>패스워드 *</th>
-			<td><input placeholder="" type="password" required style="width:100%;" v-model="registerParam.password"></td>
-			<td v-model="passwordForm"></td>
+			<td><input class="register_form" placeholder="" type="password" required v-model="registerParam.password"></td>
+			<td>{{getIsCheckPasswordValid}}</td>
 		</tr>
 		<tr>
 			<th>패스워드확인 *</th>
-			<td><input placeholder="" type="password" required style="width:100%;"></td>
-			<td v-if="getIsCheckPasswordConfirm()" v-model="passwordConfirmForm"></td>
+			<td><input class="register_form" placeholder="" type="password" required v-model="passwordConfirm"></td>
+			<td>{{getIsCheckPasswordConfirm}}</td>
 		</tr>
 		<tr>
 			<th>닉네임 *</th>
-			<td><input placeholder="" type="text" required style="width:100%;" v-model="registerParam.userNickName"></td>
+			<td><input class="register_form" placeholder="" type="text" required v-model="registerParam.userNickName"></td>
 			<td @click="getUserNickNameCheck()">중복체크</td>
 		</tr>
 		<tr>
-			<th class="login" colspan="2" @click="getLogin()" style="cursor:pointer;">회원가입</th>
-			<th class="login" @click="getLogin()" style="cursor:pointer;">리셋</th>
+			<th class="login" colspan="2" @click="postUserRegister()" style="cursor:pointer;">회원가입</th>
+			<th class="login" @click="setFormReset()" style="cursor:pointer;">리셋</th>
 		</tr>
         </table>
     <!-- / main body -->

@@ -560,7 +560,6 @@
 	function saveContent() {
 		/* contentsJs.uploadParam.contents = Editor.getContent();
 		contentsJs.uploadParam.title = document.getElementById('title').value; */
-		debugger;
 		var temp_content = $("#tx_canvas_wysiwyg");
 		
 		var upload_images = $("#tx_canvas_wysiwyg").contents().find('.upload_image');

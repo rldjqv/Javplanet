@@ -32,7 +32,7 @@ var registerJs = new Vue ({
 			
 			axios({
 				method: 'get',
-				url: this.url + "/getUserIdCheck",
+				url: this.url + "/userIdCheck",
 				params : this.registerParam
 			})
 			.then(function (response) {
@@ -58,7 +58,7 @@ var registerJs = new Vue ({
 			
 			axios({
 				method: 'get',
-				url: this.url + "/getUserNickNameCheck",
+				url: this.url + "/userNickNameCheck",
 				params : this.registerParam
 			})
 			.then(function (response) {

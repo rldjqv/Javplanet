@@ -43,7 +43,7 @@ public class UserController {
 		return userService.getUser(userParam, request);
 	}
 
-	@GetMapping("/getUserIdCheck")
+	@GetMapping("/userIdCheck")
 	public int getUserIdCheck(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		UserParam userParam = new UserParam();
@@ -51,7 +51,7 @@ public class UserController {
 		return userService.getUserIdCheck(userParam, request);
 	}
 	
-	@GetMapping("/getUserNickNameCheck")
+	@GetMapping("/userNickNameCheck")
 	public int getUserNickNameCheck(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		UserParam userParam = new UserParam();

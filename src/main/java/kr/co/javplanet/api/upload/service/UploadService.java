@@ -1,14 +1,9 @@
 package kr.co.javplanet.api.upload.service;
 
-import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.javplanet.api.upload.dao.UploadDao;
 import kr.co.javplanet.api.upload.dto.UploadDto;
@@ -25,10 +20,5 @@ public class UploadService {
 		result.header.totalCnt = uploadDao.postContents(param);
 		result.data.seq= param.data.seq;
 		return result;
-	}
-	
-	public ResponseEntity<?> postImages(Map<String, Object> images) throws Exception {
-		
-		return null;
 	}
 }

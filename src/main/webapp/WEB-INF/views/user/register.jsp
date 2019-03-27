@@ -15,7 +15,7 @@
 		<tr>	
 			<th>아이디 *</th>
 			<td v-if="!this.isCheckUserId"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userId"></td>
-			<td v-if="this.isCheckUserId"><input class="register_form" placeholder="" type="text" readonly v-model="registerParam.userId"></td>
+			<td v-if="this.isCheckUserId"><input class="register_form" placeholder="" type="text" disabled v-model="registerParam.userId"></td>
 			<td v-if="!this.isCheckUserId" @click="getUserIdCheck()">중복체크</td>
 		</tr>
 		<tr>
@@ -31,7 +31,7 @@
 		<tr>
 			<th>닉네임 *</th>
 			<td v-if="!this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userNickName"></td>
-			<td v-if="this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" readonly v-model="registerParam.userNickName"></td>
+			<td v-if="this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" disabled v-model="registerParam.userNickName"></td>
 			<td v-if="!this.isCheckUserNickName" @click="getUserNickNameCheck()">중복체크</td>
 		</tr>
 		<tr>

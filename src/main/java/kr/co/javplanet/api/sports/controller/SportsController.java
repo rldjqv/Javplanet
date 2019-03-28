@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,8 +27,7 @@ public class SportsController {
 	@Autowired
 	private SportsService sportsService;
 	
-	@RequestMapping(value = "/sports", method = RequestMethod.GET)
-	@ResponseBody
+	@GetMapping("/sports")
 	public SportsListDto getSportss(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		SportsParam sportsParam = new SportsParam();

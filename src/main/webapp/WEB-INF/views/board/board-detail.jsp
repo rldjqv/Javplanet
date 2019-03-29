@@ -10,9 +10,10 @@
     <!-- main body -->
     <div class="content" id="vue_board_detail" style="min-height: 680px;" v-cloak>
       <div class="scrollable" v-if="resultDatas.data != null">
-      <header class="heading">{{this.resultDatas.data.list[0].title}}</header>
+      <span clas="board_detail_regDate">{{this.resultDatas.data.regDate}}</span>
+      <header class="heading">{{this.resultDatas.data.title}}</header>
       <hr>
-	      <div v-html="this.resultDatas.data.list[0].contents">
+	      <div v-html="this.resultDatas.data.contents">
 	      </div>
       </div>
     </div>

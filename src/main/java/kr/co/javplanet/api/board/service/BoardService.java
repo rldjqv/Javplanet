@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.javplanet.api.board.dao.BoardDao;
+import kr.co.javplanet.api.board.dto.BoardDto;
 import kr.co.javplanet.api.board.dto.BoardListDto;
 import kr.co.javplanet.api.board.model.BoardParam;
 
@@ -23,11 +24,10 @@ public class BoardService {
 		return result;
 	}
 
-	public BoardListDto getBoardDetail(BoardParam param) throws Exception {
-		BoardListDto result = new BoardListDto();
-		result.data.list = boardDao.getBoardDetail(param);
+	public BoardDto getBoardDetail(BoardParam param) throws Exception {
+		BoardDto result = new BoardDto();
+		result.data = boardDao.getBoardDetail(param);
 		boardDao.putBoardDetailViewCount(param);
-		result.header.totalCnt = result.data.list.size();
 		return result;
 	}
 	

@@ -8,6 +8,6 @@ import kr.co.javplanet.api.board.model.BoardParam;
 public interface BoardDao {
 	public List<Board> getBoards(BoardParam param);
 	public int getBoardsTotalCnt(BoardParam param);
-	public List<Board> getBoardDetail(BoardParam param);
+	public Board getBoardDetail(BoardParam param);
 	public int putBoardDetailViewCount(BoardParam param);
 }

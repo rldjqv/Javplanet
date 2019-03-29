@@ -21,7 +21,7 @@ var boardDetailJs = new Vue ({
 	    .get(this.url + "/board/detail/" + this.boardDetailParam.seq)
 	    .then(function(response){
 	    	this.resultDatas = response.data;
-	    	commonJs.setTitle(this.resultDatas.data.list[0].title);
+	    	commonJs.setTitle(this.resultDatas.data.title);
 	    }.bind(this))
 	    .catch(function(e) {
 	    });	

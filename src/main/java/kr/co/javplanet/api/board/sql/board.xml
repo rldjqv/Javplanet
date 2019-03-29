@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			delYN,
 			modId,
 			modDate,
-			DATE_FORMAT(regDate, '%y-%m-%d %H:%i') as regDate
+			DATE_FORMAT(regDate, '%y-%m-%d %H:%i:%S') as regDate
 		FROM jav_board
 		WHERE 1=1
 		<include refid="conditions"/>

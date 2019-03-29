@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kibe</title>
+<title>키배닷컴</title>
 <meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,6 +16,7 @@
 <meta name="keywords" id="meta_keywords" content="">
 
 <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="/layout/styles/custom.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body id="top">
@@ -43,7 +44,7 @@
 </div>
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
-    <h1><a href="/">Kibe</a></h1>
+    <h1><a href="/">키배닷컴</a></h1>
     <p></p>
   </header>
 </div>

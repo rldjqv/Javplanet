@@ -6,16 +6,21 @@
 <!-- end header -->
 
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear" id="vue_board_detail"> 
     <!-- main body -->
-    <div class="content" id="vue_board_detail" style="min-height: 680px;" v-cloak>
-      <div class="scrollable" v-if="resultDatas.data != null">
-      <span clas="board_detail_regDate">{{this.resultDatas.data.regDate}}</span>
+    <div class="content" v-if="resultDatas.data != null" v-cloak>
+      <div class="scrollable">
+      <span clas="board_detail_regDate">작성일:{{this.resultDatas.data.regDate}}</span>
       <header class="heading">{{this.resultDatas.data.title}}</header>
-      <hr>
-	      <div v-html="this.resultDatas.data.contents">
-	      </div>
+      <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}} ({{this.resultDatas.data.userIp}})</span>
+      <span class="board_detail_viewCount_up_down">조회수:{{this.resultDatas.data.viewCount}} | 추천수:{{this.resultDatas.data.up}} | 비추천수:{{this.resultDatas.data.down}}</span>
+      <hr><br>
+      <div v-html="this.resultDatas.data.contents"></div>
       </div>
+    </div>
+    <div class="board_detail_up_down" v-if="resultDatas.data != null" v-cloak>
+    <img class="board_detail_up_img" src="/images/icon/up.png" />
+    <img class="board_detail_down_img" src="/images/icon/down.png" />
     </div>
     <!-- / main body -->
     <div class="clear"></div>

@@ -6,9 +6,9 @@
 <!-- end header -->
 
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear" id="vue_board" v-if="resultDatas.data != null" v-cloak> 
     <!-- main body -->
-    <div class="content" id="vue_board" v-if="resultDatas.data != null" v-cloak>
+    <div class="content">
       <div class="scrollable">
       <header class="heading">
       	<span>자유게시판</span>

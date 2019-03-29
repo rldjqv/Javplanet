@@ -1,0 +1,6 @@
+@charset "utf-8";
+#vue_board_detail{min-height: 680px;}
+
+.board_detail_up_down {text-align: center;}
+.board_detail_up_down > img {width:50px; cursor:pointer;}
+.board_detail_viewCount_up_down {float:right;}

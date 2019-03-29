@@ -26,7 +26,7 @@
 	wcs_add["wa"] = "dd9cdf64921808";
 	wcs_do();		
 </script>
-<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase-app.js"></script> <!-- Firebase Analytics -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase-app.js"></script> --> <!-- Firebase Analytics -->
 
 <a id="backtotop" href="#"><i class="fa fa-chevron-up"></i></a>
 </body>

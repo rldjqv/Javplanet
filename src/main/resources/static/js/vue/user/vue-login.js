@@ -24,7 +24,7 @@ var loginJs = new Vue ({
 			.then(function (response) {
 				this.resultDatas = response.data;
 				if (this.resultDatas != null && this.resultDatas != '') {
-					alert(this.resultDatas.userNickName + "님 환영합니다.");
+					alert(this.resultDatas.data.userNickName + "님 환영합니다.");
 					window.location.href = "/";
 				} else {
 					alert("회원정보가 일치하지 않습니다.")

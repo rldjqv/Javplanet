@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 
 import kr.co.javplanet.api.user.dao.UserDao;
 import kr.co.javplanet.api.user.dto.User;
+import kr.co.javplanet.api.user.dto.UserDto;
 import kr.co.javplanet.api.user.model.UserParam;
 
 @Service
@@ -23,12 +23,12 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public User getUser(UserParam param, HttpServletRequest request) throws Exception {
-		User result = new User();
-		result = userDao.getUser(param);
+	public UserDto getUser(UserParam param, HttpServletRequest request) throws Exception {
+		UserDto result = new UserDto();
+		result.data = userDao.getUser(param);
 		ObjectMapper objectMapper = new ObjectMapper();
-		Map<String, Object> sessionObject = objectMapper.convertValue(result, Map.class);
-		if (result != null) {
+		Map<String, Object> sessionObject = objectMapper.convertValue(result.data, Map.class);
+		if (result.data != null) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("sessionObject", sessionObject);
 		} else {
@@ -54,11 +54,11 @@ public class UserService {
 		int postRegisterUserResult = 0;
 		postRegisterUserResult = userDao.postRegisterUser(param);
 		if (postRegisterUserResult > 0) {
-			User result = new User();
-			result = userDao.getUser(param);
+			UserDto result = new UserDto();
+			result.data = userDao.getUser(param);
 			ObjectMapper objectMapper = new ObjectMapper();
 			Map<String, Object> sessionObject = objectMapper.convertValue(result, Map.class);
-			if (result != null) {
+			if (result.data != null) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("sessionObject", sessionObject);
 			} else {

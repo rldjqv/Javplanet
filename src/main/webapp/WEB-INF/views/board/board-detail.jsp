@@ -6,9 +6,9 @@
 <!-- end header -->
 
 <div class="wrapper row3">
-  <main class="hoc container clear" id="vue_board_detail"> 
+  <main class="hoc container clear" id="vue_board_detail" v-if="resultDatas.data != null" v-cloak> 
     <!-- main body -->
-    <div class="content" v-if="resultDatas.data != null" v-cloak>
+    <div class="content">
       <div class="scrollable">
       <span clas="board_detail_regDate">작성일:{{this.resultDatas.data.regDate}}</span>
       <header class="heading">{{this.resultDatas.data.title}}</header>
@@ -21,6 +21,10 @@
     <div class="board_detail_up_down" v-if="resultDatas.data != null" v-cloak>
     <img class="board_detail_up_img" src="/images/icon/up.png" />
     <img class="board_detail_down_img" src="/images/icon/down.png" />
+    </div>
+    <div>
+    	<a class="board_detail_replay">댓글쓰기</a>
+    	<a class="board_detail_list">목록보기</a>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

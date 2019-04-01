@@ -29,7 +29,11 @@
           <tbody>
             <tr v-if="resultDatas.data.list.length != 0" v-for="datas, index in resultDatas.data.list">
               <td class="board_seq">{{datas.seq}}</td>
-              <td class="board_title"><a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a><span class="board_popularity" v-if="getIsPopularity(datas.up, datas.down)">인기</span></td>
+              <td class="board_title">
+              	<img src="/images/icon/icon_new.gif" v-if="getIsNew(datas.regDate)" style="padding-right: 2px;"/>
+              	<a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a>
+              	<span class="board_popularity" v-if="getIsPopularity(datas.up, datas.down)">인기</span>
+              </td>
               <td class="board_userId">{{datas.userNickName}}</td>
               <td class="board_regDate">{{datas.regDate}}</td>
               <td class="board_viewCount">{{datas.viewCount}}</td>

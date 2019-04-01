@@ -49,7 +49,9 @@ Vue.component('pagination', {
     '<nav class="pagination">' +
     '<ul>' + 
 	  '<li><a href="#">&laquo;</a></li>' +
+	  '<li><a href="#">&lsaquo;</a></li>' +
 	  '<li :class="{\'current\' : (currentPage == pageIndex)}" v-for="pageIndex in totalPage"><a @click="getSelectPage(pageIndex)">{{getPageIndex(pageIndex)}}</a></li>' +
+	  '<li><a href="#">&rsaquo;</a></li>' +
 	  '<li><a href="#">&raquo;</a></li>' +
 	'</ul>' +
 	'</nav>',

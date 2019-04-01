@@ -11,14 +11,14 @@ var boardDetailJs = new Vue ({
 		
 	},
 	created : function () {
-		var queryString = (window.location.href).split("?")[1];
-		var seq = queryString.split('=')[1];
-		this.boardDetailParam.seq = seq;
+//		var queryString = (window.location.href).split("?")[1];
+//		var seq = queryString.split('=')[1];
+//		this.boardDetailParam.seq = seq;
 
 	},
 	mounted : function () {
 		axios
-	    .get(this.url + "/board/detail/" + this.boardDetailParam.seq)
+	    .get(this.url + "/board/detail/" + commonJs.queryString.seq)
 	    .then(function(response){
 	    	this.resultDatas = response.data;
 	    	commonJs.setTitle(this.resultDatas.data.title);

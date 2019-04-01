@@ -42,6 +42,13 @@ var boardJs = new Vue ({
 //		},
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;
+		},
+		getIsPopularity : function (up, down) {
+			if ((up - down) >= 5) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 	},
 	computed : function () {

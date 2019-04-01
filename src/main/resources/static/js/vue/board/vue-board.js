@@ -12,6 +12,9 @@ var boardJs = new Vue ({
 
 	},
 	mounted : function () {
+		if (commonJs.queryString.currentPage.indexOf("-") == 0) {
+			commonJs.queryString.currentPage = 1;
+		}
 		this.boardParam.offset = (commonJs.queryString.currentPage -1) * 20;
 		
 		axios({

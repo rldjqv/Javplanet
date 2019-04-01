@@ -27,7 +27,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="datas, index in resultDatas.data.list">
+            <tr v-if="resultDatas.data.list.length != 0" v-for="datas, index in resultDatas.data.list">
               <td class="board_seq">{{datas.seq}}</td>
               <td class="board_title"><a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a><span class="board_popularity" v-if="getIsPopularity(datas.up, datas.down)">인기</span></td>
               <td class="board_userId">{{datas.userNickName}}</td>
@@ -35,6 +35,9 @@
               <td class="board_viewCount">{{datas.viewCount}}</td>
               <td class="board_up">{{datas.up}}</td>
               <td class="board_down">{{datas.down}}</td>
+            </tr>
+            <tr v-if="resultDatas.data.list.length == 0">
+              <td colspan="7">데이터가 없습니다.</td>
             </tr>
           </tbody>
         </table>

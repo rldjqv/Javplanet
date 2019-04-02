@@ -9,6 +9,7 @@ import kr.co.javplanet.api.board.dao.BoardDao;
 import kr.co.javplanet.api.board.dto.BoardDto;
 import kr.co.javplanet.api.board.dto.BoardListDto;
 import kr.co.javplanet.api.board.model.BoardParam;
+import kr.co.javplanet.common.util.MaskingUtil;
 
 @Service
 public class BoardService {
@@ -27,6 +28,7 @@ public class BoardService {
 	public BoardDto getBoardDetail(BoardParam param) throws Exception {
 		BoardDto result = new BoardDto();
 		result.data = boardDao.getBoardDetail(param);
+		result.data.userIp = MaskingUtil.maskingIp(result.data.userIp);
 		boardDao.putBoardDetailViewCount(param);
 		return result;
 	}

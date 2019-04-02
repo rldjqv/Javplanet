@@ -15,4 +15,6 @@ public class Board {
 	public String modId;
 	public String modDate;
 	public String regDate;
+	public int previousSeq;
+	public int nextSeq;
 }

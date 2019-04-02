@@ -11,9 +11,13 @@
     <div class="content">
       <div class="scrollable">
       <span clas="board_detail_regDate">작성일:{{this.resultDatas.data.regDate}}</span>
+	  <div class="board_detail_previous_next">
+      	<a v-if="this.resultDatas.data.previousSeq != 0" class="board_detail_previous" @click="getPreviousPage()">▽이전글</a>
+      	<a v-if="this.resultDatas.data.nextSeq != 0" class="board_detail_next" @click="getNextPage()">△다음글</a>
+      </div>
       <header class="heading">{{this.resultDatas.data.title}}</header>
-      <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}} ({{this.resultDatas.data.userIp}})</span>
-      <span class="board_detail_viewCount_up_down">조회수:{{this.resultDatas.data.viewCount}} | 추천수:{{this.resultDatas.data.up}} | 비추천수:{{this.resultDatas.data.down}}</span>
+      <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}}</span><span class="board_detail_userIp">({{this.resultDatas.data.userIp}})</span>
+      <span class="board_detail_viewCount_up_down">조회:{{this.resultDatas.data.viewCount}} | 추천:{{this.resultDatas.data.up}} | 비추천:{{this.resultDatas.data.down}}</span>
       <hr><br>
       <div v-html="this.resultDatas.data.contents"></div>
       </div>
@@ -24,7 +28,7 @@
     </div>
     <div>
     	<a class="board_detail_replay">댓글쓰기</a>
-    	<a class="board_detail_list">목록보기</a>
+    	<a class="board_detail_list" @click="getHistoryBack()">목록보기</a>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

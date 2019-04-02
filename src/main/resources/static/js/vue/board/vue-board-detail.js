@@ -27,6 +27,16 @@ var boardDetailJs = new Vue ({
 	    });	
 	},
 	methods : {
+		getHistoryBack : function () {
+			history.back();
+		},
+		getPreviousPage : function () {
+			window.location.href = "/board/detail?seq=" + this.resultDatas.data.previousSeq;
+		},
+		getNextPage : function () {
+			window.location.href = "/board/detail?seq=" + this.resultDatas.data.nextSeq;
+		}
+		
 	},
 	
 	computed : function () {

@@ -34,3 +34,7 @@
     color: white;
     margin-left: 10px;
 }
+.board_detail_previous_next {
+	float: right;
+	cursor: pointer;
+}

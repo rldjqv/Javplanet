@@ -102,8 +102,11 @@ public class MaskingUtil {
 	}
 	
 	public static String maskingIp(String str) {
-		String replaceString = str;
+		if (str == null || str == "") {
+			return str;
+		}
 		
+		String replaceString = str;
 		Matcher matcher = Pattern.compile("^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})$").matcher(str);
 		
 		if(matcher.matches()) {

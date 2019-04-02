@@ -1,4 +1,4 @@
-var issueJs = new Vue ({
+var issueVue = new Vue ({
 	el : "#vue_issue",
 	data : {
 		category : 'issue',

@@ -1,4 +1,4 @@
-var celebJs = new Vue ({
+var celebVue = new Vue ({
 	el : "#vue_celeb",
 	data : {
 		category : 'celeb',

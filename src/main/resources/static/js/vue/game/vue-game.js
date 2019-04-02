@@ -1,4 +1,4 @@
-var gameJs = new Vue ({
+var gameVue = new Vue ({
 	el : "#vue_game",
 	data : {
 		category : 'game',

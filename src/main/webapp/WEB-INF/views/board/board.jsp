@@ -50,7 +50,7 @@
     <div class="clear">
     	<pagination :total_cnt="resultDatas.header.totalCnt"></pagination>
     	<c:if test="${sessionObject != null}">
-    	<a class="contents_write" v-if="commonJs.isMobile == false" v-on:click="commonJs.uploadContents(category)">글쓰기</a>
+    	<a class="contents_write" v-if="commonVue.isMobile == false" v-on:click="commonVue.uploadContents(category)">글쓰기</a>
     	</c:if>
     </div>
     <!-- / main body -->

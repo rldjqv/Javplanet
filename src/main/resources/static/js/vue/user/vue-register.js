@@ -1,4 +1,4 @@
-var registerJs = new Vue ({
+var registerVue = new Vue ({
 	el : "#vue_register",
 	data : {
 		url : location.origin + "/api/user",

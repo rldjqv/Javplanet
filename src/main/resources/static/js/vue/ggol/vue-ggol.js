@@ -1,4 +1,4 @@
-var ggolJs = new Vue ({
+var ggolVue = new Vue ({
 	el : "#vue_ggol",
 	data : {
 		category : 'ggol',

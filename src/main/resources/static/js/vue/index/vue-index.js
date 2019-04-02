@@ -1,4 +1,4 @@
-var indexJs = new Vue ({
+var indexVue = new Vue ({
 	el : "#vue_index",
 	data : {
 		category : 'index',

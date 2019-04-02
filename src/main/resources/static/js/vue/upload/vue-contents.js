@@ -1,5 +1,4 @@
-
-var contentsJs = new Vue ({
+var contentsVue = new Vue ({
 	el : "#vue_contents",
 	data : {
 		resultDatas : {},

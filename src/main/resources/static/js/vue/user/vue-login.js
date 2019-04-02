@@ -1,4 +1,4 @@
-var loginJs = new Vue ({
+var loginVue = new Vue ({
 	el : "#vue_login",
 	data : {
 		url : location.origin + "/api/user",

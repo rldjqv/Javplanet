@@ -57,7 +57,7 @@ public class UserService {
 			UserDto result = new UserDto();
 			result.data = userDao.getUser(param);
 			ObjectMapper objectMapper = new ObjectMapper();
-			Map<String, Object> sessionObject = objectMapper.convertValue(result, Map.class);
+			Map<String, Object> sessionObject = objectMapper.convertValue(result.data, Map.class);
 			if (result.data != null) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("sessionObject", sessionObject);

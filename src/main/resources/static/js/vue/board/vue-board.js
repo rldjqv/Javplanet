@@ -1,4 +1,4 @@
-var boardJs = new Vue ({
+var boardVue = new Vue ({
 	el : "#vue_board",
 	data : {
 		category : 'board',
@@ -12,10 +12,10 @@ var boardJs = new Vue ({
 
 	},
 	mounted : function () {
-		if (commonJs.queryString.currentPage.indexOf("-") == 0) {
-			commonJs.queryString.currentPage = 1;
+		if (commonVue.queryString.currentPage.indexOf("-") == 0) {
+			commonVue.queryString.currentPage = 1;
 		}
-		this.boardParam.offset = (commonJs.queryString.currentPage -1) * 20;
+		this.boardParam.offset = (commonVue.queryString.currentPage -1) * 20;
 		
 		axios({
 			method: 'get',
@@ -30,7 +30,7 @@ var boardJs = new Vue ({
 	},
 	methods : {
 //		search : function () {
-//			this.boardParam.offset = commonJs.offset;
+//			this.boardParam.offset = commonVue.offset;
 //			
 //			axios({
 //				method: 'get',

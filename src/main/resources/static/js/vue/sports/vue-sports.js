@@ -1,4 +1,4 @@
-var sportsJs = new Vue ({
+var sportsVue = new Vue ({
 	el : "#vue_sports",
 	data : {
 		category : 'sports',

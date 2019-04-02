@@ -551,29 +551,29 @@
                     $("#tx_canvas_wysiwyg")[0].contentDocument.body.append(child);
                 };
                 reader.readAsDataURL(file);
-                contentsJs.uploadParam.append('images', file);
+                contentsVue.uploadParam.append('images', file);
             }
         } else alert('invalid file input'); // 첨부클릭 후 취소시의 대응책은 세우지 않았다.
     }
 
 	/* 예제용 함수 */
 	function saveContent() {
-		/* contentsJs.uploadParam.contents = Editor.getContent();
-		contentsJs.uploadParam.title = document.getElementById('title').value; */
+		/* contentsVue.uploadParam.contents = Editor.getContent();
+		contentsVue.uploadParam.title = document.getElementById('title').value; */
 		var temp_content = $("#tx_canvas_wysiwyg");
 		
 		var upload_images = $("#tx_canvas_wysiwyg").contents().find('.upload_image');
-		var param_images = contentsJs.uploadParam.getAll('images');
+		var param_images = contentsVue.uploadParam.getAll('images');
 		var origin_Contents = Editor.getContent();
 		
 		for (var i=0; i<upload_images.length; i++) {
-			upload_images[i].src = location.origin + "/" + contentsJs.uploadParam.getAll('images')[i].name 
+			upload_images[i].src = location.origin + "/" + contentsVue.uploadParam.getAll('images')[i].name 
 		}
 		
-		contentsJs.uploadParam.append('contents', Editor.getContent());
-		contentsJs.uploadParam.append('title', document.getElementById('title').value);
+		contentsVue.uploadParam.append('contents', Editor.getContent());
+		contentsVue.uploadParam.append('title', document.getElementById('title').value);
 		
-		contentsJs.uploadConents();
+		contentsVue.uploadConents();
 		
 		// alert(Editor.getContent());
 		// Editor.save(); // 이 함수를 호출하여 글을 등록하면 된다.

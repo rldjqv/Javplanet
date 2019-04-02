@@ -1,4 +1,4 @@
-var enterJs = new Vue ({
+var enterVue = new Vue ({
 	el : "#vue_enter",
 	data : {
 		category : 'enter',

@@ -1,4 +1,4 @@
-var boardDetailJs = new Vue ({
+var boardDetailVue = new Vue ({
 	el : "#vue_board_detail",
 	data : {
 		category : 'board_detail',
@@ -18,10 +18,10 @@ var boardDetailJs = new Vue ({
 	},
 	mounted : function () {
 		axios
-	    .get(this.url + "/board/detail/" + commonJs.queryString.seq)
+	    .get(this.url + "/board/detail/" + commonVue.queryString.seq)
 	    .then(function(response){
 	    	this.resultDatas = response.data;
-	    	commonJs.setTitle(this.resultDatas.data.title);
+	    	commonVue.setTitle(this.resultDatas.data.title);
 	    }.bind(this))
 	    .catch(function(e) {
 	    });	

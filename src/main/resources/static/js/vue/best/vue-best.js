@@ -1,4 +1,4 @@
-var bestJs = new Vue ({
+var bestVue = new Vue ({
 	el : "#vue_best",
 	data : {
 		category : 'best',

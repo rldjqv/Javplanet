@@ -1,4 +1,4 @@
-var gifJs = new Vue ({
+var gifVue = new Vue ({
 	el : "#vue_gif",
 	data : {
 		category : 'gif',

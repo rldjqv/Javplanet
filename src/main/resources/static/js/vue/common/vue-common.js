@@ -1,4 +1,4 @@
-var commonJs = new Vue ({
+var commonVue = new Vue ({
 	data : {
 		isLogin : false,
 		isMobile : false,
@@ -57,7 +57,7 @@ Vue.component('pagination', {
 	'</nav>',
 	data : function () {
 		return {
-			currentPage : commonJs.queryString.currentPage,
+			currentPage : commonVue.queryString.currentPage,
 			totalPage : Math.ceil(this.total_cnt / 20),
 			blockScale : 10,
 			totalBlockCount : 1,

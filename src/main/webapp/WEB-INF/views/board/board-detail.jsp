@@ -16,18 +16,20 @@
       	<a v-if="this.resultDatas.data.nextSeq != 0" class="board_detail_next" @click="getNextPage()">△다음글</a>
       </div>
       <header class="heading">{{this.resultDatas.data.title}}</header>
-      <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}}</span><span class="board_detail_userIp">({{this.resultDatas.data.userIp}})</span>
+      <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}}</span><span class="board_detail_userIp"> | IP:{{this.resultDatas.data.userIp}}</span>
       <span class="board_detail_viewCount_up_down">조회:{{this.resultDatas.data.viewCount}} | 추천:{{this.resultDatas.data.up}} | 비추천:{{this.resultDatas.data.down}}</span>
       <hr><br>
       <div v-html="this.resultDatas.data.contents"></div>
       </div>
     </div>
     <div class="board_detail_up_down" v-if="resultDatas.data != null" v-cloak>
-    <img class="board_detail_up_img" src="/images/icon/up.png" />
-    <img class="board_detail_down_img" src="/images/icon/down.png" />
+    	<!-- <img class="board_detail_up_img" src="/images/icon/up.png" /> -->
+    	<!-- <img class="board_detail_down_img" src="/images/icon/down.png" /> -->
+   		<span class="board_detail_up" @click="postUp(resultDatas.data.seq)">추천하기</span> <span class="board_detail_up_count">{{this.resultDatas.data.up}}</span>
+   		<span class="board_detail_down" @click="postDown(resultDatas.data.seq)"> | 비추천하기</span> <span class="board_detail_down_count">{{this.resultDatas.data.down}}</span>
     </div>
     <div>
-    	<a class="board_detail_replay">댓글쓰기</a>
+    	<a class="board_detail_replay" @click="postReply(resultDatas.data.seq)">댓글쓰기</a>
     	<a class="board_detail_list" @click="getHistoryBack()">목록보기</a>
     </div>
     <!-- / main body -->

@@ -10,6 +10,7 @@
 
 .board_detail_up_down {
 	text-align: center;
+    font-weight: 1000;
 }
 
 .board_detail_up_down > img {
@@ -37,4 +38,32 @@
 .board_detail_previous_next {
 	float: right;
 	cursor: pointer;
+}
+
+.board_detail_up_count {
+    color: blue;
+}
+
+.board_detail_down_count {
+    color: red;
+}
+
+.board_detail_up {
+	cursor: pointer;
+}
+
+.board_detail_down {
+	cursor: pointer;
+}
+
+.board_up_img > img, .board_down_img > img {
+	max-width: 22px;
+}
+
+.board_up {
+	color: blue;
+}
+
+.board_down {
+	color: red;
 }

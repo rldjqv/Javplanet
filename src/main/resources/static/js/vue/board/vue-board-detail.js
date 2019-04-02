@@ -35,6 +35,15 @@ var boardDetailJs = new Vue ({
 		},
 		getNextPage : function () {
 			window.location.href = "/board/detail?seq=" + this.resultDatas.data.nextSeq;
+		},
+		postUp : function (seq) {
+			alert("추천하기 기능은 준비중입니다.");
+		},
+		postDown : function (seq) {
+			alert("비추천하기 기능은 준비중입니다.");
+		},
+		postReply : function (seq) {
+			alert("댓글달기 기능은 준비중입니다.");
 		}
 		
 	},

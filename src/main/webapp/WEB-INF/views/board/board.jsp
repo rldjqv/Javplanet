@@ -17,13 +17,13 @@
         <table>
           <thead>
             <tr>
-              <th width="6%" class="board_seq">번호</th>
-              <th width="*" class="board_title">제목</th>
-              <th width="10%" class="board_userId">글쓴이</th>
-              <th width="8%" class="board_regDate">날짜</th>
-              <th width="6%" class="board_viewCount">조회</th>
-              <th width="4%" class="board_up"><img src="/images/icon/up.png"></th>
-              <th width="4%" class="board_down"><img src="/images/icon/down.png"></th>
+              <th width="6%;" class="board_seq">번호</th>
+              <th width="*;" class="board_title">제목</th>
+              <th width="10%;" class="board_userId">글쓴이</th>
+              <th width="8%;" class="board_regDate">날짜</th>
+              <th width="6%;" class="board_viewCount">조회</th>
+              <th width="4%;" class="board_up_img"><img src="/images/icon/up.png"></th>
+              <th width="4%;" class="board_down_img"><img src="/images/icon/down.png"></th>
             </tr>
           </thead>
           <tbody>

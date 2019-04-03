@@ -12,8 +12,8 @@
       <div class="scrollable">
       <span clas="board_detail_regDate">작성일:{{this.resultDatas.data.regDate}}</span>
 	  <div class="board_detail_previous_next">
-      	<a v-if="this.resultDatas.data.previousSeq != 0" class="board_detail_previous" @click="getPreviousPage()">▽이전글</a>
       	<a v-if="this.resultDatas.data.nextSeq != 0" class="board_detail_next" @click="getNextPage()">△다음글</a>
+      	<a v-if="this.resultDatas.data.previousSeq != 0" class="board_detail_previous" @click="getPreviousPage()">▽이전글</a>
       </div>
       <header class="heading">{{this.resultDatas.data.title}}</header>
       <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}}</span><span class="board_detail_userIp"> | IP:{{this.resultDatas.data.userIp}}</span>
@@ -22,7 +22,7 @@
       <div v-html="this.resultDatas.data.contents"></div>
       </div>
     </div>
-    <div class="board_detail_up_down" v-if="resultDatas.data != null" v-cloak>
+    <div class="board_detail_up_down">
     	<!-- <img class="board_detail_up_img" src="/images/icon/up.png" /> -->
     	<!-- <img class="board_detail_down_img" src="/images/icon/down.png" /> -->
    		<span class="board_detail_up" @click="postUp(resultDatas.data.seq)">추천하기</span> <span class="board_detail_up_count">{{this.resultDatas.data.up}}</span>

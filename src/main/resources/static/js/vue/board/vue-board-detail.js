@@ -28,7 +28,7 @@ var boardDetailVue = new Vue ({
 	},
 	methods : {
 		getHistoryBack : function () {
-			history.back();
+			window.location.href = "/board?currentPage=" + localStorage.currentPage;
 		},
 		getPreviousPage : function () {
 			window.location.href = "/board/detail?seq=" + this.resultDatas.data.previousSeq;

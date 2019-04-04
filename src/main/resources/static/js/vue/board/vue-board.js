@@ -16,6 +16,7 @@ var boardVue = new Vue ({
 			commonVue.queryString.currentPage = 1;
 		}
 		this.boardParam.offset = (commonVue.queryString.currentPage -1) * 20;
+		localStorage.currentPage = commonVue.queryString.currentPage;
 		
 		axios({
 			method: 'get',

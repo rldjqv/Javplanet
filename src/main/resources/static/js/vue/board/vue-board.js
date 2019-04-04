@@ -12,7 +12,7 @@ var boardVue = new Vue ({
 
 	},
 	mounted : function () {
-		if (commonVue.queryString.currentPage.indexOf("-") == 0) {
+		if (commonVue.queryString.currentPage == undefined || commonVue.queryString.currentPage.indexOf("-") == 0) {
 			commonVue.queryString.currentPage = 1;
 		}
 		this.boardParam.offset = (commonVue.queryString.currentPage -1) * 20;

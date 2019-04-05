@@ -51,12 +51,17 @@ public class UploadController {
 			}
 			
 			String uuid = UUID.randomUUID().toString().replace("-", "").substring(0, 10);
+
+			makeDirectory(YYYY, MM, DD);
+			String contentsPrefix = YYYY + "/" + MM + "/" + DD + "/" + uuid;
+			String filePrefix = uuid;
+			String fileLocation = fileUploadDir + YYYY + "/" + MM + "/" + DD + "/";
 			
 			String contents = (String) param.get("contents");
 			try {
 				for (int i=0; i < images.length; i++) {
-					contents = contents.replace("___IMAGE___"+i, uuid.toString() + "_" + images[i].getOriginalFilename());
-					images[i].transferTo(new File(fileUploadDir, uuid.toString() + "_" + images[i].getOriginalFilename()));	
+					contents = contents.replace("___IMAGE___"+i, contentsPrefix + "_" + images[i].getOriginalFilename());
+					images[i].transferTo(new File(fileLocation, filePrefix + "_" + images[i].getOriginalFilename()));	
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -69,5 +74,34 @@ public class UploadController {
 		SessionManager.setApiHeader(uploadParam, request);
 		uploadParam.data = gson.fromJson(gson.toJson(param), UploadParam.Upload.class);
 		return uploadService.postContents(uploadParam);
+	}
+	
+	public void makeDirectory (String YYYY, String MM, String DD) {
+		File dirYYYY = new File(fileUploadDir + YYYY);
+		if (!dirYYYY.exists()) {
+			try {
+				dirYYYY.mkdir();
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+		}
+		
+		File dirMM = new File(fileUploadDir + YYYY + "/" + MM);
+		if (!dirMM.exists()) {
+			try {
+				dirMM.mkdir();
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+		}
+		
+		File dirDD = new File(fileUploadDir + YYYY + "/" + MM + "/" + DD);
+		if (!dirDD.exists()) {
+			try {
+				dirDD.mkdir();
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+		}
 	}
 }

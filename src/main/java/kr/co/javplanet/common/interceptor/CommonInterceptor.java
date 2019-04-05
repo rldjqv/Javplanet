@@ -23,7 +23,10 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
     @Override // Controller 진입 후 View 랜더링 전 
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)
             throws Exception {
-
+    	response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT"); 
+    	response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+    	response.addHeader("Cache-Control", "post-check=0, pre-check=0"); 
+    	response.setHeader("Pragma", "no-cache");
     }
     
     @Override // Controller 진입 후 View 랜더링 후

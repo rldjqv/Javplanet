@@ -33,4 +33,13 @@ public class BoardService {
 		return result;
 	}
 	
+	public int putBoardDetailUp(BoardParam param) throws Exception {
+		int result = boardDao.putBoardDetailUp(param);
+		return result;
+	}
+	
+	public int putBoardDetailDown(BoardParam param) throws Exception {
+		int result = boardDao.putBoardDetailDown(param);
+		return result;
+	}
 }

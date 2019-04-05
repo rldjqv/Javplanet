@@ -21,6 +21,8 @@ var boardDetailVue = new Vue ({
 	    	commonVue.setTitle(this.resultDatas.data.title);
 	    }.bind(this))
 	    .catch(function(e) {
+	    	alert("잘못된 접근입니다.");
+	    	history.back();
 	    });	
 	},
 	methods : {
@@ -33,11 +35,23 @@ var boardDetailVue = new Vue ({
 		getNextPage : function () {
 			window.location.href = "/board/detail?seq=" + this.resultDatas.data.nextSeq;
 		},
-		postUp : function (seq) {
-			alert("추천하기 기능은 준비중입니다.");
+		putUp : function (seq) {
+			axios
+		    .put(this.url + "/board/detail/up/" + commonVue.queryString.seq)
+		    .then(function(response){
+		    	this.resultDatas.data.up += 1;
+		    }.bind(this))
+		    .catch(function(e) {
+		    });	
 		},
-		postDown : function (seq) {
-			alert("비추천하기 기능은 준비중입니다.");
+		putDown : function (seq) {
+			axios
+		    .put(this.url + "/board/detail/down/" + commonVue.queryString.seq)
+		    .then(function(response){
+		    	this.resultDatas.data.down += 1;
+		    }.bind(this))
+		    .catch(function(e) {
+		    });	
 		},
 		postReply : function (seq) {
 			alert("댓글달기 기능은 준비중입니다.");

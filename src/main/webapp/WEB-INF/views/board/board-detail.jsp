@@ -25,8 +25,8 @@
     <div class="board_detail_up_down">
     	<!-- <img class="board_detail_up_img" src="/images/icon/up.png" /> -->
     	<!-- <img class="board_detail_down_img" src="/images/icon/down.png" /> -->
-   		<span class="board_detail_up" @click="postUp(resultDatas.data.seq)">추천하기</span> <span class="board_detail_up_count">{{this.resultDatas.data.up}}</span>
-   		<span class="board_detail_down" @click="postDown(resultDatas.data.seq)"> | 비추천하기</span> <span class="board_detail_down_count">{{this.resultDatas.data.down}}</span>
+   		<span class="board_detail_up" @click="putUp(resultDatas.data.seq)">추천하기</span> <span class="board_detail_up_count">{{this.resultDatas.data.up}}</span>
+   		<span class="board_detail_down" @click="putDown(resultDatas.data.seq)"> | 비추천하기</span> <span class="board_detail_down_count">{{this.resultDatas.data.down}}</span>
     </div>
     <div>
     	<a class="board_detail_replay" @click="postReply(resultDatas.data.seq)">댓글쓰기</a>

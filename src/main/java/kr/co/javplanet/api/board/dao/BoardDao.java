@@ -10,4 +10,6 @@ public interface BoardDao {
 	public int getBoardsTotalCnt(BoardParam param);
 	public Board getBoardDetail(BoardParam param);
 	public int putBoardDetailViewCount(BoardParam param);
+	public int putBoardDetailUp(BoardParam param);
+	public int putBoardDetailDown(BoardParam param);
 }

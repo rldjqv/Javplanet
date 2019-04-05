@@ -80,4 +80,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		WHERE 1=1
 		<include refid="conditions"/>
 	</update>
+	
+	<update id="putBoardDetailUp" parameterType="kr.co.javplanet.api.board.model.BoardParam">
+		/* board.xml : putBoardDetailUp */
+		UPDATE
+			jav_board
+		SET
+			up = up + 1
+		WHERE 1=1
+		<include refid="conditions"/>
+	</update>
+	
+	<update id="putBoardDetailDown" parameterType="kr.co.javplanet.api.board.model.BoardParam">
+		/* board.xml : putBoardDetailDown */
+		UPDATE
+			jav_board
+		SET
+			down = down + 1
+		WHERE 1=1
+		<include refid="conditions"/>
+	</update>
 </mapper>

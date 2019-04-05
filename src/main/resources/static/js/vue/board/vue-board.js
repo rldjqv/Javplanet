@@ -47,6 +47,10 @@ var boardVue = new Vue ({
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;
 		},
+		getNumber : function (index) {
+			var number = (this.resultDatas.header.totalCnt - ((commonVue.queryString.currentPage -1) * 20)) - index;
+			return number;
+		},
 		getIsPopularity : function (up, down) {
 			if ((up - down) >= 5) {
 				return true;

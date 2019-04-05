@@ -59,7 +59,7 @@ public class UploadController {
 			
 			String contents = (String) param.get("contents");
 			try {
-				for (int i=0; i < images.length; i++) {
+				for (int i = 0; i < images.length; i++) {
 					contents = contents.replace("___IMAGE___"+i, contentsPrefix + "_" + images[i].getOriginalFilename());
 					images[i].transferTo(new File(fileLocation, filePrefix + "_" + images[i].getOriginalFilename()));	
 				}

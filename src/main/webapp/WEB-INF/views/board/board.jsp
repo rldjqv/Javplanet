@@ -17,7 +17,7 @@
         <table>
           <thead>
             <tr>
-              <th width="6%;" class="board_seq">번호</th>
+              <th width="6%;" class="board_number">번호</th>
               <th width="*;" class="board_title">제목</th>
               <th width="10%;" class="board_userId">글쓴이</th>
               <th width="8%;" class="board_regDate">날짜</th>
@@ -28,7 +28,7 @@
           </thead>
           <tbody>
             <tr v-if="resultDatas.data.list.length != 0" v-for="datas, index in resultDatas.data.list">
-              <td class="board_seq">{{datas.seq}}</td>
+              <td class="board_number">{{getNumber(index)}}</td>
               <td class="board_title">
               	<img src="/images/icon/icon_new.gif" v-if="getIsNew(datas.regDate)" style="padding-right: 2px;"/>
               	<a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a>

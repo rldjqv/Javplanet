@@ -461,6 +461,6 @@ table a, #comments a{background-color:inherit;}
 	.font-x3{font-size:1.6rem;}
 	
 	.board_up, .board_down, .board_up_img, .board_down_img, .board_userId, .board_regDate {display: none;}
-	.board_seq, .board_viewCount {width: 12%;}
+	.board_number, .board_viewCount {width: 12%;}
 	
 }

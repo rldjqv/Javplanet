@@ -1,6 +1,9 @@
 package kr.co.javplanet.api.upload.controller;
 
+import java.io.File;
+import java.util.Calendar;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,6 +36,34 @@ public class UploadController {
 	
 	@PostMapping("/contents")
 	public BaseResult postContents(HttpServletRequest request, @RequestParam Map<String, Object> param, @RequestParam MultipartFile[] images) throws Exception {
+		if (images.length > 0) {
+			Calendar cal = Calendar.getInstance();
+			String YYYY = cal.get(cal.YEAR) + "";
+			String MM = cal.get(cal.MONTH)+1 + "";
+			String DD = cal.get(cal.DATE) + "";
+
+			if (MM.length() == 1) {
+				MM = "0" + MM;
+			}
+
+			if (DD.length() == 1) {
+				DD = "0" + DD;
+			}
+			
+			String uuid = UUID.randomUUID().toString().replace("-", "").substring(0, 10);
+			
+			String contents = (String) param.get("contents");
+			try {
+				for (int i=0; i < images.length; i++) {
+					contents = contents.replace("___IMAGE___"+i, uuid.toString() + "_" + images[i].getOriginalFilename());
+					images[i].transferTo(new File(fileUploadDir, uuid.toString() + "_" + images[i].getOriginalFilename()));	
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			param.put("contents", contents);
+		}
+		
 		Gson gson = new Gson();
 		UploadParam uploadParam = new UploadParam();
 		SessionManager.setApiHeader(uploadParam, request);

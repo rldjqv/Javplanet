@@ -11,9 +11,6 @@ var boardDetailVue = new Vue ({
 		
 	},
 	created : function () {
-//		var queryString = (window.location.href).split("?")[1];
-//		var seq = queryString.split('=')[1];
-//		this.boardDetailParam.seq = seq;
 
 	},
 	mounted : function () {

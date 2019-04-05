@@ -4,14 +4,6 @@ var contentsVue = new Vue ({
 		resultDatas : {},
 		url : location.origin + "/api/upload",
 		uploadParam : new FormData()
-//		uploadParam : {
-//			category : "",
-//			title : "",
-//			contents : "",
-//			images : new FormData()
-//		},
-//		images : new FormData()
-
 	},
 	created : function () {
 		
@@ -21,15 +13,16 @@ var contentsVue = new Vue ({
 	},
 	methods : {
 		uploadConents : function () {
-			var queryString = (window.location.href).split("?")[1];
-			var category = queryString.split('=')[1];
-//			this.uploadParam.category = category;
+			var confirm = window.confirm("게시글을 작성하시겠습니까?");
+			if (!confirm) {
+				return;
+			}
+			var category = commonVue.queryString.category;
 			this.uploadParam.append('category', category);
 			
 			axios
 		    .post(this.url + "/contents", this.uploadParam)
 		    .then(function(response){
-		    	alert("글 작성에 성공하였습니다.");
 		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
 		    }.bind(this))
 		    .catch(function(e) {

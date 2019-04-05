@@ -567,7 +567,8 @@
 		var origin_Contents = Editor.getContent();
 		
 		for (var i=0; i<upload_images.length; i++) {
-			upload_images[i].src = location.origin + "/" + contentsVue.uploadParam.getAll('images')[i].name 
+			//upload_images[i].src = location.origin + "/storage/" + contentsVue.uploadParam.getAll('images')[i].name
+			upload_images[i].src = location.origin + "/storage/" + "___IMAGE___" + [i];
 		}
 		
 		contentsVue.uploadParam.append('contents', Editor.getContent());

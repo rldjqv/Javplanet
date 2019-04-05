@@ -58,13 +58,9 @@ var boardVue = new Vue ({
 			var date = new Date();
 			var MM = date.getMonth() + 1;
 			var DD = date.getDate();
-			if(MM < 10) {
-				MM = '0' + MM;
-			} 
-
-			if(DD < 10) {
-				DD = '0' + DD;
-			} 
+			
+			MM < 10 ? MM = '0' + MM : MM = MM;
+			DD < 10 ? DD = '0' + DD : DD = DD;
 			
 			var curDate = MM + "-" + DD;
 			if (regDate == curDate) {

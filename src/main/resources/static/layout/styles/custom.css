@@ -11,6 +11,7 @@
 .board_detail_up_down {
 	text-align: center;
     font-weight: 1000;
+    padding-top: 30px;
 }
 
 .board_detail_up_down > img {

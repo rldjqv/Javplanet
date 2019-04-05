@@ -1,5 +1,7 @@
 package kr.co.javplanet.api.upload.service;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,11 @@ public class UploadService {
 		UploadDto result = new UploadDto();
 		result.header.totalCnt = uploadDao.postContents(param);
 		result.data.seq= param.data.seq;
+		return result;
+	}
+	
+	public int postTemp(Map<String, Object> param) throws Exception {
+		int result = uploadDao.postTemp(param);
 		return result;
 	}
 }

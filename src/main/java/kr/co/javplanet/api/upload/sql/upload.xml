@@ -32,4 +32,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		<include refid="conditions"/>
 	</insert>
 	
+	<insert id="postTemp" parameterType="map">
+		/* upload.xml : postTemp */
+		INSERT INTO
+			jav_board
+			(
+			title,
+			contents,
+			regDate
+			)
+		VALUES
+			(
+			#{title},
+			#{contents},
+			now()
+			)
+		<include refid="conditions"/>
+	</insert>
 </mapper>

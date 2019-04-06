@@ -19,7 +19,7 @@
       <span class="board_detail_userNickName">글쓴이:{{this.resultDatas.data.userNickName}}</span><span class="board_detail_userIp"> | IP:{{this.resultDatas.data.userIp}}</span>
       <span class="board_detail_viewCount_up_down">조회:{{this.resultDatas.data.viewCount}} | 추천:{{this.resultDatas.data.up}} | 비추천:{{this.resultDatas.data.down}}</span>
       <hr><br>
-      <div v-html="this.resultDatas.data.contents"></div>
+      <div class="board_detail_contents" v-html="this.resultDatas.data.contents"></div>
       </div>
     </div>
     <div class="board_detail_up_down">

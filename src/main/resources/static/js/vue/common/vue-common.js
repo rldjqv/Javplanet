@@ -30,9 +30,15 @@ var commonVue = new Vue ({
 		uploadContents : function (category) {
 			window.location.href = "/upload/contents?category=" + category;
 		},
-		setTitle : function (title) {
+		setMeta : function (title) {
 			document.title = title;
 			document.getElementById('meta_title').setAttribute('content', title);
+			document.getElementById('meta_description').setAttribute('content', title);
+			document.getElementById('meta_og_title').setAttribute('content', title);
+			document.getElementById('meta_og_description').setAttribute('content', title);
+			if (document.getElementsByClassName("board_detail_contents")[0].getElementsByTagName("img").length > 0) {
+				document.getElementById('meta_og_image').setAttribute('content', document.getElementsByClassName("board_detail_contents")[0].getElementsByTagName("img")[0].src);	
+			}
 		}
 	},
 	computed : function () {

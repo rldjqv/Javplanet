@@ -20,7 +20,9 @@ var boardDetailVue = new Vue ({
 	    .get(this.url + "/board/detail/" + commonVue.queryString.seq)
 	    .then(function(response){
 	    	this.resultDatas = response.data;
-	    	commonVue.setTitle(this.resultDatas.data.title);
+	    	setTimeout(() => {
+	    		commonVue.setMeta(this.resultDatas.data.title);	
+			}, 100);
 	    }.bind(this))
 	    .catch(function(e) {
 	    	alert("잘못된 접근입니다.");

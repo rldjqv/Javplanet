@@ -16,8 +16,14 @@
 <meta http-equiv="Pragma" content="no-store"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="title" id="meta_title" content="">
-<meta name="description" id="meta_title" content="">
-<meta name="keywords" id="meta_keywords" content="">
+<meta name="description" id="meta_description" content="">
+<meta name="keywords" id="meta_keywords" content="연예인,인물,은꼴,움짤,스포츠,게임,인터넷이슈,자유게시판">
+<meta property="og:site_name" content="키배닷컴" />
+<meta property="og:type" content="website" />
+<meta property="og:url" id="meta_og_url" content="http://kibe.ga" />
+<meta property="og:title" id="meta_og_title" content="" />
+<meta property="og:description" id="meta_og_description" content="" />
+<meta property="og:image" id="meta_og_image" content="" />
 
 <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="/layout/styles/custom.css" rel="stylesheet" type="text/css" media="all">

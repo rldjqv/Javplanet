@@ -68,3 +68,16 @@
 .board_down {
 	color: red;
 }
+
+.board_detail_reply {
+    min-height: 100px;
+    width : 100%;
+}
+
+.board_detail_reply_button {
+	padding-top: 10px;
+}
+
+.board_detail_reply_save {
+	float: right;
+}

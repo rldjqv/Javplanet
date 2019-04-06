@@ -7,7 +7,9 @@ var boardDetailVue = new Vue ({
 			category : "",
 			seq : ""
 		},
-		resultDatas : {}
+		resultDatas : {},
+		isReplyOpen : false,
+		reply : ""
 		
 	},
 	created : function () {
@@ -53,8 +55,12 @@ var boardDetailVue = new Vue ({
 		    .catch(function(e) {
 		    });	
 		},
+		openReply : function () {
+			this.isReplyOpen == false ? this.isReplyOpen = true : this.isReplyOpen = false;
+		},
 		postReply : function (seq) {
-			alert("댓글달기 기능은 준비중입니다.");
+			this.reply;
+			alert("댓글쓰기 기능은 준비중입니다.");
 		}
 		
 	},

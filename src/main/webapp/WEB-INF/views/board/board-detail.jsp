@@ -28,9 +28,17 @@
    		<span class="board_detail_up" @click="putUp(resultDatas.data.seq)">추천하기</span> <span class="board_detail_up_count">{{this.resultDatas.data.up}}</span>
    		<span class="board_detail_down" @click="putDown(resultDatas.data.seq)"> | 비추천하기</span> <span class="board_detail_down_count">{{this.resultDatas.data.down}}</span>
     </div>
-    <div>
-    	<a class="board_detail_replay" @click="postReply(resultDatas.data.seq)">댓글쓰기</a>
+    <div class="board_detail_bottom">
+    	<a class="board_detail_replay" @click="openReply()">댓글쓰기</a>
     	<a class="board_detail_list" @click="getHistoryBack()">목록보기</a>
+    </div>
+    <hr>
+    <div class="board_detail_reply_div" v-if="isReplyOpen">
+    	<textarea class="board_detail_reply" v-model="reply"></textarea>
+    	<div class="board_detail_reply_button">
+	    	<button class="board_detail_reply_close" @click="openReply()">닫기</button>
+	    	<button class="board_detail_reply_save" @click="postReply(resultDatas.data.seq)">저장하기</button>
+    	</div>
     </div>
     <!-- / main body -->
     <div class="clear"></div>

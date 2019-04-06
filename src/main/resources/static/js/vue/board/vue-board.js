@@ -5,8 +5,9 @@ var boardVue = new Vue ({
 		resultDatas : {},
 		url : location.origin + "/api",
 		boardParam : {
-			offset : 0
-		}
+			offset : 0,
+			searchText : ""
+		},
 	},
 	created : function () {
 
@@ -17,6 +18,12 @@ var boardVue = new Vue ({
 		}
 		this.boardParam.offset = (commonVue.queryString.currentPage -1) * 20;
 		localStorage.currentPage = commonVue.queryString.currentPage;
+		
+		if (commonVue.queryString.searchText == undefined || commonVue.queryString.searchText == '') {
+			this.boardParam.searchText = "";
+		} else {
+			this.boardParam.searchText = decodeURI(commonVue.queryString.searchText);	
+		}
 		
 		axios({
 			method: 'get',
@@ -30,8 +37,18 @@ var boardVue = new Vue ({
 		});
 	},
 	methods : {
-//		search : function () {
-//			this.boardParam.offset = commonVue.offset;
+		search : function () {
+			this.boardParam.searchText = this.boardParam.searchText.trim();
+			if (this.boardParam.searchText == undefined || this.boardParam.searchText == '') {
+				alert("검색어를 입력해주시기 바랍니다.");
+				return;
+			}
+			window.location.href = "?searchText=" + this.boardParam.searchText;
+//			if (commonVue.queryString.currentPage == undefined || commonVue.queryString.currentPage.indexOf("-") == 0) {
+//				commonVue.queryString.currentPage = 1;
+//			}
+//			this.boardParam.offset = (commonVue.queryString.currentPage -1) * 20;
+//			localStorage.currentPage = commonVue.queryString.currentPage;
 //			
 //			axios({
 //				method: 'get',
@@ -43,7 +60,7 @@ var boardVue = new Vue ({
 //			}.bind(this))
 //			.catch(function(e) {
 //			});
-//		},
+		},
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;
 		},

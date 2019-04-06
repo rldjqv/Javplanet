@@ -7,7 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 	<sql id="conditions">
 		<if test="data.seq != null and data.seq != '' and data.seq != 0">
 			AND seq = #{data.seq}
-		</if>		
+		</if>
+		
+		<if test="data.searchText != null and data.searchText != ''">
+			AND title LIKE "%${data.searchText}%"
+		</if>
 	</sql>
 	
 	<sql id="paging">

@@ -7,6 +7,6 @@ public class BoardParam extends BaseParam {
 	public class Board {
 		public int offset;
 		public int seq;
-		
+		public String searchText;
 	}
 }

@@ -81,3 +81,22 @@
 .board_detail_reply_save {
 	float: right;
 }
+
+button {
+    color: #FFFFFF;
+    background-color: #373737;
+    border: 0;
+    cursor: pointer;
+}
+
+.board_text_search {
+	float: right;
+}
+
+.board_text_search_textarea {
+	height: 31px;	
+}
+
+.board_text_search_button {
+	height: 30px;
+}

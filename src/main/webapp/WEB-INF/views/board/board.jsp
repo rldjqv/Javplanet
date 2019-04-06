@@ -47,6 +47,10 @@
         </table>
       </div>
     </div>
+    <div class="board_text_search">
+	    <textarea class="board_text_search_textarea" v-model="boardParam.searchText"></textarea>
+	    <button class="board_text_search_button" @click="search()">검색</button>
+    </div>
     <div class="clear">
     	<pagination :total_cnt="resultDatas.header.totalCnt"></pagination>
     	<c:if test="${sessionObject != null}">

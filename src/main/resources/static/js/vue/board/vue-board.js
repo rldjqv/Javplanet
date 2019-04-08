@@ -65,11 +65,15 @@ var boardVue = new Vue ({
 			var lowerSearchText = this.boardParam.searchText.toLowerCase(this.boardParam.searchText);
 			var lowerSearchTextLength = lowerSearchText.length;
 			var lowerTitle = title.toLowerCase(title);
-			var startTitle = title.substring(0, lowerTitle.indexOf(lowerSearchText));
-			var endTitle = title.substring(lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
-			var focusTitle = title.substring(lowerTitle.indexOf(lowerSearchText), lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
-			var title = startTitle + "<span class='board_focus_title' style='color: red;'>" + focusTitle + "</span>" + endTitle;
-			return title;
+			if (lowerTitle.includes(lowerSearchText) && lowerSearchText != "") {
+				var startTitle = title.substring(0, lowerTitle.indexOf(lowerSearchText));
+				var endTitle = title.substring(lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+				var focusTitle = title.substring(lowerTitle.indexOf(lowerSearchText), lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+				var title = startTitle + "<span class='board_focus_title' style='color: red;'>" + focusTitle + "</span>" + endTitle;
+				return title;
+			} else {
+				return title;
+			}
 		},
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;

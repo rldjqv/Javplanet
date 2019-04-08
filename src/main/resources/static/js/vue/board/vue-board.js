@@ -65,10 +65,10 @@ var boardVue = new Vue ({
 			var lowerSearchText = this.boardParam.searchText.toLowerCase(this.boardParam.searchText);
 			var lowerSearchTextLength = lowerSearchText.length;
 			var lowerTitle = title.toLowerCase(title);
-			var startString = title.substring(0, lowerTitle.indexOf(lowerSearchText));
-			var endString = title.substring(lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
-			var focusString = title.substring(lowerTitle.indexOf(lowerSearchText), lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
-			var title = startString + "<span style='color: red;'>" + focusString + "</span>" + endString;
+			var startTitle = title.substring(0, lowerTitle.indexOf(lowerSearchText));
+			var endTitle = title.substring(lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+			var focusTitle = title.substring(lowerTitle.indexOf(lowerSearchText), lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+			var title = startTitle + "<span class='board_focus_title' style='color: red;'>" + focusTitle + "</span>" + endTitle;
 			return title;
 		},
 		getBoardDetail : function (seq) {

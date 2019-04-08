@@ -31,7 +31,6 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@GetMapping("/board")
-	@ResponseBody
 	public BoardListDto getBoards(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		BoardParam boardParam = new BoardParam();

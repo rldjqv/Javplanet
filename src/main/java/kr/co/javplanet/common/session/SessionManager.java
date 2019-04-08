@@ -23,12 +23,14 @@ public class SessionManager {
 	}
 	
 	public static String getUserId(HttpServletRequest request) {
-		HttpSession session = request.getSession(false);
 		String userId = null;
-		Map<String, Object> sessionObject = (Map<String, Object>) session.getAttribute("sessionObject");
-		if (sessionObject != null) {
-			userId = (String) sessionObject.get("userId");
-			
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			Map<String, Object> sessionObject = (Map<String, Object>) session.getAttribute("sessionObject");
+			if (sessionObject != null) {
+				userId = (String) sessionObject.get("userId");
+				
+			}
 		}
 		return userId;
 	}

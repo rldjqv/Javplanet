@@ -91,10 +91,10 @@ Vue.component('pagination', {
 		},
 		getSelectPage : function(pageIndex) {
 			this.currentPage = pageIndex;
-			window.location.href="?currentPage=" + this.currentPage;
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + this.currentPage;
 		},
 		getPreviousPage : function () {
-			window.location.href="?currentPage=" + (Number(this.currentPage) - 1);
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + (Number(this.currentPage) - 1);
 		},
 		getPreviousBlock : function () {
 			this.currentBlockCount = Math.floor(((this.currentPage - 1) / this.blockScale) + 1);
@@ -102,10 +102,10 @@ Vue.component('pagination', {
 			
 			this.startPage = (this.currentBlockCount - 1) * this.blockScale + 1;
 
-			window.location.href="?currentPage=" + this.startPage;
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + this.startPage;
 		},
 		getNextPage : function () {
-			window.location.href="?currentPage=" + (Number(this.currentPage) + 1);
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + (Number(this.currentPage) + 1);
 		},
 		getNextBlock : function () {
 			this.currentBlockCount = Math.floor(((this.currentPage - 1) / this.blockScale) + 1);
@@ -113,7 +113,7 @@ Vue.component('pagination', {
 			
 			this.startPage = (this.currentBlockCount - 1) * this.blockScale + 1;
 			
-			window.location.href="?currentPage=" + this.startPage;
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + this.startPage;
 		},
 		getIsPreviousBlockActive : function () {
 			if (this.currentBlockCount > 1) {

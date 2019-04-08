@@ -43,7 +43,7 @@ var boardVue = new Vue ({
 				alert("검색어를 입력해주시기 바랍니다.");
 				return;
 			}
-			window.location.href = "?searchText=" + this.boardParam.searchText;
+			window.location.href = "?searchText=" + this.boardParam.searchText + "&currentPage=1";
 //			if (commonVue.queryString.currentPage == undefined || commonVue.queryString.currentPage.indexOf("-") == 0) {
 //				commonVue.queryString.currentPage = 1;
 //			}
@@ -60,6 +60,16 @@ var boardVue = new Vue ({
 //			}.bind(this))
 //			.catch(function(e) {
 //			});
+		},
+		getTitle : function (title) {
+			var lowerSearchText = this.boardParam.searchText.toLowerCase(this.boardParam.searchText);
+			var lowerSearchTextLength = lowerSearchText.length;
+			var lowerTitle = title.toLowerCase(title);
+			var startString = title.substring(0, lowerTitle.indexOf(lowerSearchText));
+			var endString = title.substring(lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+			var focusString = title.substring(lowerTitle.indexOf(lowerSearchText), lowerTitle.indexOf(lowerSearchText)+lowerSearchTextLength);
+			var title = startString + "<span style='color: red;'>" + focusString + "</span>" + endString;
+			return title;
 		},
 		getBoardDetail : function (seq) {
 			window.location.href = "/board/detail?seq=" + seq;

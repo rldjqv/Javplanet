@@ -31,7 +31,7 @@
               <td class="board_number">{{getNumber(index)}}</td>
               <td class="board_title">
               	<img src="/images/icon/icon_new.gif" v-if="getIsNew(datas.regDate)" style="padding-right: 2px;"/>
-              	<a @click="{{getBoardDetail(datas.seq)}}">{{datas.title}}</a>
+              	<a @click="{{getBoardDetail(datas.seq)}}" v-html="getTitle(datas.title)"></a>
               	<span class="board_popularity" v-if="getIsPopularity(datas.up, datas.down)">인기</span>
               </td>
               <td class="board_userId">{{datas.userNickName}}</td>

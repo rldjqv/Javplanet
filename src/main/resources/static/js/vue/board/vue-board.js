@@ -76,7 +76,7 @@ var boardVue = new Vue ({
 			}
 		},
 		getBoardDetail : function (seq) {
-			window.location.href = "/board/detail?seq=" + seq;
+			window.location.href = "/board/detail?seq=" + seq + "&searchText=" + commonVue.queryString.searchText + "&currentPage=" + commonVue.queryString.currentPage;
 		},
 		getNumber : function (index) {
 			var number = (this.resultDatas.header.totalCnt - ((commonVue.queryString.currentPage -1) * 20)) - index;

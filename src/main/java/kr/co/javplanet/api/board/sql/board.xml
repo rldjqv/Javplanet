@@ -14,6 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		</if>
 	</sql>
 	
+	<sql id="seqConditions">
+		<if test="data.searchText != null and data.searchText != ''">
+			AND title LIKE "%${data.searchText}%"
+		</if>
+	</sql>
+	
 	<sql id="paging">
 		LIMIT 20
 		OFFSET #{data.offset}
@@ -67,8 +73,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			A.modId,
 			A.modDate,
 			DATE_FORMAT(A.regDate, '%y-%m-%d %H:%i:%S') as regDate,
-			(SELECT seq FROM jav_board WHERE 1=1 AND seq <![CDATA[<]]> #{data.seq} ORDER BY seq DESC LIMIT 1) as previousSeq,
-			(SELECT seq FROM jav_board WHERE 1=1 AND seq <![CDATA[>]]> #{data.seq} ORDER BY seq LIMIT 1) as nextSeq
+			(SELECT seq FROM jav_board WHERE 1=1 AND seq <![CDATA[<]]> #{data.seq} <include refid="seqConditions" /> ORDER BY seq DESC LIMIT 1) as previousSeq,
+			(SELECT seq FROM jav_board WHERE 1=1 AND seq <![CDATA[>]]> #{data.seq} <include refid="seqConditions" /> ORDER BY seq LIMIT 1) as nextSeq
 		FROM jav_board A
 			LEFT JOIN jav_user B ON A.userId = B.userId
 		WHERE 1=1

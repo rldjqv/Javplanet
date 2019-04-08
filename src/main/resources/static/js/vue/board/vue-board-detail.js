@@ -5,7 +5,8 @@ var boardDetailVue = new Vue ({
 		url : location.origin + "/api",
 		boardDetailParam : {
 			category : "",
-			seq : ""
+			seq : "",
+			searchText : ""
 		},
 		resultDatas : {},
 		isReplyOpen : false,
@@ -16,28 +17,32 @@ var boardDetailVue = new Vue ({
 
 	},
 	mounted : function () {
-		axios
-	    .get(this.url + "/board/detail/" + commonVue.queryString.seq)
-	    .then(function(response){
-	    	this.resultDatas = response.data;
-	    	setTimeout(() => {
+		this.boardDetailParam.seq = commonVue.queryString.seq;
+		this.boardDetailParam.searchText = commonVue.queryString.searchText;
+		
+		axios({
+			method: 'get',
+			url: this.url + "/board/detail/",
+			params : this.boardDetailParam
+		})
+		.then(function (response) {
+			this.resultDatas = response.data;
+			setTimeout(() => {
 	    		commonVue.setMeta(this.resultDatas.data.title);	
 			}, 100);
-	    }.bind(this))
-	    .catch(function(e) {
-	    	alert("잘못된 접근입니다.");
-	    	history.back();
-	    });	
+		}.bind(this))
+		.catch(function(e) {
+		});
 	},
 	methods : {
 		getHistoryBack : function () {
 			window.location.href = "/board?searchText=" + commonVue.queryString.searchText + "&currentPage=" + commonVue.queryString.currentPage;
 		},
 		getPreviousPage : function () {
-			window.location.href = "/board/detail?seq=" + this.resultDatas.data.previousSeq;
+			window.location.href = "/board/detail?seq=" + this.resultDatas.data.previousSeq + "&searchText=" + commonVue.queryString.searchText + "&currentPage=" + commonVue.queryString.currentPage;
 		},
 		getNextPage : function () {
-			window.location.href = "/board/detail?seq=" + this.resultDatas.data.nextSeq;
+			window.location.href = "/board/detail?seq=" + this.resultDatas.data.nextSeq + "&searchText=" + commonVue.queryString.searchText + "&currentPage=" + commonVue.queryString.currentPage;
 		},
 		putUp : function (seq) {
 			axios

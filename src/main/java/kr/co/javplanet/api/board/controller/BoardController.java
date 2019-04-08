@@ -40,12 +40,12 @@ public class BoardController {
 		return boardService.getBoards(boardParam);
 	}
 	
-	@GetMapping("/board/detail/{seq}")
-	public BoardDto getBoardDetail(HttpServletRequest request, @PathVariable int seq) throws Exception {
+	@GetMapping("/board/detail")
+	public BoardDto getBoardDetail(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		Gson gson = new Gson();
 		BoardParam boardParam = new BoardParam();
 		SessionManager.setApiHeader(boardParam, request);
-		boardParam.data.seq = seq;
+		boardParam.data = gson.fromJson(gson.toJson(param), BoardParam.Board.class);
 		return boardService.getBoardDetail(boardParam);
 	}
 	

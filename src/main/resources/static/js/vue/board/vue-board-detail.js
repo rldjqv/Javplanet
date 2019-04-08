@@ -17,8 +17,9 @@ var boardDetailVue = new Vue ({
 
 	},
 	mounted : function () {
+		debugger;
 		this.boardDetailParam.seq = commonVue.queryString.seq;
-		this.boardDetailParam.searchText = commonVue.queryString.searchText;
+		this.boardDetailParam.searchText = decodeURI(commonVue.queryString.searchText);
 		
 		axios({
 			method: 'get',

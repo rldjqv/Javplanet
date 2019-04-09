@@ -23,7 +23,7 @@ var loginVue = new Vue ({
 			})
 			.then(function (response) {
 				this.resultDatas = response.data;
-				if (this.resultDatas != null && this.resultDatas != '') {
+				if (this.resultDatas.data != null && this.resultDatas.data != '') {
 					alert(this.resultDatas.data.userNickName + "님 환영합니다.");
 					history.back();
 				} else {

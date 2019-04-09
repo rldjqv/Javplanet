@@ -23,7 +23,7 @@ var contentsVue = new Vue ({
 			axios
 		    .post(this.url + "/contents", this.uploadParam)
 		    .then(function(response){
-		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq;
+		    	window.location.href = "/"+ category +"/detail?seq=" + response.data.data.seq + "&searchText=&currentPage=1";
 		    }.bind(this))
 		    .catch(function(e) {
 		    	alert("글 작성에 실패하였습니다. \n" + e.toString());

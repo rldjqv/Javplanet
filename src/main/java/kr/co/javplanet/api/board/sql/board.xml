@@ -9,13 +9,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			AND seq = #{data.seq}
 		</if>
 		
-		<if test="data.searchText != null and data.searchText != ''">
+		<if test="data.searchText != null and data.searchText != '' and data.searchText != 'undefined'">
 			AND title LIKE "%${data.searchText}%"
 		</if>
 	</sql>
 	
 	<sql id="seqConditions">
-		<if test="data.searchText != null and data.searchText != ''">
+		<if test="data.searchText != null and data.searchText != '' and data.searchText != 'undefined'">
 			AND title LIKE "%${data.searchText}%"
 		</if>
 	</sql>

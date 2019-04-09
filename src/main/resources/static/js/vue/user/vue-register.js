@@ -12,7 +12,8 @@ var registerVue = new Vue ({
 		isCheckUserId : false,
 		isCheckPasswordValid : false,
 		isCheckPasswordConfirm : false,
-		isCheckUserNickName : false
+		isCheckUserNickName : false,
+		isCheckAll : false
 	},
 	created : function () {
 	
@@ -92,6 +93,7 @@ var registerVue = new Vue ({
 				alert("닉네임 중복체크를 진행해주시기 바랍니다.");
 				return;
 			}
+			this.isCheckAll = true;
 			
 			axios
 		    .post(this.url + "/register", this.registerParam)
@@ -124,7 +126,7 @@ var registerVue = new Vue ({
 		getIsCheckPasswordValid : function () {
 			if (8 <= this.registerParam.password.length && this.registerParam.password.length <= 12) {
 				this.isCheckPasswordValid = true;
-				return "패스워드 체크 완료"
+				return ""
 			} else {
 				this.isCheckPasswordValid = false;
 				return "패스워드는 8자리이상 12자리 미만입니다.";
@@ -134,7 +136,7 @@ var registerVue = new Vue ({
 			if (this.isCheckPasswordValid) {
 				if(this.passwordConfirm == this.registerParam.password) {
 					this.isCheckPasswordConfirm = true;
-					return "패스워드 확인 완료";
+					return "";
 				} else {
 					this.isCheckPasswordConfirm = false;
 					return "패스워드가 일치하지 않습니다."

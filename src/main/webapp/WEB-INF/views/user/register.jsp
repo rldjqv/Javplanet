@@ -6,33 +6,41 @@
 <!-- end header -->
 
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear" id="vue_register" v-cloak> 
     <!-- main body -->
-    <div class="content" id="vue_register">
+    <div class="content">
       <div class="scrollable">
       <header class="heading">회원가입</header>
         <table>
 		<tr>	
-			<th>아이디 *</th>
+			<th style="max-width : 110px;">아이디</th>
 			<td v-if="!this.isCheckUserId"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userId"></td>
 			<td v-if="this.isCheckUserId"><input class="register_form" placeholder="" type="text" disabled v-model="registerParam.userId"></td>
-			<td v-if="!this.isCheckUserId" @click="getUserIdCheck()">중복체크</td>
+			<td v-if="!this.isCheckUserId"><button @click="getUserIdCheck()" style="width: 90%;">중복체크</button></td>
+			<td v-if="this.isCheckUserId"><img src="/images/icon/check.png" style="max-width: 30px;" /></td>
 		</tr>
 		<tr>
-			<th>패스워드 *</th>
-			<td><input class="register_form" placeholder="" type="password" required v-model="registerParam.password"></td>
-			<td>{{getIsCheckPasswordValid}}</td>
+			<th style="vertical-align: middle;">패스워드</th>
+			<td>
+				<input class="register_form" placeholder="" type="password" required v-model="registerParam.password">
+				<span>{{getIsCheckPasswordValid}}</span>
+			</td>
+			<td><img src="/images/icon/check.png" style="max-width: 30px;" v-if="this.isCheckPasswordValid" /></td>
 		</tr>
 		<tr>
-			<th>패스워드확인 *</th>
-			<td><input class="register_form" placeholder="" type="password" required v-model="passwordConfirm"></td>
-			<td>{{getIsCheckPasswordConfirm}}</td>
+			<th style="vertical-align: middle;">패스워드 확인</th>
+			<td>
+				<input class="register_form" placeholder="" type="password" required v-model="passwordConfirm">
+				<span>{{getIsCheckPasswordConfirm}}</span>
+			</td>
+			<td><img src="/images/icon/check.png" style="max-width: 30px;" v-if="this.isCheckPasswordConfirm" /></td>
 		</tr>
 		<tr>
-			<th>닉네임 *</th>
+			<th>닉네임</th>
 			<td v-if="!this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" required v-model="registerParam.userNickName"></td>
 			<td v-if="this.isCheckUserNickName"><input class="register_form" placeholder="" type="text" disabled v-model="registerParam.userNickName"></td>
-			<td v-if="!this.isCheckUserNickName" @click="getUserNickNameCheck()">중복체크</td>
+			<td v-if="!this.isCheckUserNickName"><button @click="getUserNickNameCheck()" style="width: 90%;">중복체크</button></td>
+			<td v-if="this.isCheckUserNickName"><img src="/images/icon/check.png" style="max-width: 30px;" /></td>
 		</tr>
 		<tr>
 			<th class="login" colspan="2" @click="postUserRegister()" style="cursor:pointer;">회원가입</th>

@@ -10,9 +10,6 @@ var boardVue = new Vue ({
 		},
 	},
 	created : function () {
-
-	},
-	mounted : function () {
 		if (commonVue.queryString.currentPage == undefined || commonVue.queryString.currentPage.indexOf("-") == 0) {
 			commonVue.queryString.currentPage = 1;
 		}
@@ -35,6 +32,9 @@ var boardVue = new Vue ({
 		}.bind(this))
 		.catch(function(e) {
 		});
+	},
+	mounted : function () {
+
 	},
 	methods : {
 		search : function () {

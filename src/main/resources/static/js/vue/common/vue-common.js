@@ -62,12 +62,14 @@ Vue.component('pagination', {
 	props: ['total_cnt'],
 	template:
     '<nav class="pagination" v-if="this.isMounted" v-cloak>' +
-    '<ul>' + 
+    '<ul>' +
+      '<li><a @click="getFirst()">처음</a></li>' +
 	  '<li v-if="getIsPreviousBlockActive()"><a @click="getPreviousBlock()">&laquo;</a></li>' +
 	  '<li v-if="getIsPreviousPageActive()"><a @click="getPreviousPage()">&lsaquo;</a></li>' +
 	  '<li :class="{\'current\' : (currentPage == pageIndex)}" v-for="pageIndex in (startPage, endPage)" v-if="pageIndex >= startPage"><a @click="getSelectPage(pageIndex)">{{getPageIndex(pageIndex)}}</a></li>' +
 	  '<li v-if="getIsNextPageActive()"><a @click="getNextPage()">&rsaquo;</a></li>' +
 	  '<li v-if="getIsNextBlockActive()"><a @click="getNextBlock()">&raquo;</a></li>' +
+	  '<li><a @click="getLast()">맨끝</a></li>' +
 	'</ul>' +
 	'</nav>',
 	data : function () {
@@ -151,6 +153,12 @@ Vue.component('pagination', {
 			} else {
 				return true;
 			}
+		},
+		getFirst : function () {
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=1";
+		},
+		getLast : function () {
+			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + this.totalPage;
 		}
 	},
 	computed : {

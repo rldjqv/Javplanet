@@ -14,10 +14,6 @@ var boardDetailVue = new Vue ({
 		
 	},
 	created : function () {
-
-	},
-	mounted : function () {
-		debugger;
 		this.boardDetailParam.seq = commonVue.queryString.seq;
 		this.boardDetailParam.searchText = decodeURI(commonVue.queryString.searchText);
 		
@@ -34,6 +30,9 @@ var boardDetailVue = new Vue ({
 		}.bind(this))
 		.catch(function(e) {
 		});
+	},
+	mounted : function () {
+
 	},
 	methods : {
 		getHistoryBack : function () {

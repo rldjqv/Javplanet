@@ -61,7 +61,7 @@ var commonVue = new Vue ({
 Vue.component('pagination', {
 	props: ['total_cnt'],
 	template:
-    '<nav class="pagination" v-if="this.isMounted" v-cloak>' +
+    '<nav class="pagination" v-if="!this.isTotalCntZero" v-cloak>' +
     '<ul>' +
       '<li><a @click="getFirst()">처음</a></li>' +
 	  '<li v-if="getIsPreviousBlockActive()"><a @click="getPreviousBlock()">&laquo;</a></li>' +
@@ -74,6 +74,7 @@ Vue.component('pagination', {
 	'</nav>',
 	data : function () {
 		return {
+			totalCnt : this.total_cnt,
 			currentPage : commonVue.queryString.currentPage,
 			totalPage : Math.ceil(this.total_cnt / 20),
 			blockScale : 10,
@@ -81,10 +82,15 @@ Vue.component('pagination', {
 			currentBlockCount : 1,
 			startPage : 1,
 			endPage : 0,
-			isMounted : false
+			isTotalCntZero : false
 			}
 	},
 	created : function () {
+		if (this.totalCnt == 0) {
+			this.isTotalCntZero = true;
+		} else {
+			this.isTotalCntZero = false;
+		}
 		this.totalBlockCount = Math.ceil(this.totalPage / 10);
 		this.currentBlockCount = Math.floor(((this.currentPage - 1) / this.blockScale) + 1);
 		this.startPage = (this.currentBlockCount - 1) * this.blockScale + 1;
@@ -94,7 +100,7 @@ Vue.component('pagination', {
 		}
 	},
 	mounted : function () {
-		this.isMounted = true;
+		
 	},
 	methods : {
 		getPageIndex : function(pageIndex) {
@@ -158,6 +164,9 @@ Vue.component('pagination', {
 			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=1";
 		},
 		getLast : function () {
+			if(this.totalPage == 0) {
+				this.totalPage = 1;
+			}
 			window.location.href="?searchText=" + commonVue.queryString.searchText + "&currentPage=" + this.totalPage;
 		}
 	},

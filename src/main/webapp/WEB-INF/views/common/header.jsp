@@ -28,18 +28,12 @@
 <meta property="og:image" id="meta_og_image" content="" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="627" />
-
-
-
 <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link href="/layout/styles/custom.css" rel="stylesheet" type="text/css" media="all">
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3323076458154442",
-    enable_page_level_ads: true
-  });
+
 </script>
 </head>
 

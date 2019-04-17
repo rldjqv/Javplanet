@@ -19,12 +19,18 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
 <!-- <script src="/js/vue.js"></script> --> <!-- 개발용 -->
 <script src="/js/vue.min.js"></script> <!-- 배포용 -->
+<script src="https://cdn.jsdelivr.net/npm/vue-meta@1.6.0/lib/vue-meta.min.js"></script>
 <script src="/js/axios.min.js"></script>
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script> <!-- Naver Analytics -->
 <script>
 	if(!wcs_add) var wcs_add = {};
 	wcs_add["wa"] = "dd9cdf64921808";
-	wcs_do();		
+	wcs_do();
+	
+	(adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-3323076458154442",
+	    enable_page_level_ads: true
+  	});
 </script>
 <!-- <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase-app.js"></script> --> <!-- Firebase Analytics -->
 

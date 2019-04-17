@@ -8,7 +8,12 @@ var commonVue = new Vue ({
 	created : function () {
 		// QueryString 초기화 //
 		var params = {};
-	    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+	    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+	    	if (value == undefined || value == "undefined") {
+	    		value = "";
+	    	}
+	    	params[key] = value;
+	    	});
 	    this.queryString = params;
 		// QueryString 초기화 //
 	    

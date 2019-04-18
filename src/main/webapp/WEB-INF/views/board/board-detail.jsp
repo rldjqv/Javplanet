@@ -29,15 +29,27 @@
    		<span class="board_detail_down" @click="putDown(resultDatas.data.seq)"> | 비추천하기</span> <span class="board_detail_down_count">{{this.resultDatas.data.down}}</span>
     </div>
     <div class="board_detail_bottom">
-    	<a class="board_detail_replay" @click="openReply()">댓글쓰기</a>
+    	<!-- <a class="board_detail_replay" @click="openReply()">댓글쓰기</a> -->
     	<a class="board_detail_list" @click="getHistoryBack()">목록보기</a>
     </div>
     <hr>
-    <div class="board_detail_reply_div" v-if="isReplyOpen">
+    <div class="board_detail_reply_view_div">
+    	<div class="board_detail_reply_view_title">test1
+    		<span class="board_detail_reply_view_regDate"> | 19-04-09 13:06:58</span>
+    		<span class="board_detail_reply_view_userIp">0:0:0:0:0:0:0:1</span>
+    	</div>
+    	<div class="board_detail_reply_view_contents">
+    	내용디ㅏㅓㄴㅇ시ㅏㅁ넝
+    	ㄴ미ㅏㅇ시만어시;ㅁㄴㅇㅅ
+    	ㄴ미아섬니;ㅏ어
+    	ㄴㅁ이사ㅓ
+    	</div>
+    </div>
+    <div class="board_detail_reply_save_div" v-if="isReplyOpen">
     	<textarea class="board_detail_reply" v-model="reply"></textarea>
     	<div class="board_detail_reply_button">
-	    	<button class="board_detail_reply_close" @click="openReply()">닫기</button>
-	    	<button class="board_detail_reply_save" @click="postReply(resultDatas.data.seq)">저장하기</button>
+	    	<!-- <button class="board_detail_reply_close" @click="openReply()">닫기</button> -->
+	    	<button class="board_detail_reply_save" @click="postReply(resultDatas.data.seq)">댓글등록</button>
     	</div>
     </div>
     <!-- / main body -->

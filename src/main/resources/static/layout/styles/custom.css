@@ -102,7 +102,7 @@ button {
 	height: 30px;
 }
 
-.board_detail_reply_view_title {
+.board_detail_reply_view_header {
 	background: #80808008;
 	border-top: 1px dotted;
     padding: 0px 0px 0px 3px;

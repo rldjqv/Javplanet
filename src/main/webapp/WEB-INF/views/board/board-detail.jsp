@@ -34,7 +34,7 @@
     </div>
     <hr>
     <div class="board_detail_reply_view_div">
-    	<div class="board_detail_reply_view_title">
+    	<div class="board_detail_reply_view_header">
     		<span class="board_detail_reply_view_userNickName">test33</span>
     		<span class="board_detail_reply_view_regDate"> | 19-04-09 13:06:58</span>
     		<span class="board_detail_reply_view_userIp">0:0:0:0:0:0:0:1</span>

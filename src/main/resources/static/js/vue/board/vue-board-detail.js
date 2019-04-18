@@ -9,7 +9,7 @@ var boardDetailVue = new Vue ({
 			searchText : ""
 		},
 		resultDatas : {},
-		isReplyOpen : false,
+		isReplyOpen : true,
 		reply : ""
 		
 	},

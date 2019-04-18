@@ -71,7 +71,8 @@
 
 .board_detail_reply {
     min-height: 100px;
-    width : 100%;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .board_detail_reply_button {
@@ -99,4 +100,21 @@ button {
 
 .board_text_search_button {
 	height: 30px;
+}
+
+.board_detail_reply_view_header {
+	background: #80808008;
+	border-top: 1px dotted;
+    padding: 0px 0px 0px 3px;
+}
+
+.board_detail_reply_view_userIp {
+	float:right;
+}
+
+.board_detail_reply_view_contents {
+	border-top: 1px dotted;
+	border-bottom: 1px dotted;
+	min-height: 60px;
+	padding: 0px 0px 0px 3px;
 }

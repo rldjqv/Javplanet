@@ -5,10 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MaskingUtil {
-
 	public static void main(String[] args) {
-		
-		
+		System.out.println(maskingIp("192.168.0.1"));
 	}
 	
 	public static String maskingPhoneNum(String str) {

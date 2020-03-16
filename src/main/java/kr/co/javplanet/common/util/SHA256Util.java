@@ -3,6 +3,10 @@ package kr.co.javplanet.common.util;
 import java.security.MessageDigest;
 
 public class SHA256Util {
+	public static void main(String[] args) {
+		System.out.println(encrypt("rldjqv"));
+	}
+	
 	public static String encrypt(String planText) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-256");

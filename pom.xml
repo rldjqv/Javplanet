@@ -9,7 +9,7 @@
   	<packaging>war</packaging>
 
 	<name>Kibe</name>
-	<description>Kibe Web Application</description>
+	<description>Kibe Web Applications</description>
 	<url>http://kibe.co.kr</url>
 
 	<parent>

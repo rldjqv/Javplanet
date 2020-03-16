@@ -10,7 +10,7 @@
 
 	<name>Kibe</name>
 	<description>Kibe Web Application</description>
-	<url>http://kibe.ga</url>
+	<url>http://kibe.co.kr</url>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
